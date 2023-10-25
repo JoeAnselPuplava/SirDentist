@@ -23,7 +23,8 @@ public class MouseToWeaponScript : MonoBehaviour
     {
         mousePos = Input.mousePosition;
         Vector2 ballPos = rb.position;
-        rb.AddForce(mousePos * thrust);
+        rb.velocity+= new Vector2(4,4);
+        //rb.AddForce(mousePos * thrust);
         if(rb.velocity.magnitude > maxspeed){
             rb.velocity = Vector2.ClampMagnitude(rb.velocity,maxspeed);
         }
