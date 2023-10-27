@@ -31,13 +31,12 @@ public class EnemyMovement : MonoBehaviour
             StartCoroutine(moveRight());
         }
         
-        else if (Mathf.Round(player.transform.position.x) - Mathf.Round(transform.position.x) == 0f)
-        {
-            //StartCoroutine(moveUp());
-            Vector3 moveUp = new Vector3(0, 0.03f, 0);
-            transform.position = transform.position + moveUp;
-        }
-        Debug.Log(transform.position);
+        //else if (Mathf.Round(player.transform.position.x) - Mathf.Round(transform.position.x) == 0f)
+        //{
+        //    //StartCoroutine(moveUp());
+        //    Vector3 moveUp = new Vector3(0, 0.03f, 0);
+        //    transform.position = transform.position + moveUp;
+        //}
 
     }
 
@@ -54,7 +53,7 @@ public class EnemyMovement : MonoBehaviour
 
     IEnumerator moveRight()
     {
-        Vector3 moveRight = new Vector3(0.004f, 0, 0);
+        //Vector3 moveRight = new Vector3(0.004f, 0, 0);
         yield return new WaitForSeconds(0.5f);
         //transform.position = transform.position + moveRight;
 
@@ -64,12 +63,33 @@ public class EnemyMovement : MonoBehaviour
 
     IEnumerator moveUp()
     {
-        Vector3 moveUp = new Vector3(0, 0.03f, 0);
-        Vector2 movement = new Vector2(rb.velocity.x, jumpForce);
-        rb.velocity = movement;
-        yield return new WaitForSeconds(0.1f);
+        //Vector3 moveUp = new Vector3(0, 0.03f, 0);
+        //Vector2 movement = new Vector2(rb.velocity.x, jumpForce);
+        //rb.velocity = movement;
+        yield return new WaitForSeconds(0.5f);
         //transform.position = transform.position + moveUp;
 
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Rigidbody2D prb = player.GetComponent<Rigidbody2D>();
+            Vector2 movement;
+            if (rb.velocity.x > 0)
+            {
+                movement = new Vector2(20, 20);
+            }
+            else
+            {
+                movement = new Vector2(-20, 20);
+            }
+            prb.velocity = movement;
+            Debug.Log(prb.velocity);
+            StartCoroutine(moveUp());
+            //Destroy(other.gameObject);
+        }
     }
 }
