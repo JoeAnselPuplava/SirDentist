@@ -440,6 +440,11 @@ CircleCollider2D:
   m_Offset: {x: -0.00000047683716, y: -0.00000047683716}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!50 &1522522363 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 3326421889059659361, guid: a65c8c001ea692748946a0b4c2029567, type: 3}
+  m_PrefabInstance: {fileID: 3718751227937256233}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1681543941
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,7 +569,7 @@ Transform:
   m_GameObject: {fileID: 1681543941}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.0004, y: -4.4643, z: 0}
-  m_LocalScale: {x: 16.0008, y: 1.0286, z: 1}
+  m_LocalScale: {x: 60.11, y: 1.0286, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -631,7 +636,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.96
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -655,7 +660,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1782437323}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -0.3, y: 2.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -907,6 +912,7 @@ MonoBehaviour:
   thrust: 0.1
   maxspeed: 5
   weaponForcePoint: {fileID: 1522522355}
+  ball: {fileID: 0}
 --- !u!1 &2134072002
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,6 +1108,10 @@ PrefabInstance:
       value: 0.2066668
       objectReference: {fileID: 0}
     - target: {fileID: 3786680295032418671, guid: a65c8c001ea692748946a0b4c2029567, type: 3}
+      propertyPath: m_BreakForce
+      value: Infinity
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786680295032418671, guid: a65c8c001ea692748946a0b4c2029567, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: 0.02999771
       objectReference: {fileID: 0}
@@ -1117,9 +1127,21 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5154910712437719325, guid: a65c8c001ea692748946a0b4c2029567, type: 3}
+      propertyPath: m_Mass
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437678456557034283, guid: a65c8c001ea692748946a0b4c2029567, type: 3}
+      propertyPath: ball
+      value: 
+      objectReference: {fileID: 1522522363}
     - target: {fileID: 5437678456557034283, guid: a65c8c001ea692748946a0b4c2029567, type: 3}
       propertyPath: thrust
-      value: 6
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437678456557034283, guid: a65c8c001ea692748946a0b4c2029567, type: 3}
+      propertyPath: maxspeed
+      value: 40.7
       objectReference: {fileID: 0}
     - target: {fileID: 5437678456557034283, guid: a65c8c001ea692748946a0b4c2029567, type: 3}
       propertyPath: weaponForcePoint

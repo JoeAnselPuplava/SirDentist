@@ -27,6 +27,20 @@ public class MouseToWeaponScript : MonoBehaviour
     }
 
     // Update is called once per frame
+    
+    void FixedUpdate()
+    {
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 ballPos = ball.position;
+        Debug.Log(mousePosition);
+        rb.velocity+= mousePosition - ballPos;
+        ball.velocity+= mousePosition - ballPos;
+    }
+
+}
+
+
+    /*
     void FixedUpdate()
     {
         //Debug.Log(mousePos - ScreenCenter);
@@ -42,5 +56,4 @@ public class MouseToWeaponScript : MonoBehaviour
             ball.velocity = Vector2.ClampMagnitude(rb.velocity,maxspeed);
         }
     }
-    
-}
+    */
