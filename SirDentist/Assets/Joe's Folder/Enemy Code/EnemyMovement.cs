@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     public float jumpForce = 10f;
     public GameObject player;
     private Rigidbody2D rb;
+    private bool shouldMove = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,10 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TowardsPlayer();
+        if (shouldMove)
+        {
+            TowardsPlayer();
+        }        
     }
 
     void TowardsPlayer()
@@ -68,8 +72,15 @@ public class EnemyMovement : MonoBehaviour
         //rb.velocity = movement;
         yield return new WaitForSeconds(0.5f);
         //transform.position = transform.position + moveUp;
+      
+    }
 
-        
+    IEnumerator stopMoving()
+    {
+        shouldMove = false;
+        yield return new WaitForSeconds(1f);
+        shouldMove = true;
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -88,8 +99,14 @@ public class EnemyMovement : MonoBehaviour
             }
             prb.velocity = movement;
             Debug.Log(prb.velocity);
-            StartCoroutine(moveUp());
+            StartCoroutine(stopMoving());
             //Destroy(other.gameObject);
+        }
+        else if (other.CompareTag("Flail"))
+        {
+            Rigidbody2D prb = other.GetComponent<Rigidbody2D>();
+            rb.velocity = prb.velocity;
+            StartCoroutine(stopMoving());
         }
     }
 }

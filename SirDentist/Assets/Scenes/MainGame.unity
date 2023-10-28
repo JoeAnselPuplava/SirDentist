@@ -191,6 +191,14 @@ PrefabInstance:
       propertyPath: m_ConnectedRigidBody
       value: 
       objectReference: {fileID: 875788559}
+    - target: {fileID: 4143052149644583617, guid: a65c8c001ea692748946a0b4c2029567, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4143052149644583617, guid: a65c8c001ea692748946a0b4c2029567, type: 3}
+      propertyPath: m_TagString
+      value: Flail
+      objectReference: {fileID: 0}
     - target: {fileID: 4539205695084013166, guid: a65c8c001ea692748946a0b4c2029567, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 0
@@ -1162,6 +1170,7 @@ GameObject:
   - component: {fileID: 1127780892}
   - component: {fileID: 1127780891}
   - component: {fileID: 1127780896}
+  - component: {fileID: 1127780897}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -1368,6 +1377,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1127780897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127780890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddda684ae41c06b4aadc0adc450b3ab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1127780896}
 --- !u!1 &1164639378
 GameObject:
   m_ObjectHideFlags: 0
