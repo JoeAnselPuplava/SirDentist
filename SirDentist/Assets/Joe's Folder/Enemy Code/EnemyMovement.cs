@@ -9,10 +9,12 @@ public class EnemyMovement : MonoBehaviour
     public GameObject player;
     private Rigidbody2D rb;
     private bool shouldMove = true;
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -29,10 +31,15 @@ public class EnemyMovement : MonoBehaviour
         if (Mathf.Round(player.transform.position.x*10f) - Mathf.Round(transform.position.x*10f) < 0)
         {
             StartCoroutine(moveLeft());
+            animator.SetBool("left", true);
+            animator.SetBool("right", false);
+
         }
         else if (Mathf.Round(player.transform.position.x*10f) - Mathf.Round(transform.position.x*10f) > 0)
         {
             StartCoroutine(moveRight());
+            animator.SetBool("right", true);
+            animator.SetBool("left", false);
         }
         
         //else if (Mathf.Round(player.transform.position.x) - Mathf.Round(transform.position.x) == 0f)
