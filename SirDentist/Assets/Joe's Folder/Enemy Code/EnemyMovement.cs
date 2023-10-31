@@ -20,12 +20,25 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        shouldStab(); 
         if (shouldMove)
         {
             TowardsPlayer();
-        }        
+        }
+            
     }
+    private void shouldStab(){// calculates distance between players hit 
+        //and determines if it should run the stab animation
+        float dist_to_player= Vector3.Distance(player.transform.position,transform.position);//computes dist to player
+        if(dist_to_player<3){
+            animator.SetBool("hasHit",true);
+        }
+        else{
+            animator.SetBool("hasHit", false);
+        }
 
+
+    }
     void TowardsPlayer()
     {
         if (Mathf.Round(player.transform.position.x*10f) - Mathf.Round(transform.position.x*10f) < 0)
@@ -33,7 +46,7 @@ public class EnemyMovement : MonoBehaviour
             StartCoroutine(moveLeft());
             animator.SetBool("left", true);
             animator.SetBool("right", false);
-
+           
         }
         else if (Mathf.Round(player.transform.position.x*10f) - Mathf.Round(transform.position.x*10f) > 0)
         {
@@ -92,8 +105,10 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+
         if (other.CompareTag("Player"))
         {
+            animator.SetBool("hasHit", true);
             Rigidbody2D prb = player.GetComponent<Rigidbody2D>();
             Vector2 movement;
             if (rb.velocity.x > 0)
