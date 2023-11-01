@@ -15,6 +15,8 @@ public class MouseToWeaponScript : MonoBehaviour
     Vector2 mousePos;
     Vector2 ScreenCenter;
     
+    public float maxRadius = 10f;
+    public Transform targetPoint;
     
     //RigidBody2D weaponrb;s
     // Start is called before the first frame update
@@ -32,15 +34,45 @@ public class MouseToWeaponScript : MonoBehaviour
     {
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 ballPos = ball.position;
+
+        if (targetPoint != null)
+        {
+            Vector2 targetPosition = targetPoint.position;
+            //Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            Vector2 direction = targetPosition - mousePosition;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+            // Ensure the angle is positive (between 0 and 360 degrees)
+            if (angle < 0)
+            {
+                angle += 360f;
+            }
+
+            Debug.Log("Angle: " + angle);
+
+            float distance = Vector2.Distance(targetPosition, mousePosition);
+            if (distance > maxRadius)
+            {
+                float angleRadians = angle * Mathf.Deg2Rad;
+                float clampedX = targetPosition.x + maxRadius * Mathf.Cos(angleRadians);
+                float clampedY = targetPosition.y + maxRadius * Mathf.Sin(angleRadians);
+                mousePosition = new Vector2(-clampedX, -clampedY);
+            }
+        }
+
         Debug.Log(mousePosition);
-        rb.velocity+= mousePosition - ballPos / 50;
-        ball.velocity+= mousePosition - ballPos  / 50;
+        rb.velocity+= mousePosition - ballPos;
+        ball.velocity+= mousePosition - ballPos;
     }
 
 }
 
 
     /*
+
+                
+    
     void FixedUpdate()
     {
         //Debug.Log(mousePos - ScreenCenter);
@@ -56,4 +88,10 @@ public class MouseToWeaponScript : MonoBehaviour
             ball.velocity = Vector2.ClampMagnitude(rb.velocity,maxspeed);
         }
     }
+    
+
+
+        
+
+        
     */
