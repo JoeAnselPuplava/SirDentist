@@ -44,6 +44,7 @@ public class EnemyMovement : MonoBehaviour
 
 
     }
+
     void TowardsPlayer()
     {
         if (Mathf.Round(player.transform.position.x*10f) - Mathf.Round(transform.position.x*10f) < 0)
@@ -59,13 +60,6 @@ public class EnemyMovement : MonoBehaviour
             animator.SetBool("right", true);
             animator.SetBool("left", false);
         }
-        
-        //else if (Mathf.Round(player.transform.position.x) - Mathf.Round(transform.position.x) == 0f)
-        //{
-        //    //StartCoroutine(moveUp());
-        //    Vector3 moveUp = new Vector3(0, 0.03f, 0);
-        //    transform.position = transform.position + moveUp;
-        //}
 
     }
 
@@ -138,9 +132,6 @@ public class EnemyMovement : MonoBehaviour
             //Debug.Log;
             StartCoroutine(stopMoving());            
             Rigidbody2D prb = other.gameObject.GetComponent<Rigidbody2D>();
-
-            //Vector2 difference = (transform.position - other.transform.position).normalized;
-            //Vector2 force = difference * 100;
 
             Vector2 force = new Vector2(prb.velocity.x * 30, 200);
             
