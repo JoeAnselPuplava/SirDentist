@@ -215,6 +215,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5154910712437719325, guid: a65c8c001ea692748946a0b4c2029567, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: d778bc1b42cbc428a808a368b3b5f6ce, type: 2}
     - target: {fileID: 5437678456557034283, guid: a65c8c001ea692748946a0b4c2029567, type: 3}
       propertyPath: ball
       value: 
@@ -1143,7 +1147,6 @@ GameObject:
   - component: {fileID: 1127780895}
   - component: {fileID: 1127780894}
   - component: {fileID: 1127780893}
-  - component: {fileID: 1127780892}
   - component: {fileID: 1127780891}
   - component: {fileID: 1127780896}
   - component: {fileID: 1127780897}
@@ -1170,51 +1173,6 @@ MonoBehaviour:
   moveSpeed: 5
   jumpForce: 10
   player: {fileID: 1333010802}
---- !u!61 &1127780892
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1127780890}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.1, y: 1.1}
-  m_EdgeRadius: 0
 --- !u!61 &1127780893
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1343,7 +1301,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: d778bc1b42cbc428a808a368b3b5f6ce, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

@@ -9,6 +9,7 @@ public class EnemyMovement : MonoBehaviour
     public GameObject player;
     private Rigidbody2D rb;
     private bool shouldMove = true;
+    private bool grounded = true;
     private Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -20,13 +21,17 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        shouldStab(); 
-        if (shouldMove)
+        shouldStab();
+
+        if (shouldMove && grounded)
         {
             TowardsPlayer();
         }
             
     }
+
+
+
     private void shouldStab(){// calculates distance between players hit 
         //and determines if it should run the stab animation
         float dist_to_player= Vector3.Distance(player.transform.position,transform.position);//computes dist to player
@@ -67,18 +72,21 @@ public class EnemyMovement : MonoBehaviour
     IEnumerator moveLeft()
     {
         Vector3 moveLeft = new Vector3(-0.004f, 0, 0);
-        
+        shouldMove = false;
         yield return new WaitForSeconds(0.5f);
         //transform.position = transform.position + moveLeft;
 
         Vector2 movement = new Vector2(-1 * moveSpeed, rb.velocity.y);
+        shouldMove = true;
         rb.velocity = movement;
     }
 
     IEnumerator moveRight()
     {
         //Vector3 moveRight = new Vector3(0.004f, 0, 0);
+        shouldMove = false;
         yield return new WaitForSeconds(0.5f);
+        shouldMove = true;
         //transform.position = transform.position + moveRight;
 
         Vector2 movement = new Vector2(1 * moveSpeed, rb.velocity.y);
@@ -98,15 +106,15 @@ public class EnemyMovement : MonoBehaviour
     IEnumerator stopMoving()
     {
         shouldMove = false;
-        yield return new WaitForSeconds(1f);
-        shouldMove = true;
+        rb.velocity = new Vector2(0, 0);
+        yield return new WaitForSeconds(3f);
 
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
 
-        if (other.CompareTag("Player"))
+        if (other.gameObject.tag == "Player")
         {
             animator.SetBool("hasHit", true);
             Rigidbody2D prb = player.GetComponent<Rigidbody2D>();
@@ -124,11 +132,37 @@ public class EnemyMovement : MonoBehaviour
             StartCoroutine(stopMoving());
             //Destroy(other.gameObject);
         }
-        else if (other.CompareTag("Flail"))
+
+        else if (other.gameObject.tag == "Flail")
         {
-            Rigidbody2D prb = other.GetComponent<Rigidbody2D>();
-            rb.velocity = prb.velocity;
+            //Debug.Log;
+            StartCoroutine(stopMoving());            
+            Rigidbody2D prb = other.gameObject.GetComponent<Rigidbody2D>();
+
+            //Vector2 difference = (transform.position - other.transform.position).normalized;
+            //Vector2 force = difference * 100;
+
+            Vector2 force = new Vector2(prb.velocity.x * 30, 200);
+            
+            //Vector2 force = new Vector2(200, 200);
+            rb.AddForce(force);
+
+            //rb.AddForce(prb.velocity * 20);
+            //rb.velocity = prb.velocity;
             StartCoroutine(stopMoving());
+        }
+
+        else if (other.gameObject.tag == ("Ground"))
+        {
+            grounded = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == ("Ground"))
+        {
+            grounded = false;
         }
     }
 }
