@@ -33,8 +33,8 @@ public class MouseToWeaponScript : MonoBehaviour
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 ballPos = ball.position;
         Debug.Log(mousePosition);
-        rb.velocity+= mousePosition - ballPos;
-        ball.velocity+= mousePosition - ballPos;
+        rb.velocity+= mousePosition - ballPos / 50;
+        ball.velocity+= mousePosition - ballPos  / 50;
     }
 
 }
