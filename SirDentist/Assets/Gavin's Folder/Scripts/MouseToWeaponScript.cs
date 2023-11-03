@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MouseToWeaponScript : MonoBehaviour
 {
-    public float thrust = 1.0f;
+    public float thrust = 400.0f;
     public float maxspeed = 3f;
     float speed;
     public GameObject weaponForcePoint;
@@ -34,10 +34,13 @@ public class MouseToWeaponScript : MonoBehaviour
     {
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 ballPos = ball.position;
-
+        Vector2 trueballPos = ballPos;
+        Vector2 truePos = mousePosition;
         if (targetPoint != null)
         {
             Vector2 targetPosition = targetPoint.position;
+            truePos = truePos - targetPosition;
+            trueballPos = trueballPos - targetPosition;
             //Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             Vector2 direction = targetPosition - mousePosition;
@@ -51,19 +54,26 @@ public class MouseToWeaponScript : MonoBehaviour
 
             Debug.Log("Angle: " + angle);
 
+
+
             float distance = Vector2.Distance(targetPosition, mousePosition);
             if (distance > maxRadius)
             {
                 float angleRadians = angle * Mathf.Deg2Rad;
-                float clampedX = targetPosition.x + maxRadius * Mathf.Cos(angleRadians);
-                float clampedY = targetPosition.y + maxRadius * Mathf.Sin(angleRadians);
-                mousePosition = new Vector2(-clampedX, -clampedY);
+                float clampedX = maxRadius * Mathf.Cos(angleRadians);
+                float clampedY = maxRadius * Mathf.Sin(angleRadians);
+                truePos = new Vector2(-clampedX, -clampedY);
             }
         }
 
         Debug.Log(mousePosition);
-        rb.velocity+= mousePosition - ballPos;
-        ball.velocity+= mousePosition - ballPos;
+        rb.velocity+= (truePos - trueballPos);
+        ball.velocity+= (truePos - trueballPos);
+
+        //rb.AddForce((truePos - trueballPos) * thrust);
+        //ball.AddForce((truePos - trueballPos)* thrust);
+
+        //GAVIN NOTE TO SELF: Maybe Make flail increase in spin force when beyond limited barrier?
     }
 
 }
