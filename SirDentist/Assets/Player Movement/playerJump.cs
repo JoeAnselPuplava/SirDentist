@@ -4,53 +4,43 @@ using UnityEngine;
 
 public class PlayerJump : MonoBehaviour {
 
-      //public Animator anim;
-      public Rigidbody2D rb;
-      public float jumpForce = 7f;
-      public Transform feet;
-      public LayerMask groundLayer;
-      //public LayerMask enemyLayer;
-      public bool canJump = false;
-      public int jumpTimes = 0;
-      public bool isAlive = true;
-      //public AudioSource JumpSFX;
+    public Rigidbody2D rb;
+    public float jumpForce = 7f;
+    public Transform feet;
+    public LayerMask groundLayer;
+    public bool isAlive = true;
 
-      void Start(){
-            //anim = gameObject.GetComponentInChildren<Animator>();
-            rb = GetComponent<Rigidbody2D>();
-      }
+    private bool canJump = true; // Initially, the player can jump
 
-     void Update() {
-            if ((IsGrounded()) || (jumpTimes == 0)){
-                  canJump = true;
-            }  else if (jumpTimes == 1){
-                  canJump = false;
-            }
+    void Start() {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
-           if ((Input.GetButtonDown("Jump")) && (canJump) && (isAlive == true)) {
-                  Jump();
-            }
-      }
+    void Update() {
+        if (IsGrounded() && isAlive) {
+            jumpTimes = 0; // Reset jump count when touching the ground
+            canJump = true; // Player can jump again
+        }
 
-      public void Jump() {
-            jumpTimes += 1;
-            rb.velocity = Vector2.up * jumpForce;
-            // anim.SetTrigger("Jump");
-            // JumpSFX.Play();
+        if (Input.GetButtonDown("Jump") && canJump && isAlive) {
+            Jump();
+            canJump = false; // Disable jumping until the player touches the ground
+        }
+    }
 
-            //Vector2 movement = new Vector2(rb.velocity.x, jumpForce);
-            //rb.velocity = movement;
-            canJump = false;
-      }
+    private int jumpTimes = 0;
 
-      public bool IsGrounded() {
-            Collider2D groundCheck = Physics2D.OverlapCircle(feet.position, 2f, groundLayer);
-            //Collider2D enemyCheck = Physics2D.OverlapCircle(feet.position, 2f, enemyLayer);
-            if ((groundCheck != null) ) {
-                  //Debug.Log("I am trouching ground!");
-                  jumpTimes = 0;
-                  return true;
-            }
-            return false;
-      }
+    public void Jump() {
+        jumpTimes += 1;
+        rb.velocity = Vector2.up * jumpForce;
+        // You can play jump animation and sound here if needed
+    }
+
+    public bool IsGrounded() {
+        Collider2D groundCheck = Physics2D.OverlapCircle(feet.position, 0f, groundLayer);
+        if (groundCheck != null) {
+            return true;
+        }
+        return false;
+    }
 }
