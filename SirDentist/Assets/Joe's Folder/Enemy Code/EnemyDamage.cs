@@ -7,6 +7,7 @@ public class EnemyDamage : MonoBehaviour
 
     private GameHandler gameHandler;
     public int damage = 10;
+    public int health = 10;
     private Animator animator;
 
     // Start is called before the first frame update
@@ -37,6 +38,21 @@ public class EnemyDamage : MonoBehaviour
         else if (other.gameObject.tag == "Sword")
         {
 
+        }
+    }
+
+    void flailDamage(int damage)
+    {
+        health -= damage;
+        checkHealth();
+    }
+
+    void checkHealth()
+    {
+        if (health <= 0)
+        {
+            //Play death animation
+            Destroy(gameObject);
         }
     }
 }
