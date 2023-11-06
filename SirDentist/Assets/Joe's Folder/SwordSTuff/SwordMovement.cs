@@ -7,10 +7,9 @@ public class SwordMovement : MonoBehaviour
     public float thrust = 400.0f;
     public float maxspeed = 3f;
     float speed;
-    public GameObject weaponForcePoint;
     Rigidbody2D rb;
 
-    public Rigidbody2D ball;
+    public Transform ball;
     Vector2 mousePos;
     Vector2 ScreenCenter;
 
@@ -23,7 +22,7 @@ public class SwordMovement : MonoBehaviour
     {
         ScreenCenter.x = Screen.width / 2;
         ScreenCenter.y = Screen.height / 2;
-        rb = weaponForcePoint.GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
 
     }
 
@@ -67,7 +66,6 @@ public class SwordMovement : MonoBehaviour
 
         Debug.Log(mousePosition);
         rb.velocity += (truePos - trueballPos);
-        ball.velocity += (truePos - trueballPos);
 
         //rb.AddForce((truePos - trueballPos) * thrust);
         //ball.AddForce((truePos - trueballPos)* thrust);
