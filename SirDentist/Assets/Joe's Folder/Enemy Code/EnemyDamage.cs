@@ -13,7 +13,10 @@ public class EnemyDamage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (GameObject.FindWithTag("GameHandler") != null)
+        {
+            gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
+        }
     }
 
     // Update is called once per frame

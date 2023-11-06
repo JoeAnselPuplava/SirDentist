@@ -12,18 +12,12 @@ public class EnemyMovement : MonoBehaviour
     private bool grounded = true;
     private Animator animator;
 
-    private GameHandler gameHandler;
-    public int damage = 10;
-
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        if (GameObject.FindWithTag ("GameHandler") != null) {
-            gameHandler = GameObject.FindWithTag ("GameHandler").GetComponent<GameHandler> ();
-        }
+        animator = GetComponent<Animator>();      
     }
 
     // Update is called once per frame
@@ -130,7 +124,6 @@ public class EnemyMovement : MonoBehaviour
 
         if (other.gameObject.tag == "Player")
         {
-            //animator.SetBool("hasHit", true);
             Rigidbody2D prb = player.GetComponent<Rigidbody2D>();
             Vector2 force = new Vector2(0, 0);
             if (rb.velocity.x > 0)
