@@ -1397,6 +1397,7 @@ GameObject:
   - component: {fileID: 1816516418}
   - component: {fileID: 1816516417}
   - component: {fileID: 1816516416}
+  - component: {fileID: 1816516422}
   m_Layer: 0
   m_Name: Sword 0.1v
   m_TagString: Untagged
@@ -1443,7 +1444,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 400
   maxspeed: 3
-  weaponForcePoint: {fileID: 1816516415}
   ball: {fileID: 965213114}
   maxRadius: 10
   targetPoint: {fileID: 1857211432}
@@ -1732,7 +1732,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816516415}
   m_LocalRotation: {x: -0, y: -0, z: 0.2456957, w: 0.969347}
-  m_LocalPosition: {x: -1.68, y: -0.64, z: 0}
+  m_LocalPosition: {x: -1.7, y: -0.62, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1741,6 +1741,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 28.446}
+--- !u!231 &1816516422
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816516415}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 1857211434}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 3
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 16}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 1
+  m_Distance: 3.2000005
+  m_DampingRatio: 0
+  m_Frequency: 1
 --- !u!1 &1857211431
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,6 +1773,7 @@ GameObject:
   - component: {fileID: 1857211432}
   - component: {fileID: 1857211434}
   - component: {fileID: 1857211433}
+  - component: {fileID: 1857211435}
   m_Layer: 9
   m_Name: RotationPoint
   m_TagString: Untagged
@@ -1790,7 +1812,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.4878739, y: 0.22495034}
+  m_ConnectedAnchor: {x: -0.507874, y: 0.23338853}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!50 &1857211434
@@ -1820,6 +1842,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!231 &1857211435
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857211431}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 3
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: -1.9309444, y: -0.2064532}
+  m_AutoConfigureDistance: 1
+  m_Distance: 2.1007833
+  m_DampingRatio: 0
+  m_Frequency: 1
 --- !u!1 &1899094284
 GameObject:
   m_ObjectHideFlags: 0
