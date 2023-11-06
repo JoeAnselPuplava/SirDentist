@@ -11,17 +11,13 @@ public class EnemyMovement : MonoBehaviour
     private bool shouldMove = true;
     private bool grounded = true;
     private Animator animator;
-    private GameHandler gameHandler;
-    public int damage = 10;
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        if (GameObject.FindWithTag ("GameHandler") != null) {
-            gameHandler = GameObject.FindWithTag ("GameHandler").GetComponent<GameHandler> ();
-        }
+        animator = GetComponent<Animator>();      
     }
 
     // Update is called once per frame
@@ -29,9 +25,14 @@ public class EnemyMovement : MonoBehaviour
     {
         shouldStab();
 
+        Debug.Log("What: " + (shouldMove && grounded));
         if (shouldMove && grounded)
         {
             TowardsPlayer();
+        }
+        else
+        {
+            standIdle();
         }
             
     }
@@ -69,45 +70,52 @@ public class EnemyMovement : MonoBehaviour
 
     }
 
+    void standIdle()
+    {
+
+    }
+
     IEnumerator moveLeft()
     {
-        Vector3 moveLeft = new Vector3(-0.004f, 0, 0);
-        shouldMove = false;
         yield return new WaitForSeconds(0.5f);
-        //transform.position = transform.position + moveLeft;
 
-        Vector2 movement = new Vector2(-1 * moveSpeed, rb.velocity.y);
-        shouldMove = true;
-        rb.velocity = movement;
+
+        if (rb.velocity == new Vector2(0, 0) || rb.velocity.x > 0)
+        {
+            Vector2 movement = new Vector2(-1 * moveSpeed, rb.velocity.y);
+            rb.velocity = movement;
+        }
+        else if (rb.velocity.x > 5)
+        {
+            Vector2 movement = new Vector2(-1 * 0.5f * moveSpeed, 0);
+            rb.velocity += movement;
+        }
     }
 
     IEnumerator moveRight()
     {
-        //Vector3 moveRight = new Vector3(0.004f, 0, 0);
-        shouldMove = false;
         yield return new WaitForSeconds(0.5f);
-        shouldMove = true;
-        //transform.position = transform.position + moveRight;
 
-        Vector2 movement = new Vector2(1 * moveSpeed, rb.velocity.y);
-        rb.velocity = movement;
-    }
 
-    IEnumerator moveUp()
-    {
-        //Vector3 moveUp = new Vector3(0, 0.03f, 0);
-        //Vector2 movement = new Vector2(rb.velocity.x, jumpForce);
-        //rb.velocity = movement;
-        yield return new WaitForSeconds(0.5f);
-        //transform.position = transform.position + moveUp;
-      
+        if (rb.velocity == new Vector2(0, 0) || rb.velocity.x < 0)
+        {
+            Vector2 movement = new Vector2(1 * moveSpeed, rb.velocity.y);
+            rb.velocity = movement;
+        }
+        else if(rb.velocity.x < 5)
+        {
+            Vector2 movement = new Vector2(1 * 0.5f * moveSpeed, 0);
+            rb.velocity += movement;
+        }
+        
     }
 
     IEnumerator stopMoving()
     {
         shouldMove = false;
         rb.velocity = new Vector2(0, 0);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
+        shouldMove = true;
 
     }
 
@@ -116,38 +124,40 @@ public class EnemyMovement : MonoBehaviour
 
         if (other.gameObject.tag == "Player")
         {
-            animator.SetBool("hasHit", true);
             Rigidbody2D prb = player.GetComponent<Rigidbody2D>();
-            Vector2 movement;
-            gameHandler.playerGetHit(damage);
+            Vector2 force = new Vector2(0, 0);
             if (rb.velocity.x > 0)
             {
-                movement = new Vector2(20, 20);
+                force = new Vector2(200, 200);
             }
             else
             {
-                movement = new Vector2(-20, 20);
+                force = new Vector2(-200, 200);
             }
-            prb.velocity = movement;
-            Debug.Log(prb.velocity);
+            prb.AddForce(force);
+            //Debug.Log(prb.velocity);
             StartCoroutine(stopMoving());
-            //Destroy(other.gameObject);
         }
 
         else if (other.gameObject.tag == "Flail")
         {
-            //Debug.Log;
             StartCoroutine(stopMoving());            
             Rigidbody2D prb = other.gameObject.GetComponent<Rigidbody2D>();
 
-            Vector2 force = new Vector2(prb.velocity.x * 30, 200);
-            
-            //Vector2 force = new Vector2(200, 200);
-            rb.AddForce(force);
+            //Vector2 force = new Vector2(prb.velocity.x * 50, Mathf.Abs(prb.velocity.y) * 20);
+            Vector2 force = new Vector2(0,0);
+            if (Mathf.Round(other.gameObject.transform.position.x * 10f) - Mathf.Round(transform.position.x * 10f) < 0)
+            {
+                force = new Vector2(200, 200);
 
-            //rb.AddForce(prb.velocity * 20);
-            //rb.velocity = prb.velocity;
-            StartCoroutine(stopMoving());
+            }
+            else if (Mathf.Round(other.gameObject.transform.position.x * 10f) - Mathf.Round(transform.position.x * 10f) > 0)
+            {
+                force = new Vector2(-200, 200);
+            }
+
+
+            rb.AddForce(force);
         }
 
         else if (other.gameObject.tag == ("Ground"))
