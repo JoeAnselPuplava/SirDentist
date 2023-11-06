@@ -25,7 +25,7 @@ public class EnemyMovement : MonoBehaviour
     {
         shouldStab();
 
-        Debug.Log("What: " + (shouldMove && grounded));
+        //Debug.Log("What: " + (shouldMove && grounded));
         if (shouldMove && grounded)
         {
             TowardsPlayer();

@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Flail
   - GameHandler
+  - Enemy
   layers:
   - Default
   - TransparentFX

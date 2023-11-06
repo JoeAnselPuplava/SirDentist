@@ -20,8 +20,13 @@ public class FlailDamageScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("HIT!");
         if(other.tag == "Enemy"){
-            Vector2 damage = rb.velocity;
+            float damage = Mathf.Sqrt(Mathf.Pow(Mathf.Abs(rb.velocity.x),2))
+            + Mathf.Sqrt(Mathf.Pow(Mathf.Abs(rb.velocity.y),2));
+            Debug.Log(damage);
+            EnemyDamage enemyDamage = other.GetComponent<EnemyDamage>();
+            enemyDamage.flailDamage(Mathf.RoundToInt(damage));
             //call enemy function
         }
     }

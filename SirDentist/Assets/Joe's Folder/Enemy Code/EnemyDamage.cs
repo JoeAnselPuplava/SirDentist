@@ -44,7 +44,7 @@ public class EnemyDamage : MonoBehaviour
         }
     }
 
-    void flailDamage(int damage)
+    public void flailDamage(int damage)
     {
         health -= damage;
         checkHealth();

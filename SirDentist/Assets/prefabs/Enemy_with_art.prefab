@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 8931173401568766931}
   m_Layer: 0
   m_Name: Enemy_with_art
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134,7 +134,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.0646815, y: 2.0361633}
+  m_Size: {x: 1.74, y: 1.75}
   m_EdgeRadius: 0
 --- !u!61 &3866623088441028132
 BoxCollider2D:

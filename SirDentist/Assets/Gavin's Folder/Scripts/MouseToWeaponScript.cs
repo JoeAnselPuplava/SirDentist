@@ -52,7 +52,7 @@ public class MouseToWeaponScript : MonoBehaviour
                 angle += 360f;
             }
 
-            Debug.Log("Angle: " + angle);
+            //Debug.Log("Angle: " + angle);
 
 
 
@@ -66,7 +66,7 @@ public class MouseToWeaponScript : MonoBehaviour
             }
         }
 
-        Debug.Log(mousePosition);
+        //Debug.Log(mousePosition);
         rb.velocity+= (truePos - trueballPos);
         ball.velocity+= (truePos - trueballPos);
 
