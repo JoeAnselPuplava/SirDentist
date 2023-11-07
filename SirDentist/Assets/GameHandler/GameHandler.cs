@@ -79,8 +79,10 @@ public class GameHandler : MonoBehaviour {
       }
 
       public void StartGame() {
-            SceneManager.LoadScene("MainGame");
-      }
+            //Change by Joe to build gavin's test Level
+            SceneManager.LoadScene("Gavin-Test Level");
+            //SceneManager.LoadScene("MainGame");
+    }
 
       // Return to MainMenu
       public void RestartGame() {

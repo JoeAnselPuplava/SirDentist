@@ -72,7 +72,7 @@ public class EnemyMovement : MonoBehaviour
 
     void standIdle()
     {
-
+        //StandIdle Animation
     }
 
     IEnumerator moveLeft()
@@ -85,7 +85,7 @@ public class EnemyMovement : MonoBehaviour
             Vector2 movement = new Vector2(-1 * moveSpeed, rb.velocity.y);
             rb.velocity = movement;
         }
-        else if (rb.velocity.x > 5)
+        else if (rb.velocity.x > -5)
         {
             Vector2 movement = new Vector2(-1 * 0.5f * moveSpeed, 0);
             rb.velocity += movement;
@@ -95,7 +95,6 @@ public class EnemyMovement : MonoBehaviour
     IEnumerator moveRight()
     {
         yield return new WaitForSeconds(0.5f);
-
 
         if (rb.velocity == new Vector2(0, 0) || rb.velocity.x < 0)
         {
@@ -114,52 +113,22 @@ public class EnemyMovement : MonoBehaviour
     {
         shouldMove = false;
         rb.velocity = new Vector2(0, 0);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         shouldMove = true;
 
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-
+        Debug.Log("In contact with " + (other.gameObject.tag));
         if (other.gameObject.tag == "Player")
         {
-            Rigidbody2D prb = player.GetComponent<Rigidbody2D>();
-            Vector2 force = new Vector2(0, 0);
-            if (rb.velocity.x > 0)
-            {
-                force = new Vector2(200, 200);
-            }
-            else
-            {
-                force = new Vector2(-200, 200);
-            }
-            prb.AddForce(force);
-            //Debug.Log(prb.velocity);
+            //StartCoroutine(stopMoving());
+        }
+        else if(other.gameObject.tag == "Flail")
+        {
             StartCoroutine(stopMoving());
         }
-
-        else if (other.gameObject.tag == "Flail")
-        {
-            StartCoroutine(stopMoving());            
-            Rigidbody2D prb = other.gameObject.GetComponent<Rigidbody2D>();
-
-            //Vector2 force = new Vector2(prb.velocity.x * 50, Mathf.Abs(prb.velocity.y) * 20);
-            Vector2 force = new Vector2(0,0);
-            if (Mathf.Round(other.gameObject.transform.position.x * 10f) - Mathf.Round(transform.position.x * 10f) < 0)
-            {
-                force = new Vector2(200, 200);
-
-            }
-            else if (Mathf.Round(other.gameObject.transform.position.x * 10f) - Mathf.Round(transform.position.x * 10f) > 0)
-            {
-                force = new Vector2(-200, 200);
-            }
-
-
-            rb.AddForce(force);
-        }
-
         else if (other.gameObject.tag == ("Ground"))
         {
             grounded = true;
@@ -168,8 +137,10 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+        //Debug.Log("No longer in contact with " + (collision.gameObject.tag));
         if (collision.gameObject.tag == ("Ground"))
         {
+            Debug.Log("Gounded false");
             grounded = false;
         }
     }
