@@ -7,23 +7,30 @@ public class EnemyMovement : MonoBehaviour
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
     public GameObject player;
+    private GameObject[] ground;
+
+    
     private Rigidbody2D rb;
     private bool shouldMove = true;
     private bool grounded = true;
     private Animator animator;
+    private Collider2D enemyCollider;
 
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();      
+        animator = GetComponent<Animator>();
+        enemyCollider = GetComponent<Collider2D>();
+        ground = GameObject.FindGameObjectsWithTag("Ground");
     }
 
     // Update is called once per frame
     void Update()
     {
         shouldStab();
+        touchingGrass();
 
         //Debug.Log("What: " + (shouldMove && grounded));
         if (shouldMove && grounded)
@@ -123,16 +130,38 @@ public class EnemyMovement : MonoBehaviour
         Debug.Log("In contact with " + (other.gameObject.tag));
         if (other.gameObject.tag == "Player")
         {
-            //StartCoroutine(stopMoving());
+            StartCoroutine(stopMoving());
         }
         else if(other.gameObject.tag == "Flail")
         {
             StartCoroutine(stopMoving());
         }
-        else if (other.gameObject.tag == ("Ground"))
+
+        
+    }
+
+    private void touchingGrass()
+    {
+        //if (other.gameObject.tag == ("Ground"))
+
+        ground = GameObject.FindGameObjectsWithTag("Ground");
+        Collider2D groundCollider;
+             
+        foreach (GameObject floors in ground)
         {
-            grounded = true;
+
+            groundCollider = floors.GetComponent<Collider2D>();
+
+            if (groundCollider != null)
+            {
+                if (enemyCollider.IsTouching(groundCollider))
+                {
+                    Debug.Log("Grounded true");
+                    grounded = true;
+                }
+            }
         }
+        
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -140,7 +169,7 @@ public class EnemyMovement : MonoBehaviour
         //Debug.Log("No longer in contact with " + (collision.gameObject.tag));
         if (collision.gameObject.tag == ("Ground"))
         {
-            Debug.Log("Gounded false");
+            Debug.Log("Grounded false");
             grounded = false;
         }
     }
