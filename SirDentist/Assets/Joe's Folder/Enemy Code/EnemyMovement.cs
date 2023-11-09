@@ -127,7 +127,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("In contact with " + (other.gameObject.tag));
+        //Debug.Log("In contact with " + (other.gameObject.tag));
         if (other.gameObject.tag == "Player")
         {
             StartCoroutine(stopMoving());
@@ -156,7 +156,7 @@ public class EnemyMovement : MonoBehaviour
             {
                 if (enemyCollider.IsTouching(groundCollider))
                 {
-                    Debug.Log("Grounded true");
+                    //Debug.Log("Grounded true");
                     grounded = true;
                 }
             }
@@ -169,7 +169,7 @@ public class EnemyMovement : MonoBehaviour
         //Debug.Log("No longer in contact with " + (collision.gameObject.tag));
         if (collision.gameObject.tag == ("Ground"))
         {
-            Debug.Log("Grounded false");
+            //Debug.Log("Grounded false");
             grounded = false;
         }
     }

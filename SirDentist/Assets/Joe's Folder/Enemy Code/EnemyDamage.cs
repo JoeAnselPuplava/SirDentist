@@ -6,9 +6,11 @@ public class EnemyDamage : MonoBehaviour
 {
 
     private GameHandler gameHandler;
-    public int damage = 10;
-    public int health = 10;
+    public float damage = 10f;
+    public float health = 50f;
     private Animator animator;
+
+    private bool immune = false;
 
     // Start is called before the first frame update
     void Start()
@@ -44,10 +46,12 @@ public class EnemyDamage : MonoBehaviour
         }
     }
 
-    public void flailDamage(int damage)
+    public void flailDamage(float damage)
     {
-        health -= damage;
-        checkHealth();
+        if(!immune){
+            health -= damage;
+            checkHealth();
+        }
     }
 
     void checkHealth()
@@ -56,6 +60,13 @@ public class EnemyDamage : MonoBehaviour
         {
             //Play death animation
             Destroy(gameObject);
+            StartCoroutine(Immunity());
         }
+    }
+
+    private IEnumerator Immunity(){
+        immune = true;
+        yield return new WaitForSeconds(0.2f);
+        immune = false;
     }
 }
