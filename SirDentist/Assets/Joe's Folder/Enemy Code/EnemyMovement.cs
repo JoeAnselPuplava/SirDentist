@@ -6,7 +6,7 @@ public class EnemyMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
-    public GameObject player;
+    private GameObject player;
     private GameObject[] ground;
 
     
@@ -23,6 +23,7 @@ public class EnemyMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         enemyCollider = GetComponent<Collider2D>();
+        player = GameObject.FindWithTag("Player");
         ground = GameObject.FindGameObjectsWithTag("Ground");
     }
 
