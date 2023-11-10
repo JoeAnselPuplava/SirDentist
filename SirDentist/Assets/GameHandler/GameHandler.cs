@@ -20,6 +20,8 @@ public class GameHandler : MonoBehaviour {
       private string sceneName;
       public static string lastLevelDied;  //allows replaying the Level where you died
 
+      private bool immune = false;
+
       void Start(){
             player = GameObject.FindWithTag("Player");
             sceneName = SceneManager.GetActiveScene().name;
@@ -35,26 +37,28 @@ public class GameHandler : MonoBehaviour {
     //   }
 
       public void playerGetHit(int damage){
-           if (isDefending == false){
-                  playerHealth -= damage;
-                  if (playerHealth >=0){
-                        updateStatsDisplay();
-                  }
-                  if (damage > 0){
-                        //player.GetComponent<PlayerHurt>().playerHit();       //play GetHit animation
-                  }
+        if (!immune)
+        {
+            playerHealth -= damage;
+            if (playerHealth >=0){
+                updateStatsDisplay();
             }
+            if (damage > 0){
+                //player.GetComponent<PlayerHurt>().playerHit();       //play GetHit animation
+            }
+            StartCoroutine(Immunity());
+        }
 
-           if (playerHealth > StartPlayerHealth){
+        if (playerHealth > StartPlayerHealth){
                   playerHealth = StartPlayerHealth;
                   updateStatsDisplay();
             }
 
-           if (playerHealth <= 0){
-                  playerHealth = 0;
-                  updateStatsDisplay();
-                  playerDies();
-            }
+        if (playerHealth <= 0){
+                playerHealth = 0;
+                updateStatsDisplay();
+                playerDies();
+        }
       }
 
       public void updateStatsDisplay(){
@@ -113,4 +117,11 @@ public class GameHandler : MonoBehaviour {
       public void Credits() {
             SceneManager.LoadScene("Credits");
       }
+
+    private IEnumerator Immunity()
+    {
+        immune = true;
+        yield return new WaitForSeconds(0.3f);
+        immune = false;
+    }
 }
