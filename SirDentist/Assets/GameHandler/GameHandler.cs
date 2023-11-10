@@ -41,7 +41,7 @@ public class GameHandler : MonoBehaviour {
                         updateStatsDisplay();
                   }
                   if (damage > 0){
-                        player.GetComponent<PlayerHurt>().playerHit();       //play GetHit animation
+                        //player.GetComponent<PlayerHurt>().playerHit();       //play GetHit animation
                   }
             }
 

@@ -33,6 +33,7 @@ public class EnemyDamage : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             //animator.SetBool("hasHit", true);
+            gameHandler.playerGetHit(10);
         }
 
         else if (other.gameObject.tag == "Flail")
