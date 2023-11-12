@@ -1,0 +1,787 @@
+fileFormatVersion: 2
+guid: 91849947bbeabd246b681649dc24e07a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 300
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 4000
+        width: 940
+        height: 937
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 787bc353b2e61f94584291a4e3524b39
+      internalID: 1725737999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 4000
+        width: 940
+        height: 928
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4903c3f07bba9cd46815c07b6b0dd108
+      internalID: -1701174165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 2073
+        y: 4000
+        width: 925
+        height: 914
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f381f69a22c44ec4a8344e2d4e843f52
+      internalID: 1045108751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 3054
+        y: 4000
+        width: 926
+        height: 914
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4db7da2fc5de1d46a5a710d7b9f7f37
+      internalID: 1470245236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 4018
+        y: 3997
+        width: 885
+        height: 963
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c728b21ac1552434f81d9be94d4b3aa5
+      internalID: -1624426425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 5076
+        y: 4003
+        width: 823
+        height: 957
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81875c5a9f18f3342b43dfdee659af6c
+      internalID: 1951868701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 3010
+        width: 811
+        height: 987
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 234838007130e814bb4ea28bace315e1
+      internalID: 428326672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 3010
+        width: 812
+        height: 987
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c567116943682954ab7ecd9307a6a87c
+      internalID: -92639382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2082
+        y: 3007
+        width: 867
+        height: 975
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ec5912a8ca108340851f20dbc3157ec
+      internalID: -2119986185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 3073
+        y: 3007
+        width: 869
+        height: 975
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45058ee8deadfc24dac37eb7a3a3fca3
+      internalID: 81050978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 4118
+        y: 3005
+        width: 782
+        height: 942
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b84933e7f5198b4dac6cee604160785
+      internalID: -788269733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 5105
+        y: 2998
+        width: 806
+        height: 943
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54b641c601af7bf45ae86416392382a1
+      internalID: 1993053707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 1984
+        width: 808
+        height: 941
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5a360b6d5fc68e41a843ff7c6c248cb
+      internalID: -1238358189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 1984
+        width: 823
+        height: 941
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c3dd77a8b2df8243b8019d68fe6e2ae
+      internalID: -1944281188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1994
+        y: 1985
+        width: 940
+        height: 931
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a88bfb018bf4d1549941d576bcf442ce
+      internalID: 90242724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 2990
+        y: 1985
+        width: 963
+        height: 916
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8715fb6879106bc44b5d434051793916
+      internalID: 1272011166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 4006
+        y: 1987
+        width: 926
+        height: 914
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f27ed31794dc37a4c9f0e97f6c02ff39
+      internalID: -1048999200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 5011
+        y: 1987
+        width: 873
+        height: 964
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59a21dca8489ed046acdf4b898f0d9d7
+      internalID: 1548940366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 977
+        width: 885
+        height: 963
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34b3fd1277f72cc4b84b2c460dce2637
+      internalID: 814370639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1021
+        y: 983
+        width: 811
+        height: 989
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d705e641a3603b140bbdd520f5467886
+      internalID: -2097115244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 2067
+        y: 983
+        width: 811
+        height: 989
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b150b2aacd1c4ea438d379727619c489
+      internalID: -933757773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 3029
+        y: 983
+        width: 869
+        height: 972
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2257a2c6045ec7b4e8bb191589cb195f
+      internalID: 340117908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 3983
+        y: 983
+        width: 870
+        height: 972
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fd735bd44bf81448a6826e501d53d7f
+      internalID: -666788700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 5105
+        y: 980
+        width: 782
+        height: 940
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76eb631af539421448c7289cb10258fa
+      internalID: -1457856565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 4
+        width: 783
+        height: 946
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83476a6644e642343a76e7143e89d816
+      internalID: 1567571040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 4
+        width: 803
+        height: 941
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a66f018fa6df51048960170bbdf44352
+      internalID: 1920120555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 2070
+        y: 4
+        width: 808
+        height: 941
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d17f08a23ee7cbf44b236e53b0cec26f
+      internalID: -662738011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 3177
+        y: 412
+        width: 223
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e8de99bb800322428962ce5de19f540
+      internalID: 521304601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 4109
+        y: 435
+        width: 222
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bc860cb58809564b8f27947d473e056
+      internalID: 832075493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sir Dentist_Player (Game Design) Walk Sprite Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 5202
+        y: 447
+        width: 222
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49015502cb831954bad7340cd742ad42
+      internalID: 1057384490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_0: 1725737999
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_1: -1701174165
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_10: -788269733
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_11: 1993053707
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_12: -1238358189
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_13: -1944281188
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_14: 90242724
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_15: 1272011166
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_16: -1048999200
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_17: 1548940366
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_18: 814370639
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_19: -2097115244
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_2: 1045108751
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_20: -933757773
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_21: 340117908
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_22: -666788700
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_23: -1457856565
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_24: 1567571040
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_25: 1920120555
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_26: -662738011
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_27: 521304601
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_28: 832075493
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_29: 1057384490
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_3: 1470245236
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_4: -1624426425
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_5: 1951868701
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_6: 428326672
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_7: -92639382
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_8: -2119986185
+      Sir Dentist_Player (Game Design) Walk Sprite Sheet_9: 81050978
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
