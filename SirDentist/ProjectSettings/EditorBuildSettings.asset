@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Gavin-Test Level.unity
     guid: f30c2a9f2f5be0148a2f85c47c546fd3
+  - enabled: 1
+    path: Assets/Scenes/EndLose.unity
+    guid: 163006a909c15ae42ab88d18cff31e06
   m_configObjects: {}
