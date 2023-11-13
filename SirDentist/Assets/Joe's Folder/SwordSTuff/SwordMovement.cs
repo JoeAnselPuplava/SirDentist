@@ -50,7 +50,7 @@ public class SwordMovement : MonoBehaviour
                 angle += 360f;
             }
 
-            Debug.Log("Angle: " + angle);
+            //Debug.Log("Angle: " + angle);
 
 
 
@@ -64,7 +64,7 @@ public class SwordMovement : MonoBehaviour
             }
         }
 
-        Debug.Log(mousePosition);
+        //Debug.Log(mousePosition);
         rb.velocity += (truePos - trueballPos);
 
         //rb.AddForce((truePos - trueballPos) * thrust);
