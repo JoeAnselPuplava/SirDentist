@@ -20,7 +20,7 @@ TagManager:
   - Player
   - Weapon
   - Background
-  - 
+  - Door
   - 
   - 
   - 
@@ -42,6 +42,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Front
+    uniqueID: 1127888965
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 3519526075
     locked: 0

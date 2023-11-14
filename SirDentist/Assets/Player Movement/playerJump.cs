@@ -17,6 +17,7 @@ public class PlayerJump : MonoBehaviour {
     }
 
     void Update() {
+        //Debug.Log(canJump);
         if (IsGrounded() && isAlive) {
             jumpTimes = 0; // Reset jump count when touching the ground
             canJump = true; // Player can jump again

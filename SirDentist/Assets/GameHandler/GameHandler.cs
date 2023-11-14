@@ -19,6 +19,7 @@ public class GameHandler : MonoBehaviour {
 
       private string sceneName;
       public static string lastLevelDied;  //allows replaying the Level where you died
+    private bool hasKey = false;
 
       private bool immune = false;
 
@@ -61,7 +62,28 @@ public class GameHandler : MonoBehaviour {
         }
       }
 
-      public void updateStatsDisplay(){
+    public void playerGetHeal(int heal)
+    {
+        playerHealth += heal;
+        updateStatsDisplay();
+    }
+
+    public int returnPlayerHealth()
+    {
+        return playerHealth;
+    }
+
+    public void setKeyTrue()
+    {
+        hasKey = true;
+    }
+
+    public bool keyStatus()
+    {
+        return hasKey;
+    }
+
+    public void updateStatsDisplay(){
             Text healthTextTemp = healthText.GetComponent<Text>();
             healthTextTemp.text = "HEALTH: " + playerHealth;
 
