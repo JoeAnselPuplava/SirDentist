@@ -21,13 +21,13 @@ public class DoorScript : MonoBehaviour
         {
             gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
         }
+
         animator = GetComponent<Animator>();
         animator.SetBool("hasKey", false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        gameHandler.setKeyTrue();
         if (other.gameObject.tag == "Player"&& gameHandler.keyStatus() && once)
         {
             
@@ -41,7 +41,6 @@ public class DoorScript : MonoBehaviour
 
     IEnumerator switchScenes()
     {
-        gameHandler.setKeyTrue();
         while (openDoorSound.isPlaying)
             yield return null;
         SceneManager.LoadScene("MainMenu");
