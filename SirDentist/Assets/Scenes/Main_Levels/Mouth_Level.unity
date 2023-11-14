@@ -173,7 +173,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &870533
 Rigidbody2D:
   serializedVersion: 4
@@ -1936,7 +1936,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &93844649
 Rigidbody2D:
   serializedVersion: 4
@@ -3722,7 +3722,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &147720658
 Rigidbody2D:
   serializedVersion: 4
@@ -4241,7 +4241,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &171604150
 Rigidbody2D:
   serializedVersion: 4
@@ -6662,7 +6662,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &274744063
 Rigidbody2D:
   serializedVersion: 4
@@ -8348,11 +8348,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4021753712446198243, guid: 94dd6e3524dbb1c4b939543a14cc3e3a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.7000103
+      value: -10.700018
       objectReference: {fileID: 0}
     - target: {fileID: 4021753712446198243, guid: 94dd6e3524dbb1c4b939543a14cc3e3a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.6600027
+      value: 24.400002
       objectReference: {fileID: 0}
     - target: {fileID: 4021753712446198243, guid: 94dd6e3524dbb1c4b939543a14cc3e3a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9256,7 +9256,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &454297720
 Rigidbody2D:
   serializedVersion: 4
@@ -10486,7 +10486,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &514527962
 Rigidbody2D:
   serializedVersion: 4
@@ -11700,7 +11700,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &578979942
 Rigidbody2D:
   serializedVersion: 4
@@ -12268,7 +12268,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &591275986
 Rigidbody2D:
   serializedVersion: 4
@@ -13825,7 +13825,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &662553379
 Rigidbody2D:
   serializedVersion: 4
@@ -15426,7 +15426,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &726168095
 Rigidbody2D:
   serializedVersion: 4
@@ -17398,11 +17398,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2991714973986473499, guid: dd2b3b7f1e3be6444952d137d086e326, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.899992
+      value: -11.9
       objectReference: {fileID: 0}
     - target: {fileID: 2991714973986473499, guid: dd2b3b7f1e3be6444952d137d086e326, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0600003
+      value: 21.8
       objectReference: {fileID: 0}
     - target: {fileID: 2991714973986473499, guid: dd2b3b7f1e3be6444952d137d086e326, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17881,7 +17881,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &851900920
 Rigidbody2D:
   serializedVersion: 4
@@ -20214,7 +20214,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &966536704
 Rigidbody2D:
   serializedVersion: 4
@@ -22979,7 +22979,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &1103218569
 Rigidbody2D:
   serializedVersion: 4
@@ -23313,7 +23313,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &1110581091
 Rigidbody2D:
   serializedVersion: 4
@@ -24948,7 +24948,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &1190584321
 Rigidbody2D:
   serializedVersion: 4
@@ -25761,7 +25761,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &1274393485
 Rigidbody2D:
   serializedVersion: 4
@@ -26257,7 +26257,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &1296556512
 Rigidbody2D:
   serializedVersion: 4
@@ -26646,7 +26646,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312402078}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.08, y: 0.03, z: -8}
+  m_LocalPosition: {x: -8.080008, y: 21.77, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27615,7 +27615,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &1357201137
 Rigidbody2D:
   serializedVersion: 4
@@ -30335,7 +30335,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &1497192075
 Rigidbody2D:
   serializedVersion: 4
@@ -32629,7 +32629,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &1612277809
 Rigidbody2D:
   serializedVersion: 4
@@ -34045,7 +34045,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &1667218287
 Rigidbody2D:
   serializedVersion: 4
@@ -34307,7 +34307,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &1685744903
 Rigidbody2D:
   serializedVersion: 4
@@ -35259,7 +35259,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &1716780966
 Rigidbody2D:
   serializedVersion: 4
@@ -39330,7 +39330,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &1889098319
 Rigidbody2D:
   serializedVersion: 4
@@ -41556,7 +41556,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &2000064080
 Rigidbody2D:
   serializedVersion: 4
@@ -42369,7 +42369,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &2044333824
 Rigidbody2D:
   serializedVersion: 4

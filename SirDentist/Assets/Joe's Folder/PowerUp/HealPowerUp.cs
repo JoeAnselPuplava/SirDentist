@@ -29,6 +29,7 @@ public class HealPowerUp : MonoBehaviour
         if (other.gameObject.tag == "Player" && gameHandler.returnPlayerHealth() < 100 && once)
         {
             once = false;
+            gameHandler.playerGetHeal(heal);
             StartCoroutine(playSound());
         }
     }
@@ -37,7 +38,6 @@ public class HealPowerUp : MonoBehaviour
     {
         healSound.Play();
         gameObject.GetComponent<Renderer>().enabled = false;
-        gameHandler.setKeyTrue();
         while (healSound.isPlaying)
             yield return null;
         Destroy(gameObject);
