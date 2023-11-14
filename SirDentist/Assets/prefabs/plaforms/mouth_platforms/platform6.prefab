@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 2104617170891211113}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!68 &5455739494494111466
 EdgeCollider2D:
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 4838595937852913984}
   m_Layer: 0
   m_Name: platform6
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

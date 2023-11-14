@@ -7,13 +7,14 @@ using UnityEngine.SceneManagement;
 public class DoorScript : MonoBehaviour
 {
     private GameHandler gameHandler;
-    public AudioSource openDoorSound;
+    private AudioSource openDoorSound;
     private bool once = true;
 
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<AudioSource>().playOnAwake = false;
+        openDoorSound = GetComponent<AudioSource>();
 
         if (GameObject.FindWithTag("GameHandler") != null)
         {

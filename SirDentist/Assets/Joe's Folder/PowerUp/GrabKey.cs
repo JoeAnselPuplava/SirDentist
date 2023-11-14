@@ -7,13 +7,14 @@ using UnityEngine;
 public class grabKey : MonoBehaviour
 {
     private GameHandler gameHandler;
-    public AudioSource grabSound;
+    private AudioSource grabSound;
     private bool once = true;
 
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<AudioSource>().playOnAwake = false;
+        grabSound = GetComponent<AudioSource>();
 
         if (GameObject.FindWithTag("GameHandler") != null)
         {
@@ -33,6 +34,7 @@ public class grabKey : MonoBehaviour
     IEnumerator playSound()
     {
         grabSound.Play();
+        gameObject.GetComponent<Renderer>().enabled = false;
         gameHandler.setKeyTrue();
         while (grabSound.isPlaying)
             yield return null;

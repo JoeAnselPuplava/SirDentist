@@ -33,7 +33,7 @@ public class EnemyMovement : MonoBehaviour
         shouldStab();
         touchingGrass();
 
-        //Debug.Log("What: " + (shouldMove && grounded));
+        //Debug.Log("What: " + grounded);
         if (shouldMove && grounded)
         {
             TowardsPlayer();
@@ -44,8 +44,6 @@ public class EnemyMovement : MonoBehaviour
         }
             
     }
-
-
 
     private void shouldStab(){// calculates distance between players hit 
         //and determines if it should run the stab animation

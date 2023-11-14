@@ -40,11 +40,6 @@ public class LauchingMovement : MonoBehaviour
         {
             if (dist < dist_to && canLaunch)
             {
-                Debug.Log("Before: " + rb.velocity);
-                //rb.AddForce(new Vector2(-rb.velocity.x, -rb.velocity.y));
-                
-                //rb.velocity = new Vector2(0, 0);
-                Debug.Log("After: " + rb.velocity);
                 StartCoroutine(launching());
                 StartCoroutine(cooldown());
             }

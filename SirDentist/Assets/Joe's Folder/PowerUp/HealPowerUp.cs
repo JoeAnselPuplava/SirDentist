@@ -8,13 +8,14 @@ public class HealPowerUp : MonoBehaviour
 {
     private GameHandler gameHandler;
     public int heal = 10;
-    public AudioSource healSound;
+    private AudioSource healSound;
     private bool once = true;
 
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<AudioSource>().playOnAwake = false;
+        healSound = GetComponent<AudioSource>();
 
         if (GameObject.FindWithTag("GameHandler") != null)
         {
@@ -34,12 +35,11 @@ public class HealPowerUp : MonoBehaviour
 
     IEnumerator playSound()
     {
-        //Debug.Log("Playing Sound?");
         healSound.Play();
+        gameObject.GetComponent<Renderer>().enabled = false;
         gameHandler.setKeyTrue();
         while (healSound.isPlaying)
             yield return null;
-        //Debug.Log("Destroying Object!");
         Destroy(gameObject);
     }
 }
