@@ -8,6 +8,7 @@ public class DoorScript : MonoBehaviour
 {
     private GameHandler gameHandler;
     private AudioSource openDoorSound;
+    private Animator animator;
     private bool once = true;
 
     // Start is called before the first frame update
@@ -20,12 +21,16 @@ public class DoorScript : MonoBehaviour
         {
             gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
         }
+        animator = GetComponent<Animator>();
+        animator.SetBool("hasKey", false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        print("collided");
         if (other.gameObject.tag == "Player" && gameHandler.keyStatus() && once)
         {
+            OpenDoorAndWait();
             once = false;
             StartCoroutine(playSound());
         }
@@ -40,4 +45,9 @@ public class DoorScript : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
         Destroy(gameObject);
     }
+     IEnumerator OpenDoorAndWait(){
+        animator.SetBool("hasKey", true);
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+
+     }
 }
