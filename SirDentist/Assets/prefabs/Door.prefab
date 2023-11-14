@@ -245,6 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c3c7075e1a074e93b01f092c44b9d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openDoorSound: {fileID: 4721415532081413065}
 --- !u!95 &875972346198298240
 Animator:
   serializedVersion: 5

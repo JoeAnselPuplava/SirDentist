@@ -27,25 +27,28 @@ public class DoorScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        print("collided");
-        if (other.gameObject.tag == "Player" && gameHandler.keyStatus() && once)
+        gameHandler.setKeyTrue();
+        if (other.gameObject.tag == "Player"&& gameHandler.keyStatus() && once)
         {
-            OpenDoorAndWait();
+            
             once = false;
-            StartCoroutine(playSound());
+            openDoorSound.Play();
+            animator.SetBool("hasKey", true);//starts opening animation
+            WaitForDoor();//waits while opening animation plays
+            StartCoroutine(switchScenes());
         }
     }
 
-    IEnumerator playSound()
+    IEnumerator switchScenes()
     {
-        openDoorSound.Play();
         gameHandler.setKeyTrue();
         while (openDoorSound.isPlaying)
             yield return null;
         SceneManager.LoadScene("MainMenu");
         Destroy(gameObject);
     }
-     IEnumerator OpenDoorAndWait(){
+     IEnumerator WaitForDoor(){
+        //openDoorSound.Play();
         animator.SetBool("hasKey", true);
         yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
 
