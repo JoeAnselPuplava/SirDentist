@@ -172,6 +172,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &870533
 Rigidbody2D:
   serializedVersion: 4
@@ -1933,6 +1935,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &93844649
 Rigidbody2D:
   serializedVersion: 4
@@ -3263,6 +3267,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 281900653}
     m_Modifications:
+    - target: {fileID: -1735832758449148110, guid: 2655165cff1294fd39ddbe5349f15768, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 19407956724943951, guid: 2655165cff1294fd39ddbe5349f15768, type: 3}
       propertyPath: m_Material
       value: 
@@ -3713,6 +3721,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &147720658
 Rigidbody2D:
   serializedVersion: 4
@@ -4230,6 +4240,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &171604150
 Rigidbody2D:
   serializedVersion: 4
@@ -6649,6 +6661,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &274744063
 Rigidbody2D:
   serializedVersion: 4
@@ -9241,6 +9255,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &454297720
 Rigidbody2D:
   serializedVersion: 4
@@ -10469,6 +10485,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &514527962
 Rigidbody2D:
   serializedVersion: 4
@@ -11681,6 +11699,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &578979942
 Rigidbody2D:
   serializedVersion: 4
@@ -12247,6 +12267,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &591275986
 Rigidbody2D:
   serializedVersion: 4
@@ -13802,6 +13824,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &662553379
 Rigidbody2D:
   serializedVersion: 4
@@ -15401,6 +15425,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &726168095
 Rigidbody2D:
   serializedVersion: 4
@@ -17854,6 +17880,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &851900920
 Rigidbody2D:
   serializedVersion: 4
@@ -20185,6 +20213,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &966536704
 Rigidbody2D:
   serializedVersion: 4
@@ -22948,6 +22978,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &1103218569
 Rigidbody2D:
   serializedVersion: 4
@@ -23280,6 +23312,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &1110581091
 Rigidbody2D:
   serializedVersion: 4
@@ -24913,6 +24947,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &1190584321
 Rigidbody2D:
   serializedVersion: 4
@@ -25724,6 +25760,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &1274393485
 Rigidbody2D:
   serializedVersion: 4
@@ -26218,6 +26256,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &1296556512
 Rigidbody2D:
   serializedVersion: 4
@@ -27574,6 +27614,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &1357201137
 Rigidbody2D:
   serializedVersion: 4
@@ -30292,6 +30334,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &1497192075
 Rigidbody2D:
   serializedVersion: 4
@@ -32584,6 +32628,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &1612277809
 Rigidbody2D:
   serializedVersion: 4
@@ -33998,6 +34044,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &1667218287
 Rigidbody2D:
   serializedVersion: 4
@@ -34258,6 +34306,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &1685744903
 Rigidbody2D:
   serializedVersion: 4
@@ -35208,6 +35258,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &1716780966
 Rigidbody2D:
   serializedVersion: 4
@@ -39277,6 +39329,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &1889098319
 Rigidbody2D:
   serializedVersion: 4
@@ -41501,6 +41555,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &2000064080
 Rigidbody2D:
   serializedVersion: 4
@@ -42312,6 +42368,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   health: 10000
+  hurt: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!50 &2044333824
 Rigidbody2D:
   serializedVersion: 4
@@ -44169,11 +44227,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4212099123576505540, guid: e2756f5d2d7ec4bac9d3aadc0d2c68a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 60.66
+      value: 58.3
       objectReference: {fileID: 0}
     - target: {fileID: 4212099123576505540, guid: e2756f5d2d7ec4bac9d3aadc0d2c68a4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.67
+      value: -14.8
       objectReference: {fileID: 0}
     - target: {fileID: 4212099123576505540, guid: e2756f5d2d7ec4bac9d3aadc0d2c68a4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -44267,6 +44325,10 @@ PrefabInstance:
     - target: {fileID: 1382220506936011679, guid: aceec57bed8444e97b48314d767d0660, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1461122176245175014, guid: aceec57bed8444e97b48314d767d0660, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8400461358063949959, guid: aceec57bed8444e97b48314d767d0660, type: 3}
       propertyPath: m_Name

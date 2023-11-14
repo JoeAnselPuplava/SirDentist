@@ -119,6 +119,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   health: 50
+  hurt: {fileID: 8300000, guid: 9cf752587d75f4e86ad5a3c66d671dad, type: 3}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!114 &886377192567811695
 MonoBehaviour:
   m_ObjectHideFlags: 0

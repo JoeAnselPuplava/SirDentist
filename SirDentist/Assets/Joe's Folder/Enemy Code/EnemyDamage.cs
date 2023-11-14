@@ -9,22 +9,20 @@ public class EnemyDamage : MonoBehaviour
     public float damage = 10f;
     public float health = 50f;
     private Animator animator;
+    public AudioClip hurt;
+    public AudioClip hit;
+    private AudioSource AudSource;
 
-    private bool immune = false;
+    private bool Eimmune = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        AudSource = GetComponent<AudioSource>();
         if (GameObject.FindWithTag("GameHandler") != null)
         {
             gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnCollisionEnter2D(Collision2D other)
@@ -33,12 +31,14 @@ public class EnemyDamage : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             //animator.SetBool("hasHit", true);
-            gameHandler.playerGetHit(10);
+            StartCoroutine(waitImmune());
+
+
         }
 
-        else if (other.gameObject.tag == "Flail")
+        else if (other.gameObject.tag == "Flail" && !Eimmune)
         {
-
+            AudioSource.PlayClipAtPoint(hurt, transform.position);
         }
 
         else if (other.gameObject.tag == "Sword")
@@ -47,9 +47,16 @@ public class EnemyDamage : MonoBehaviour
         }
     }
 
+    IEnumerator waitImmune()
+    {
+        AudioSource.PlayClipAtPoint(hit, transform.position);
+        gameHandler.playerGetHit(10);
+        yield return new WaitForSeconds(0.3f);
+    }
+
     public void flailDamage(float damage)
     {
-        if(!immune){
+        if(!Eimmune){
             health -= damage;
             checkHealth();
         }
@@ -66,8 +73,8 @@ public class EnemyDamage : MonoBehaviour
     }
 
     private IEnumerator Immunity(){
-        immune = true;
+        Eimmune = true;
         yield return new WaitForSeconds(0.2f);
-        immune = false;
+        Eimmune = false;
     }
 }

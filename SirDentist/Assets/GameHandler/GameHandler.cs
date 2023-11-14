@@ -21,7 +21,7 @@ public class GameHandler : MonoBehaviour {
       public static string lastLevelDied;  //allows replaying the Level where you died
     private bool hasKey = false;
 
-      private bool immune = false;
+      public bool immune = false;
 
       void Start(){
             player = GameObject.FindWithTag("Player");
