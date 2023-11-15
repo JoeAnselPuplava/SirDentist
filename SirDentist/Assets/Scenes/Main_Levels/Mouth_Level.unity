@@ -173,7 +173,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &870533
 Rigidbody2D:
   serializedVersion: 4
@@ -1936,7 +1936,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &93844649
 Rigidbody2D:
   serializedVersion: 4
@@ -3722,7 +3722,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &147720658
 Rigidbody2D:
   serializedVersion: 4
@@ -4241,7 +4241,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &171604150
 Rigidbody2D:
   serializedVersion: 4
@@ -6662,7 +6662,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &274744063
 Rigidbody2D:
   serializedVersion: 4
@@ -8348,11 +8348,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4021753712446198243, guid: 94dd6e3524dbb1c4b939543a14cc3e3a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.7000103
+      value: -3.1300182
       objectReference: {fileID: 0}
     - target: {fileID: 4021753712446198243, guid: 94dd6e3524dbb1c4b939543a14cc3e3a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.6600027
+      value: 2.520003
       objectReference: {fileID: 0}
     - target: {fileID: 4021753712446198243, guid: 94dd6e3524dbb1c4b939543a14cc3e3a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9256,7 +9256,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &454297720
 Rigidbody2D:
   serializedVersion: 4
@@ -10486,7 +10486,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &514527962
 Rigidbody2D:
   serializedVersion: 4
@@ -11700,7 +11700,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &578979942
 Rigidbody2D:
   serializedVersion: 4
@@ -12268,7 +12268,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &591275986
 Rigidbody2D:
   serializedVersion: 4
@@ -13825,7 +13825,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &662553379
 Rigidbody2D:
   serializedVersion: 4
@@ -14736,6 +14736,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &691092596 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6592727011549376180, guid: 9a063834b85674070ac165a5fa0ff3b9, type: 3}
+  m_PrefabInstance: {fileID: 2080469720}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &693120592
 GameObject:
   m_ObjectHideFlags: 0
@@ -15426,7 +15431,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &726168095
 Rigidbody2D:
   serializedVersion: 4
@@ -17398,11 +17403,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2991714973986473499, guid: dd2b3b7f1e3be6444952d137d086e326, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.899992
+      value: -4.33
       objectReference: {fileID: 0}
     - target: {fileID: 2991714973986473499, guid: dd2b3b7f1e3be6444952d137d086e326, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0600003
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 2991714973986473499, guid: dd2b3b7f1e3be6444952d137d086e326, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17881,7 +17886,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &851900920
 Rigidbody2D:
   serializedVersion: 4
@@ -20214,7 +20219,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &966536704
 Rigidbody2D:
   serializedVersion: 4
@@ -20347,6 +20352,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5426621658510972640, guid: 9a063834b85674070ac165a5fa0ff3b9, type: 3}
   m_PrefabInstance: {fileID: 2080469720}
   m_PrefabAsset: {fileID: 0}
+--- !u!50 &967078120 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 2212380170419008630, guid: 9a063834b85674070ac165a5fa0ff3b9, type: 3}
+  m_PrefabInstance: {fileID: 2080469720}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &967078126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691092596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddda684ae41c06b4aadc0adc450b3ab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 967078120}
 --- !u!1 &967773151
 GameObject:
   m_ObjectHideFlags: 0
@@ -22979,7 +23002,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &1103218569
 Rigidbody2D:
   serializedVersion: 4
@@ -23313,7 +23336,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &1110581091
 Rigidbody2D:
   serializedVersion: 4
@@ -24948,7 +24971,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &1190584321
 Rigidbody2D:
   serializedVersion: 4
@@ -25761,7 +25784,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &1274393485
 Rigidbody2D:
   serializedVersion: 4
@@ -26257,7 +26280,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &1296556512
 Rigidbody2D:
   serializedVersion: 4
@@ -26646,7 +26669,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1312402078}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.08, y: 0.03, z: -8}
+  m_LocalPosition: {x: -0.51000786, y: -0.10999802, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27615,7 +27638,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &1357201137
 Rigidbody2D:
   serializedVersion: 4
@@ -30335,7 +30358,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &1497192075
 Rigidbody2D:
   serializedVersion: 4
@@ -32629,7 +32652,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &1612277809
 Rigidbody2D:
   serializedVersion: 4
@@ -34045,7 +34068,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &1667218287
 Rigidbody2D:
   serializedVersion: 4
@@ -34307,7 +34330,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &1685744903
 Rigidbody2D:
   serializedVersion: 4
@@ -35259,7 +35282,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &1716780966
 Rigidbody2D:
   serializedVersion: 4
@@ -39330,7 +39353,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &1889098319
 Rigidbody2D:
   serializedVersion: 4
@@ -41556,7 +41579,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &2000064080
 Rigidbody2D:
   serializedVersion: 4
@@ -42369,7 +42392,7 @@ MonoBehaviour:
   damage: 5
   health: 10000
   hurt: {fileID: 0}
-  hit: {fileID: 0}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!50 &2044333824
 Rigidbody2D:
   serializedVersion: 4
@@ -43390,7 +43413,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6592727011549376180, guid: 9a063834b85674070ac165a5fa0ff3b9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 967078126}
   m_SourcePrefab: {fileID: 100100000, guid: 9a063834b85674070ac165a5fa0ff3b9, type: 3}
 --- !u!1 &2087312857
 GameObject:

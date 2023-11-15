@@ -60,6 +60,9 @@ public class LauchingMovement : MonoBehaviour
         float oldSpeed = moveSpeed;
         moveSpeed = 0;
         StartCoroutine(stopMoving());
+
+        //Wind up code
+
         yield return new WaitForSeconds(1.5f);
         moveSpeed = oldSpeed;
         Vector2 force = new Vector2(player.transform.position.x - transform.position.x,
