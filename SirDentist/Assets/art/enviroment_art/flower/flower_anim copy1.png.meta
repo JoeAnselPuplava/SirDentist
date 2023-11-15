@@ -126,12 +126,12 @@ TextureImporter:
       name: flower_anim copy1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2029
-        height: 2378
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 13
+        y: 7
+        width: 2010
+        height: 2370
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,12 +147,12 @@ TextureImporter:
       name: flower_anim copy1_1
       rect:
         serializedVersion: 2
-        x: 2190
+        x: 2189
         y: 0
-        width: 2005
-        height: 2378
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 2010
+        height: 2370
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -168,12 +168,12 @@ TextureImporter:
       name: flower_anim copy1_2
       rect:
         serializedVersion: 2
-        x: 4373
-        y: 0
+        x: 4366
+        y: 8
         width: 2010
-        height: 2378
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 2370
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,12 +189,12 @@ TextureImporter:
       name: flower_anim copy1_3
       rect:
         serializedVersion: 2
-        x: 6536
-        y: 0
-        width: 2023
-        height: 2378
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 6542
+        y: 8
+        width: 2010
+        height: 2370
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
