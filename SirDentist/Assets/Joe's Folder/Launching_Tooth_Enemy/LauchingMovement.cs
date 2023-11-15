@@ -8,6 +8,8 @@ public class LauchingMovement : MonoBehaviour
     public float jumpForce = 10f;
     public float dist_to = 7f;
 
+    private int crackState=1;
+
     private GameObject player;
     private GameObject[] ground;
     private Rigidbody2D rb;
@@ -16,6 +18,8 @@ public class LauchingMovement : MonoBehaviour
     private bool canLaunch = true;
     private Animator animator;
     private Collider2D enemyCollider;
+    public AudioClip chargeUpAudioClip;
+    private AudioSource AudSource;
     
 
 
@@ -27,6 +31,7 @@ public class LauchingMovement : MonoBehaviour
         enemyCollider = GetComponent<Collider2D>();
         player = GameObject.FindWithTag("Player");
         ground = GameObject.FindGameObjectsWithTag("Ground");
+        AudSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -40,7 +45,9 @@ public class LauchingMovement : MonoBehaviour
         {
             if (dist < dist_to && canLaunch)
             {
+                
                 StartCoroutine(launching());
+                animator.SetBool("charging",false);
                 StartCoroutine(cooldown());
             }
             else
@@ -54,17 +61,25 @@ public class LauchingMovement : MonoBehaviour
         }
 
     }
+    private void windUp(){
+        
+        GetComponent<AudioSource>().clip = chargeUpAudioClip;
+        animator.SetBool("charging",true);
+        GetComponent<AudioSource>().Play();
+
+    }
 
     IEnumerator launching()
     {
         float oldSpeed = moveSpeed;
         moveSpeed = 0;
+
         StartCoroutine(stopMoving());
 
-        //Wind up code
 
         yield return new WaitForSeconds(1.5f);
         moveSpeed = oldSpeed;
+        windUp();
         Vector2 force = new Vector2(player.transform.position.x - transform.position.x,
                                     player.transform.position.y - transform.position.y);
         rb.AddForce(force*200);
@@ -72,26 +87,10 @@ public class LauchingMovement : MonoBehaviour
 
     IEnumerator cooldown()
     {
+        
         canLaunch = false;
         yield return new WaitForSeconds(3f);
         canLaunch = true;
-    }
-
-    private void shouldStab()
-    {
-        // calculates distance between players hit 
-        //and determines if it should run the stab animation
-        float dist_to_player = Vector3.Distance(player.transform.position, transform.position);//computes dist to player
-        if (dist_to_player < 3)
-        {
-            animator.SetBool("hasHit", true);
-        }
-        else
-        {
-            animator.SetBool("hasHit", false);
-        }
-
-
     }
 
     void TowardsPlayer()
@@ -99,15 +98,12 @@ public class LauchingMovement : MonoBehaviour
         if (Mathf.Round(player.transform.position.x * 10f) - Mathf.Round(transform.position.x * 10f) < 0)
         {
             StartCoroutine(moveLeft());
-            animator.SetBool("left", true);
-            animator.SetBool("right", false);
+
 
         }
         else if (Mathf.Round(player.transform.position.x * 10f) - Mathf.Round(transform.position.x * 10f) > 0)
         {
             StartCoroutine(moveRight());
-            animator.SetBool("right", true);
-            animator.SetBool("left", false);
         }
 
     }
@@ -119,6 +115,8 @@ public class LauchingMovement : MonoBehaviour
 
     IEnumerator moveLeft()
     {
+        animator.SetBool("notShootin",false);
+        animator.SetBool("right", false);
         yield return new WaitForSeconds(0.5f);
 
 
@@ -136,6 +134,8 @@ public class LauchingMovement : MonoBehaviour
 
     IEnumerator moveRight()
     {
+        animator.SetBool("notShootin",false);
+        animator.SetBool("right", true);
         yield return new WaitForSeconds(0.5f);
 
         if (rb.velocity == new Vector2(0, 0) || rb.velocity.x < 0)
@@ -153,22 +153,29 @@ public class LauchingMovement : MonoBehaviour
 
     IEnumerator stopMoving()
     {
+        
         shouldMove = false;
         rb.velocity = new Vector2(0, 0);
         yield return new WaitForSeconds(2f);
         shouldMove = true;
 
+
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+
         //Debug.Log("In contact with " + (other.gameObject.tag));
         if (other.gameObject.tag == "Player")
         {
+            animator.SetBool("notShootin",true);
+            animator.SetBool("charging",false);
             StartCoroutine(stopMoving());
         }
         else if (other.gameObject.tag == "Flail")
         {
+            animator.SetBool("notShootin",true);
+            animator.SetBool("charging",false);
             StartCoroutine(stopMoving());
         }
 
@@ -191,6 +198,7 @@ public class LauchingMovement : MonoBehaviour
             {
                 if (enemyCollider.IsTouching(groundCollider))
                 {
+                    animator.SetBool("notShootin", true);
                     //Debug.Log("Grounded true");
                     grounded = true;
                 }
@@ -204,7 +212,14 @@ public class LauchingMovement : MonoBehaviour
         //Debug.Log("No longer in contact with " + (collision.gameObject.tag));
         if (collision.gameObject.tag == ("Ground"))
         {
+            
             //Debug.Log("Grounded false");
+            grounded = false;
+        }
+        if (collision.gameObject.tag == ("Player")||collision.gameObject.tag == ("Flail"))
+        {
+            animator.SetBool("notShootin", true);
+            Debug.Log("got hit");
             grounded = false;
         }
     }
