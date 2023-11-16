@@ -121,7 +121,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: flower_anim copy2_0
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 0
+        width: 2010
+        height: 2370
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf945215962e2464b9fe6a5caefedac9
+      internalID: 944686040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flower_anim copy2_1
+      rect:
+        serializedVersion: 2
+        x: 2189
+        y: 3
+        width: 2010
+        height: 2370
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6ca42da06c0643f98f486b89927db5b
+      internalID: 1674034578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flower_anim copy2_2
+      rect:
+        serializedVersion: 2
+        x: 4373
+        y: 0
+        width: 2010
+        height: 2370
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94a4550635ed94471aa5051ae7633e0a
+      internalID: 211058877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flower_anim copy2_3
+      rect:
+        serializedVersion: 2
+        x: 6542
+        y: 0
+        width: 2010
+        height: 2370
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c2545d821db642fb800d966b8fd6dfb
+      internalID: -1997133136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +216,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      flower_anim copy2_0: 944686040
+      flower_anim copy2_1: 1674034578
+      flower_anim copy2_2: 211058877
+      flower_anim copy2_3: -1997133136
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
