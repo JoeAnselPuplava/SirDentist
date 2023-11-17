@@ -678,6 +678,7 @@ GameObject:
   - component: {fileID: 327105179}
   - component: {fileID: 327105177}
   - component: {fileID: 327105184}
+  - component: {fileID: 327105185}
   m_Layer: 0
   m_Name: RangedEnemy
   m_TagString: Enemy
@@ -692,15 +693,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 327105175}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be17f4efddd0143d8a157adbccdbfab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  health: 70
-  hurt: {fileID: 0}
-  hit: {fileID: 0}
+  health: 100
+  hurt: {fileID: 8300000, guid: 9cf752587d75f4e86ad5a3c66d671dad, type: 3}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!114 &327105179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -840,6 +841,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EggPrefab: {fileID: 469795721482379407, guid: 602d7911f32d1ce43b59e6cf78a851b3, type: 3}
+--- !u!114 &327105185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327105175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b62ec596c0ece954dbcefa31162b2081, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
+  jumpForce: 10
 --- !u!1 &600840268 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 437348000887688587, guid: a65c8c001ea692748946a0b4c2029567, type: 3}
