@@ -1066,6 +1066,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 1608710181549862148, guid: dd2b3b7f1e3be6444952d137d086e326, type: 3}
+      propertyPath: fallMultiplier
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608710181549862148, guid: dd2b3b7f1e3be6444952d137d086e326, type: 3}
+      propertyPath: lowJumpMultiplier
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2438415385844131788, guid: dd2b3b7f1e3be6444952d137d086e326, type: 3}
       propertyPath: m_Size.x
       value: 1.95
@@ -1104,7 +1112,7 @@ PrefabInstance:
       objectReference: {fileID: 218795099}
     - target: {fileID: 2832793509092044431, guid: dd2b3b7f1e3be6444952d137d086e326, type: 3}
       propertyPath: jumpForce
-      value: 10
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2991714973986473499, guid: dd2b3b7f1e3be6444952d137d086e326, type: 3}
       propertyPath: m_RootOrder
@@ -1242,8 +1250,9 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 5eb28149c8a49b94488f3ee10093e19d, type: 2}
   - {fileID: 7400000, guid: b9323923597a8c24a90b2a6e634db404, type: 2}
+  - {fileID: 7400000, guid: 3b09587048093a7458041f925214218d, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!1 &1312402078
@@ -1462,7 +1471,7 @@ GameObject:
   - component: {fileID: 1681543944}
   - component: {fileID: 1681543943}
   - component: {fileID: 1681543942}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor
   m_TagString: Ground
   m_Icon: {fileID: 0}

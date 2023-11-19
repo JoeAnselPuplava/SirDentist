@@ -25,7 +25,7 @@ public class PlayerJump : MonoBehaviour {
 
         if (Input.GetButtonDown("Jump") && canJump && isAlive) {
             Jump();
-            canJump = false; // Disable jumping until the player touches the ground
+            canJump = true; // Disable jumping until the player touches the ground
         }
     }
 
