@@ -8,6 +8,7 @@ TagManager:
   - Flail
   - GameHandler
   - Enemy
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

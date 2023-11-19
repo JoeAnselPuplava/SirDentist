@@ -10,6 +10,10 @@ public class GameHandler : MonoBehaviour {
       public static int playerHealth = 100;
       public int StartPlayerHealth = 100;
       public GameObject healthText;
+      public static int Lives = 5;
+      public int maxLives = 5;
+      public GameObject textLives;
+
 
     //   public static int gotTokens = 0;
     //   public GameObject tokensText;
@@ -55,12 +59,20 @@ public class GameHandler : MonoBehaviour {
                   updateStatsDisplay();
             }
 
-        if (playerHealth <= 0){
+        if (playerHealth <= 0 && (Lives <= 0)){
                 playerHealth = 0;
                 updateStatsDisplay();
                 playerDies();
+        } else if (playerHealth <= 0){ 
+          UpdateLives(-1); 
         }
       }
+
+    public void UpdateLives(int lifeChange){
+      Lives += lifeChange;
+      Text livesTextB = textLives.GetComponent<Text>();
+      livesTextB.text = "Lives: " + Lives + " / " + maxLives;
+    }
 
     public void playerGetHeal(int heal)
     {
@@ -87,8 +99,8 @@ public class GameHandler : MonoBehaviour {
             Text healthTextTemp = healthText.GetComponent<Text>();
             healthTextTemp.text = "HEALTH: " + playerHealth;
 
-            // Text tokensTextTemp = tokensText.GetComponent<Text>();
-            // tokensTextTemp.text = "GOLD: " + gotTokens;
+            Text livesTextB = textLives.GetComponent<Text>();
+            livesTextB.text = "Lives: " + Lives + " / " + maxLives;      
       }
 
       public void playerDies(){
