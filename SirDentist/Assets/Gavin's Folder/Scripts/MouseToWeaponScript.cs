@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class MouseToWeaponScript : MonoBehaviour
 {
+    GameObject player;
     public float thrust = 400.0f;
-    public float maxspeed = 3f;
+    public float maxspeed = 40f;
     float speed;
     public GameObject weaponForcePoint;
     Rigidbody2D rb;
@@ -17,14 +18,18 @@ public class MouseToWeaponScript : MonoBehaviour
     
     public float maxRadius = 10f;
     public Transform targetPoint;
+
+    public GameObject chainone;
     
     //RigidBody2D weaponrb;s
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         ScreenCenter.x = Screen.width/2;
         ScreenCenter.y = Screen.height/2;
         rb = weaponForcePoint.GetComponent<Rigidbody2D>();
+        chainone.GetComponent<HingeJoint2D>().connectedBody = player.GetComponent<Rigidbody2D>();
         
     }
 

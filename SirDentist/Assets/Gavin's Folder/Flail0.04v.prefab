@@ -894,7 +894,7 @@ Transform:
   - {fileID: 5509637464838998860}
   - {fileID: 5623721294594462068}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7706273987029548278
 MonoBehaviour:
@@ -914,6 +914,7 @@ MonoBehaviour:
   ball: {fileID: 1596685003412361368}
   maxRadius: 6
   targetPoint: {fileID: 5623721294594462068}
+  chainone: {fileID: 6015538673424257858}
 --- !u!1 &1397416483174777232
 GameObject:
   m_ObjectHideFlags: 0
@@ -4157,6 +4158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 6420976259091149562}
   rb: {fileID: 0}
+  damagemulti: 0.3
 --- !u!58 &8788197876522372493
 CircleCollider2D:
   m_ObjectHideFlags: 0
