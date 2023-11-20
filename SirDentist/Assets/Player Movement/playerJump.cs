@@ -9,11 +9,13 @@ public class PlayerJump : MonoBehaviour {
     public Transform feet;
     public LayerMask groundLayer;
     public bool isAlive = true;
+    private Animator animator;
 
     public bool canJump = true; // Initially, the player can jump
 
     void Start() {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update() {
@@ -24,8 +26,13 @@ public class PlayerJump : MonoBehaviour {
         }
 
         if (Input.GetButtonDown("Jump") && canJump && isAlive) {
+            animator.SetBool("is_jumping",true);
             Jump();
             canJump = false; // Disable jumping until the player touches the ground
+
+
+            //DELETE THIS ONCE IsGrounded() works
+            animator.SetBool("is_jumping",false);
         }
     }
 
@@ -38,8 +45,10 @@ public class PlayerJump : MonoBehaviour {
     }
 
     public bool IsGrounded() {        
-        Collider2D groundCheck = Physics2D.OverlapCircle(feet.position, 0f, groundLayer);
+        Collider2D groundCheck = Physics2D.OverlapCircle(feet.position, .2f, groundLayer);
         if (groundCheck != null) {
+            animator.SetBool("is_jumping",false);
+            print("ON GROUND");
             return true;
         }
         return false;

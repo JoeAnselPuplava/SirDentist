@@ -10,10 +10,12 @@ public class PlayerMove : MonoBehaviour
     public float startSpeed = 20f;
     public bool isAlive = true;
     private Vector2 velocity;
+    private Animator animator;
 
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -21,6 +23,11 @@ public class PlayerMove : MonoBehaviour
         if (isAlive)
         {
             float horizontalInput = Input.GetAxis("Horizontal");
+            if(Mathf.Abs(horizontalInput) > 0.1f){
+                animator.SetBool("walk",true);
+            }else{
+                animator.SetBool("walk",false);
+            }
             velocity = new Vector2(horizontalInput * runSpeed, rb2D.velocity.y);
 
             // Turning: Reverse if input is moving the Player right and Player faces left
