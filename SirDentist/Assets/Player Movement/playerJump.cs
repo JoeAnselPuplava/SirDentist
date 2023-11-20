@@ -10,7 +10,7 @@ public class PlayerJump : MonoBehaviour {
     public LayerMask groundLayer;
     public bool isAlive = true;
 
-    private bool canJump = true; // Initially, the player can jump
+    public bool canJump = true; // Initially, the player can jump
 
     void Start() {
         rb = GetComponent<Rigidbody2D>();
@@ -25,7 +25,7 @@ public class PlayerJump : MonoBehaviour {
 
         if (Input.GetButtonDown("Jump") && canJump && isAlive) {
             Jump();
-            canJump = true; // Disable jumping until the player touches the ground
+            canJump = false; // Disable jumping until the player touches the ground
         }
     }
 
@@ -37,7 +37,7 @@ public class PlayerJump : MonoBehaviour {
         // You can play jump animation and sound here if needed
     }
 
-    public bool IsGrounded() {
+    public bool IsGrounded() {        
         Collider2D groundCheck = Physics2D.OverlapCircle(feet.position, 0f, groundLayer);
         if (groundCheck != null) {
             return true;
