@@ -11,6 +11,8 @@ public class PlayerJump : MonoBehaviour {
     public bool isAlive = true;
     private Animator animator;
 
+    public bool in_air;
+
     public bool canJump = true; // Initially, the player can jump
 
     void Start() {
@@ -23,6 +25,11 @@ public class PlayerJump : MonoBehaviour {
         if (IsGrounded() && isAlive) {
             jumpTimes = 0; // Reset jump count when touching the ground
             canJump = true; // Player can jump again
+            in_air = false;
+        }
+        else{
+            in_air = true;
+            canJump = false;
         }
 
         if (Input.GetButtonDown("Jump") && canJump && isAlive) {
