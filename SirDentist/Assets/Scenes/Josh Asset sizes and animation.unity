@@ -1120,15 +1120,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2991714973986473499, guid: dd2b3b7f1e3be6444952d137d086e326, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.2828
       objectReference: {fileID: 0}
     - target: {fileID: 2991714973986473499, guid: dd2b3b7f1e3be6444952d137d086e326, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.2828
       objectReference: {fileID: 0}
     - target: {fileID: 2991714973986473499, guid: dd2b3b7f1e3be6444952d137d086e326, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.2828
       objectReference: {fileID: 0}
     - target: {fileID: 2991714973986473499, guid: dd2b3b7f1e3be6444952d137d086e326, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1250,7 +1250,8 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 5eb28149c8a49b94488f3ee10093e19d, type: 2}
   - {fileID: 7400000, guid: b9323923597a8c24a90b2a6e634db404, type: 2}
-  - {fileID: 7400000, guid: 3b09587048093a7458041f925214218d, type: 2}
+  - {fileID: 7400000, guid: b0bf632fa0ebce64f88cf2fa001b863d, type: 2}
+  - {fileID: 7400000, guid: cb1cabcb1a870ea48bf74c8eac798ff7, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
