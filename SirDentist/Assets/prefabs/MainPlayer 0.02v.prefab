@@ -346,6 +346,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isAlive: 1
+  in_air: 0
   canJump: 1
 --- !u!60 &4240459479420739393
 PolygonCollider2D:

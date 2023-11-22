@@ -21,41 +21,55 @@ public class PlayerJump : MonoBehaviour {
     }
 
     void Update() {
-        //Debug.Log(canJump);
-        if (IsGrounded() && isAlive) {
+        //Debug.Log(IsGrounded());
+        if (IsGrounded() && isAlive)
+        {
             jumpTimes = 0; // Reset jump count when touching the ground
             canJump = true; // Player can jump again
             in_air = false;
         }
-        else{
+        else
+        {
             in_air = true;
-            canJump = false;
         }
 
         if (Input.GetButtonDown("Jump") && canJump && isAlive) {
-            animator.SetBool("is_jumping",true);
+            
             Jump();
             canJump = false; // Disable jumping until the player touches the ground
 
-
             //DELETE THIS ONCE IsGrounded() works
-            animator.SetBool("is_jumping",false);
+            animator.SetBool("is_jumping", false);
+            Debug.Log("Made jumping false");
+
         }
     }
 
     private int jumpTimes = 0;
 
     public void Jump() {
+
+        //StartCoroutine(waitForJump());
+        animator.SetBool("is_jumping", true);
+
         jumpTimes += 1;
         rb.velocity = Vector2.up * jumpForce;
+
         // You can play jump animation and sound here if needed
+    }
+
+    IEnumerator waitForJump()
+    {
+        animator.SetBool("is_jumping", true);
+
+        yield return new WaitForSeconds(0.1f);
+
+        animator.SetBool("is_jumping", false);
     }
 
     public bool IsGrounded() {        
         Collider2D groundCheck = Physics2D.OverlapCircle(feet.position, .2f, groundLayer);
         if (groundCheck != null) {
-            animator.SetBool("is_jumping",false);
-            print("ON GROUND");
             return true;
         }
         return false;

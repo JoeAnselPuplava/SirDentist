@@ -16,14 +16,16 @@ public class PlayerBetterFall : MonoBehaviour {
 
     void Update() {
         //Debug.Log(rb.velocity);
+
         if (rb.velocity.y < 0) {
             rb.velocity += Vector2.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         } else if (rb.velocity.y > 0 && !Input.GetButton("Jump")) {
             rb.velocity += Vector2.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
-        else if (rb.velocity.y < 12 && (!jumpScript.canJump || !jumpScript.IsGrounded()))
+
+        if (rb.velocity.y < 17 && (!jumpScript.canJump || !jumpScript.IsGrounded()))
         {
-            rb.velocity += Vector2.up * Physics.gravity.y * lowJumpMultiplier * Time.deltaTime;
+            rb.velocity += Vector2.up * Physics.gravity.y * (lowJumpMultiplier + 1) * Time.deltaTime;
         }
     }
 }
