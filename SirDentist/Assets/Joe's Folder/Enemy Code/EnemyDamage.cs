@@ -18,6 +18,7 @@ public class EnemyDamage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+         animator = GetComponent<Animator>();
         AudSource = GetComponent<AudioSource>();
         if (GameObject.FindWithTag("GameHandler") != null)
         {
@@ -30,7 +31,7 @@ public class EnemyDamage : MonoBehaviour
 
         if (other.gameObject.tag == "Player")
         {
-            //animator.SetBool("hasHit", true);
+            
             StartCoroutine(waitImmune());
 
 
@@ -38,13 +39,17 @@ public class EnemyDamage : MonoBehaviour
 
         else if (other.gameObject.tag == "Flail" && !Eimmune)
         {
+            animator.SetTrigger("beenHit");
+            //print("OWWW");
             AudioSource.PlayClipAtPoint(hurt, transform.position);
+
         }
 
         else if (other.gameObject.tag == "Sword")
         {
-
+            animator.SetTrigger("beenHit");
         }
+
     }
 
     IEnumerator waitImmune()
@@ -77,4 +82,5 @@ public class EnemyDamage : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         Eimmune = false;
     }
+
 }

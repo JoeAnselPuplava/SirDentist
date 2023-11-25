@@ -10,7 +10,7 @@ public class PlayerMove : MonoBehaviour
     public float startSpeed = 20f;
     public bool isAlive = true;
     private Vector2 velocity;
-    private Animator animator;
+    public Animator animator;
 
     void Start()
     {

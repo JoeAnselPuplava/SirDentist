@@ -49,10 +49,10 @@ public class EnemyMovement : MonoBehaviour
         //and determines if it should run the stab animation
         float dist_to_player= Vector3.Distance(player.transform.position,transform.position);//computes dist to player
         if(dist_to_player<3){
-            animator.SetBool("hasHit",true);
+            animator.SetBool("shouldHit",true);
         }
         else{
-            animator.SetBool("hasHit", false);
+            animator.SetBool("shouldHit", false);
         }
 
 

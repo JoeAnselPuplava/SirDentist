@@ -29,7 +29,7 @@ public class FlailDamageScript : MonoBehaviour
             }
             //float damage = Mathf.Sqrt(Mathf.Pow(Mathf.Abs(rb.velocity.x),2))
             //+ Mathf.Sqrt(Mathf.Pow(Mathf.Abs(rb.velocity.y),2));
-            Debug.Log("Damage:" + damage * damagemulti);
+            //Debug.Log("Damage:" + damage * damagemulti);
             EnemyDamage enemyDamage = other.gameObject.GetComponent<EnemyDamage>();
             enemyDamage.flailDamage(damage * damagemulti);
             //call enemy function
