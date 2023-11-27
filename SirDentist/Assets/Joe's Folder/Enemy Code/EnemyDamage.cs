@@ -71,10 +71,14 @@ public class EnemyDamage : MonoBehaviour
     {
         if (health <= 0)
         {
-            //Play death animation
-            Destroy(gameObject);
-            StartCoroutine(Immunity());
+            animator.SetTrigger("die");//this plays the death animation (in this case eyeball exploding)
+            //in animator killMe() is called after death anim finishes playing
+            print("dying");
         }
+    }
+    public void killMe(){//destroys the enemy game object
+        Destroy(gameObject);
+        StartCoroutine(Immunity());
     }
 
     private IEnumerator Immunity(){

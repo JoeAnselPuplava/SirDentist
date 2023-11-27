@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 215092465011511706}
   - component: {fileID: 3551054070034095554}
   - component: {fileID: 2351999587579336671}
+  - component: {fileID: 1582246677183917493}
+  - component: {fileID: 7052610569154784225}
   m_Layer: 0
   m_Name: PlayerArt
   m_TagString: Untagged
@@ -126,6 +128,40 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1582246677183917493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2477595301888519019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd9886b1862e14efda8e66001e962af1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 7
+  feet: {fileID: 2085737300438999138}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  isAlive: 1
+  in_air: 0
+  canJump: 1
+--- !u!114 &7052610569154784225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2477595301888519019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93a140a30745d43aba5111c267f48515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAlive: 1
+  animator: {fileID: 2351999587579336671}
 --- !u!1001 &8196356113254721940
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -423,6 +459,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 3862702354956226859}
   m_SourcePrefab: {fileID: 100100000, guid: dd2b3b7f1e3be6444952d137d086e326, type: 3}
+--- !u!4 &2085737300438999138 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7876032082958666230, guid: dd2b3b7f1e3be6444952d137d086e326, type: 3}
+  m_PrefabInstance: {fileID: 8196356113254721940}
+  m_PrefabAsset: {fileID: 0}
 --- !u!50 &3994663098714714593 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 5102765951974529141, guid: dd2b3b7f1e3be6444952d137d086e326, type: 3}
