@@ -55,6 +55,30 @@ public class EnemyDamage : MonoBehaviour
 
     }
 
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if (other.gameObject.tag == "Player")
+        {
+            StartCoroutine(waitImmune());
+        }
+
+        else if (other.gameObject.tag == "Flail" && !Eimmune)
+        {
+            animator.SetTrigger("beenHit");
+            //print("OWWW");
+            //AudioSource.PlayClipAtPoint(hurt, transform.position);
+
+        }
+
+        else if (other.gameObject.tag == "Sword")
+        {
+            animator.SetTrigger("beenHit");
+        }
+
+    }
+
     IEnumerator waitImmune()
     {
         //AudioSource.PlayClipAtPoint(hit, transform.position);
