@@ -21,26 +21,16 @@ public class PlayerJump : MonoBehaviour {
     }
 
     void Update() {
-        //Debug.Log(IsGrounded());
         if (IsGrounded() && isAlive)
         {
             jumpTimes = 0; // Reset jump count when touching the ground
             canJump = true; // Player can jump again
-            in_air = false;
-        }
-        else
-        {
-            in_air = true;
+
         }
 
         if (Input.GetButtonDown("Jump") && canJump && isAlive) {
             
             Jump();
-            canJump = false; // Disable jumping until the player touches the ground
-
-            //DELETE THIS ONCE IsGrounded() works
-            animator.SetBool("is_jumping", false);
-            Debug.Log("Made jumping false");
 
         }
     }
@@ -49,22 +39,20 @@ public class PlayerJump : MonoBehaviour {
 
     public void Jump() {
 
-        //StartCoroutine(waitForJump());
-        animator.SetBool("is_jumping", true);
+        canJump = false; // Disable jumping until the player touches the ground
 
-        jumpTimes += 1;
         rb.velocity = Vector2.up * jumpForce;
 
         // You can play jump animation and sound here if needed
     }
 
-    IEnumerator waitForJump()
+    IEnumerator createJump()
     {
-        animator.SetBool("is_jumping", true);
+        //Debug.Log("Running");
 
         yield return new WaitForSeconds(0.1f);
 
-        animator.SetBool("is_jumping", false);
+        
     }
 
     public bool IsGrounded() {        
@@ -72,6 +60,7 @@ public class PlayerJump : MonoBehaviour {
         if (groundCheck != null) {
             return true;
         }
+        canJump = false;
         return false;
     }
 }

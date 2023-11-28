@@ -118,9 +118,12 @@ public class GameHandler : MonoBehaviour {
 
       public void StartGame() {
             //Change by Joe to build gavin's test Level
-            SceneManager.LoadScene("Mouth_Level");
-             // Reset time scale to 1 when starting the game
-            Time.timeScale = 1f;
+            //SceneManager.LoadScene("Mouth_Level");
+
+            //Change by Joe to tutorial level
+            SceneManager.LoadScene("Tutorial_Level");
+        // Reset time scale to 1 when starting the game
+        Time.timeScale = 1f;
             // Reset the paused state if it was paused before
             GameHandler_PauseMenu.GameisPaused = false;
     }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class EyeActivatorScript : MonoBehaviour
 {
     public GameObject[] enemies;
+    public float speed = 10f;
     private bool once = true;
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class EyeActivatorScript : MonoBehaviour
             once = false;
             foreach (GameObject enemy in enemies)
             {
-                enemy.GetComponent<EnemyMovement>().moveSpeed = 5f;
+                enemy.GetComponent<EnemyMovement>().moveSpeed = speed;
             }
         }
     }
