@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Checkpoint
   - Weapon
+  - PauseMenuSlider
   layers:
   - Default
   - TransparentFX
