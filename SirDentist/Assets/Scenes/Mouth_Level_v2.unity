@@ -5186,11 +5186,35 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8353552769440247928, guid: 3d0e7157d10d36a45b3e2ff49837acfb, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8353552769440247928, guid: 3d0e7157d10d36a45b3e2ff49837acfb, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637055401176159020, guid: 3d0e7157d10d36a45b3e2ff49837acfb, type: 3}
+      propertyPath: m_Value
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8637055401176159020, guid: 3d0e7157d10d36a45b3e2ff49837acfb, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 485371319}
+    - target: {fileID: 8637055401176159020, guid: 3d0e7157d10d36a45b3e2ff49837acfb, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8647448079333665114, guid: 3d0e7157d10d36a45b3e2ff49837acfb, type: 3}
+      propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8647448079333665114, guid: 3d0e7157d10d36a45b3e2ff49837acfb, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8647448079333665114, guid: 3d0e7157d10d36a45b3e2ff49837acfb, type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
