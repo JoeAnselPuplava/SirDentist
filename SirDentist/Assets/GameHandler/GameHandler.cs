@@ -135,6 +135,7 @@ public class GameHandler : MonoBehaviour {
             SceneManager.LoadScene("MainMenu");
              // Reset all static variables here, for new games:
             playerHealth = StartPlayerHealth;
+            Lives = maxLives;
       }
 
       // Replay the Level where you died
@@ -144,6 +145,7 @@ public class GameHandler : MonoBehaviour {
             SceneManager.LoadScene(lastLevelDied);
              // Reset all static variables here, for new games:
             playerHealth = StartPlayerHealth;
+            Lives = maxLives;
       }
 
       public void QuitGame() {
