@@ -11,7 +11,9 @@ public class EnemyDamage : MonoBehaviour
     private Animator animator;
     public AudioClip hurt;
     public AudioClip hit;
+    public AudioClip explode;
     private AudioSource AudSource;
+    private GameObject player;
 
     private bool Eimmune = false;
 
@@ -20,6 +22,7 @@ public class EnemyDamage : MonoBehaviour
     {
          animator = GetComponent<Animator>();
         AudSource = GetComponent<AudioSource>();
+        player = GameObject.FindWithTag("Player");
         if (GameObject.FindWithTag("GameHandler") != null)
         {
             gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
@@ -41,7 +44,7 @@ public class EnemyDamage : MonoBehaviour
         {
             animator.SetTrigger("beenHit");
             //print("OWWW");
-            AudioSource.PlayClipAtPoint(hurt, transform.position);
+            //AudioSource.PlayClipAtPoint(hurt, transform.position);
 
         }
 
@@ -54,14 +57,17 @@ public class EnemyDamage : MonoBehaviour
 
     IEnumerator waitImmune()
     {
+        //AudioSource.PlayClipAtPoint(hit, transform.position);
         AudioSource.PlayClipAtPoint(hit, transform.position);
         gameHandler.playerGetHit(10);
         yield return new WaitForSeconds(0.3f);
     }
 
     public void flailDamage(float damage)
-    {
-        if(!Eimmune){
+    {      
+
+        if (!Eimmune){
+            AudioSource.PlayClipAtPoint(hurt, transform.position);
             health -= damage;
             checkHealth();
         }
@@ -71,6 +77,8 @@ public class EnemyDamage : MonoBehaviour
     {
         if (health <= 0)
         {
+            Eimmune = true;
+            AudioSource.PlayClipAtPoint(explode, transform.position);
             animator.SetTrigger("die");//this plays the death animation (in this case eyeball exploding)
             //in animator killMe() is called after death anim finishes playing
             print("dying");
