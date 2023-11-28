@@ -181,7 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   health: 50
-  hurt: {fileID: 8300000, guid: 9cf752587d75f4e86ad5a3c66d671dad, type: 3}
+  hurt: {fileID: 8300000, guid: 056d04608ec2441dfac3d27040bbbfa8, type: 3}
   hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!82 &6090357502145267612
 AudioSource:
@@ -289,9 +289,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9cf752587d75f4e86ad5a3c66d671dad, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 056d04608ec2441dfac3d27040bbbfa8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.349
   m_Pitch: 1
   Loop: 0
   Mute: 0

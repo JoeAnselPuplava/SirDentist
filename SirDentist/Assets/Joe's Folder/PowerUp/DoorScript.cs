@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class DoorScript : MonoBehaviour
 {
+    public string next_scene = "MainMenu";
     private GameHandler gameHandler;
     private AudioSource openDoorSound;
     private Animator animator;
@@ -43,7 +44,7 @@ public class DoorScript : MonoBehaviour
     {
         while (openDoorSound.isPlaying)
             yield return null;
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(next_scene);
         Destroy(gameObject);
     }
      IEnumerator WaitForDoor(){
