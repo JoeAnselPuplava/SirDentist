@@ -10,7 +10,6 @@ public class MouseToWeaponScript : MonoBehaviour
     public float maxspeed = 40f;
     float speed;
     public GameObject weaponForcePoint;
-    Rigidbody2D rb;
 
     public Rigidbody2D ball;
     Vector2 mousePos;
@@ -28,7 +27,6 @@ public class MouseToWeaponScript : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         ScreenCenter.x = Screen.width/2;
         ScreenCenter.y = Screen.height/2;
-        rb = weaponForcePoint.GetComponent<Rigidbody2D>();
         chainone.GetComponent<HingeJoint2D>().connectedBody = player.GetComponent<Rigidbody2D>();
         
     }
@@ -70,10 +68,9 @@ public class MouseToWeaponScript : MonoBehaviour
                 truePos = new Vector2(-clampedX, -clampedY);
             }
         }
-
+        ball.AddForce((truePos - trueballPos) * thrust);
         //Debug.Log(mousePosition);
-        rb.velocity+= (truePos - trueballPos);
-        ball.velocity+= (truePos - trueballPos);
+        //ball.velocity+= (truePos - trueballPos);
 
         //rb.AddForce((truePos - trueballPos) * thrust);
         //ball.AddForce((truePos - trueballPos)* thrust);

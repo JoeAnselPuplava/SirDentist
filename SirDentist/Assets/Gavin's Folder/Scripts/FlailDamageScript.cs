@@ -5,7 +5,7 @@ using UnityEngine;
 public class FlailDamageScript : MonoBehaviour
 {
     public GameObject ball;
-    public Rigidbody2D rb;
+    Rigidbody2D rb;
 
     public float damagemulti = 0.3f;
 

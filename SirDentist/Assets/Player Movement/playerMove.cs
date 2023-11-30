@@ -28,7 +28,8 @@ public class PlayerMove : MonoBehaviour
             }else{
                 animator.SetBool("walk",false);
             }
-            velocity = new Vector2(horizontalInput * runSpeed, rb2D.velocity.y);
+            velocity += new Vector2(horizontalInput * runSpeed, rb2D.velocity.y);
+
 
             // Turning: Reverse if input is moving the Player right and Player faces left
             if ((horizontalInput < 0 && !FaceRight) || (horizontalInput > 0 && FaceRight))
