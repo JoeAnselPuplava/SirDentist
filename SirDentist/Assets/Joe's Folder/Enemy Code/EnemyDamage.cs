@@ -6,7 +6,7 @@ public class EnemyDamage : MonoBehaviour
 {
 
     private GameHandler gameHandler;
-    public float damage = 10f;
+    public int attackpower = 10;
     public float health = 50f;
     private Animator animator;
     public AudioClip hurt;
@@ -83,7 +83,7 @@ public class EnemyDamage : MonoBehaviour
     {
         //AudioSource.PlayClipAtPoint(hit, transform.position);
         AudioSource.PlayClipAtPoint(hit, transform.position);
-        gameHandler.playerGetHit(10);
+        gameHandler.playerGetHit(attackpower);
         yield return new WaitForSeconds(0.3f);
     }
 
