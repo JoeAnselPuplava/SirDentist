@@ -117,14 +117,14 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0.5}
-    oldSize: {x: 5.8384614, y: 8.992308}
+    oldSize: {x: 6.1538463, y: 9.230769}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -132,12 +132,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 4.4653845}
-      - {x: 0, y: -4.496154}
-      - {x: 5.8230767, y: -4.496154}
-      - {x: 5.8230767, y: 4.457692}
-      - {x: 5.8076925, y: 4.473077}
-      - {x: 0.0076923077, y: 4.473077}
+    - - {x: 0.06923077, y: 4.6153846}
+      - {x: 0, y: 4.5692306}
+      - {x: 0, y: -4.6153846}
+      - {x: 6.1307693, y: -4.6153846}
+      - {x: 6.1307693, y: 4.6153846}
   m_UseDelaunayMesh: 0
 --- !u!82 &4721415532081413065
 AudioSource:
@@ -247,6 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c3c7075e1a074e93b01f092c44b9d5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  next_scene: MainMenu
 --- !u!95 &875972346198298240
 Animator:
   serializedVersion: 5

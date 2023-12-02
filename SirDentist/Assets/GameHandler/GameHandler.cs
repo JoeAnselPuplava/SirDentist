@@ -15,8 +15,9 @@ public class GameHandler : MonoBehaviour {
       public GameObject textLives;
 
 
-    //   public static int gotTokens = 0;
-    //   public GameObject tokensText;
+     public static int gotCoins = 0;
+     public int coins = 0;
+     public GameObject coinsText;
 
       public bool isDefending = false;
 
@@ -36,10 +37,10 @@ public class GameHandler : MonoBehaviour {
             updateStatsDisplay();
       }
 
-    //   public void playerGetTokens(int newTokens){
-    //         gotTokens += newTokens;
-    //         updateStatsDisplay();
-    //   }
+    public void playerGetCoins(int newCoins){
+             coins += newCoins;
+             updateStatsDisplay();
+     }
 
       public void playerGetHit(int damage){
         if (!immune)
@@ -100,7 +101,10 @@ public class GameHandler : MonoBehaviour {
             healthTextTemp.text = "HEALTH: " + playerHealth;
 
             Text livesTextB = textLives.GetComponent<Text>();
-            livesTextB.text = "Lives: " + Lives + " / " + maxLives;      
+            livesTextB.text = "Lives: " + Lives + " / " + maxLives;
+
+            Text coinsTextB = coinsText.GetComponent<Text>();
+            coinsTextB.text = "Coins: " + coins;      
       }
 
       public void playerDies(){
@@ -136,6 +140,7 @@ public class GameHandler : MonoBehaviour {
              // Reset all static variables here, for new games:
             playerHealth = StartPlayerHealth;
             Lives = maxLives;
+            coins = gotCoins;
       }
 
       // Replay the Level where you died
@@ -146,6 +151,7 @@ public class GameHandler : MonoBehaviour {
              // Reset all static variables here, for new games:
             playerHealth = StartPlayerHealth;
             Lives = maxLives;
+            coins = gotCoins;
       }
 
       public void QuitGame() {

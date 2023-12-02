@@ -12,7 +12,7 @@ public class EyeActivatorScript : MonoBehaviour
     {
         foreach (GameObject enemy in enemies)
         {
-            enemy.GetComponent<EnemyMovement>().moveSpeed = 0f;
+            enemy.GetComponent<EyeMovement>().moveSpeed = 0f;
         }
     }
 
