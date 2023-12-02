@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyDamage : MonoBehaviour
+public class EyeDamage : MonoBehaviour
 {
 
     private GameHandler gameHandler;
@@ -20,7 +20,7 @@ public class EnemyDamage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         AudSource = GetComponent<AudioSource>();
         player = GameObject.FindWithTag("Player");
         if (GameObject.FindWithTag("GameHandler") != null)
@@ -34,7 +34,7 @@ public class EnemyDamage : MonoBehaviour
 
         if (other.gameObject.tag == "Player")
         {
-            
+
             StartCoroutine(waitImmune());
 
 
@@ -81,16 +81,16 @@ public class EnemyDamage : MonoBehaviour
 
     IEnumerator waitImmune()
     {
-        //AudioSource.PlayClipAtPoint(hit, transform.position);
         AudioSource.PlayClipAtPoint(hit, transform.position);
         gameHandler.playerGetHit(attackpower);
         yield return new WaitForSeconds(0.3f);
     }
 
     public void flailDamage(float damage)
-    {      
+    {
 
-        if (!Eimmune){
+        if (!Eimmune)
+        {
             AudioSource.PlayClipAtPoint(hurt, transform.position);
             health -= damage;
             checkHealth();
@@ -108,12 +108,14 @@ public class EnemyDamage : MonoBehaviour
             print("dying");
         }
     }
-    public void killMe(){//destroys the enemy game object
+    public void killMe()
+    {
         Destroy(gameObject);
         StartCoroutine(Immunity());
     }
 
-    private IEnumerator Immunity(){
+    private IEnumerator Immunity()
+    {
         Eimmune = true;
         yield return new WaitForSeconds(0.2f);
         Eimmune = false;

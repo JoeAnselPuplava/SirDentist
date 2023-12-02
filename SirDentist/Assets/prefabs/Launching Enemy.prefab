@@ -10,14 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 5426621658510972640}
   - component: {fileID: 1095013287386498447}
-  - component: {fileID: 7018614497352055944}
   - component: {fileID: 886377192567811695}
-  - component: {fileID: 484259901084990560}
   - component: {fileID: 7429465021218309950}
   - component: {fileID: 2212380170419008630}
   - component: {fileID: 5862564315415019672}
   - component: {fileID: 6364464482588236289}
   - component: {fileID: 8156617121803199417}
+  - component: {fileID: 5783700012496283509}
+  - component: {fileID: 7018614497352055944}
   m_Layer: 0
   m_Name: Launching Enemy
   m_TagString: Enemy
@@ -92,22 +92,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7018614497352055944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6592727011549376180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b74c0be2c1a804ffe893be4f99861818, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  jumpForce: 10
-  dist_to: 7
-  chargeUpAudioClip: {fileID: 8300000, guid: 30da91a52f6594a8799f2936ede2dace, type: 3}
 --- !u!114 &886377192567811695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,22 +104,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efaf21cfe0a3448ce9841f3c41df1b84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &484259901084990560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6592727011549376180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70e5d2200403143feb88554bf8764265, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
-  health: 50
-  hurt: {fileID: 8300000, guid: 9cf752587d75f4e86ad5a3c66d671dad, type: 3}
-  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
 --- !u!60 &7429465021218309950
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -508,3 +476,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5783700012496283509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6592727011549376180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48ee48ed620c144a6b23bf9a69055882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackpower: 10
+  health: 50
+  hurt: {fileID: 8300000, guid: 966c1a2a9a4be4d3eb13b69b1cf3ebc8, type: 3}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
+  explode: {fileID: 8300000, guid: 0aa440763332548be9bfd3bfd97b54aa, type: 3}
+--- !u!114 &7018614497352055944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6592727011549376180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b74c0be2c1a804ffe893be4f99861818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  jumpForce: 10
+  dist_to: 7
+  chargeUpAudioClip: {fileID: 8300000, guid: 30da91a52f6594a8799f2936ede2dace, type: 3}

@@ -10,14 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 8282066149912055325}
   - component: {fileID: 3982425802944265405}
-  - component: {fileID: 2875997606133027355}
   - component: {fileID: 8654641192421822080}
   - component: {fileID: 3732630646310376676}
   - component: {fileID: 4047028893353178685}
-  - component: {fileID: 8931173401568766931}
   - component: {fileID: 6090357502145267612}
   - component: {fileID: -1735832758449148110}
   - component: {fileID: 5892231129973442824}
+  - component: {fileID: 7305804252376625512}
+  - component: {fileID: 6929798049100145831}
   m_Layer: 0
   m_Name: Enemy_with_art
   m_TagString: Enemy
@@ -92,20 +92,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2875997606133027355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1852329664667170523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf68258b942c54c2983ef7fa04ac8046, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  jumpForce: 10
 --- !u!50 &8654641192421822080
 Rigidbody2D:
   serializedVersion: 4
@@ -167,23 +153,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8931173401568766931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1852329664667170523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be17f4efddd0143d8a157adbccdbfab8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
-  health: 50
-  hurt: {fileID: 8300000, guid: 056d04608ec2441dfac3d27040bbbfa8, type: 3}
-  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
-  explode: {fileID: 8300000, guid: 0aa440763332548be9bfd3bfd97b54aa, type: 3}
 --- !u!82 &6090357502145267612
 AudioSource:
   m_ObjectHideFlags: 0
@@ -421,3 +390,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.9310226, y: 4.93146}
   m_EdgeRadius: 0
+--- !u!114 &7305804252376625512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852329664667170523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 404a81dae6f52457a8404d5e7b1c3e7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackpower: 10
+  health: 50
+  hurt: {fileID: 8300000, guid: 056d04608ec2441dfac3d27040bbbfa8, type: 3}
+  hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
+  explode: {fileID: 8300000, guid: 0aa440763332548be9bfd3bfd97b54aa, type: 3}
+--- !u!114 &6929798049100145831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852329664667170523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 224fd6aad28cb4353946ab8458529099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  jumpForce: 10
