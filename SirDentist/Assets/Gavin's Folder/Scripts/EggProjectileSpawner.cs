@@ -7,6 +7,8 @@ public class EggProjectileSpawner : MonoBehaviour
 {
     public GameObject EggPrefab;
 
+    public float spawnDist = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +22,8 @@ public class EggProjectileSpawner : MonoBehaviour
     }
 
     void FireShot(){
-        Instantiate(EggPrefab, new Vector3(transform.position.x, 3f, transform.position.z), Quaternion.identity);
+        Instantiate(EggPrefab, new Vector3(transform.position.x - spawnDist, transform.position.y, transform.position.z), Quaternion.identity);
+        Instantiate(EggPrefab, new Vector3(transform.position.x + spawnDist, transform.position.y, transform.position.z), Quaternion.identity);
     }
 
     IEnumerator timeDelay(){

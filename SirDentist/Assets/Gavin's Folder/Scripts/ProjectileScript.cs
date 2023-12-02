@@ -6,8 +6,8 @@ public class ProjectileScript : MonoBehaviour
 {
 	public Transform target;
 
-	public float speed = 5f;
-	public float rotateSpeed = 200f;
+	public float speed = 15f;
+	public float rotateSpeed = 230f;
 
 	private Rigidbody2D rb;
 

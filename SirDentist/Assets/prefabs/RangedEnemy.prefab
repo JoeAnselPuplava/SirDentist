@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8065201880292433293}
   - component: {fileID: 5873567587768435859}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,9 +25,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3405174301639790806}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.3, y: 2.37, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 1.6, z: 0}
+  m_LocalScale: {x: 5.45, y: 3.9140906, z: 1.6515151}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5685914515616240351}
   m_RootOrder: -1
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 1350902701726906588}
   - component: {fileID: 1626619985189687250}
   - component: {fileID: 6969527078569731666}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: RangedEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8792242479419311618}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 59.209465, y: -1.0009441, z: 0.6177628}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -135,7 +135,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 40
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -182,8 +182,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 3.83, y: 5.45}
+  m_Offset: {x: 0, y: 1.63}
+  m_Size: {x: 5.94, y: 8.48}
   m_Direction: 0
 --- !u!70 &5587455070573751120
 CapsuleCollider2D:
@@ -217,8 +217,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 3.29, y: 4.82}
+  m_Offset: {x: 0, y: 1.5}
+  m_Size: {x: 5.1, y: 7.25}
   m_Direction: 0
 --- !u!114 &6166373077492322862
 MonoBehaviour:
@@ -245,10 +245,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be17f4efddd0143d8a157adbccdbfab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  attackpower: 0
   health: 100
   hurt: {fileID: 8300000, guid: 9cf752587d75f4e86ad5a3c66d671dad, type: 3}
   hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
+  explode: {fileID: 8300000, guid: 0aa440763332548be9bfd3bfd97b54aa, type: 3}
 --- !u!114 &1626619985189687250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,6 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EggPrefab: {fileID: 469795721482379407, guid: 602d7911f32d1ce43b59e6cf78a851b3, type: 3}
+  spawnDist: 5
 --- !u!114 &6969527078569731666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,5 +276,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b62ec596c0ece954dbcefa31162b2081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 3.4
   jumpForce: 10

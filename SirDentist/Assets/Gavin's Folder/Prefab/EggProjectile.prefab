@@ -33,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 5106720124139643980}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &723718989544215438
 Rigidbody2D:
@@ -75,8 +75,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 10
-  rotateSpeed: 100
+  speed: 15
+  rotateSpeed: 150
 --- !u!58 &4612299524246080648
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -92,7 +92,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

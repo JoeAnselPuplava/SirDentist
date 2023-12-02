@@ -48,7 +48,7 @@ public class ProjectileEnemyMovement : MonoBehaviour
 
     private void shouldRunfunc(){
         float dist_to_player= Vector3.Distance(player.transform.position,transform.position);
-        if(dist_to_player<8){
+        if(dist_to_player<15){
             shouldRun = true;
         }
         else{
