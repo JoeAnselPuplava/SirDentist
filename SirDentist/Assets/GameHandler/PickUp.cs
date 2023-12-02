@@ -7,6 +7,7 @@ public class PickUp : MonoBehaviour{
       public GameHandler gameHandler;
       //public playerVFX playerPowerupVFX;
       public bool isCoinPickUp = true;
+      public bool playerCoin = true;
       
 
       void Start(){
@@ -15,7 +16,9 @@ public class PickUp : MonoBehaviour{
       }
 
       public void OnTriggerEnter2D (Collider2D other){
-            if (other.gameObject.tag == "Player" || other.gameObject.tag == "Flail"){
+            if ((playerCoin && other.gameObject.tag == "Player") ||
+               (!playerCoin && other.gameObject.tag == "Flail")){
+
                   GetComponent<Collider2D>().enabled = false;
                   //GetComponent< AudioSource>().Play();
                   StartCoroutine(DestroyThis());
