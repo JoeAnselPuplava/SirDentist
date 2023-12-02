@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
@@ -15,6 +16,7 @@ public class EnemyDamage : MonoBehaviour
     private AudioSource AudSource;
     private GameObject player;
 
+    public float stuntime = 0.7f;
     private bool Eimmune = false;
 
     // Start is called before the first frame update
@@ -98,6 +100,17 @@ public class EnemyDamage : MonoBehaviour
         }
     }
 
+    public void meleeDamage(float damage)
+    {
+       if (!Eimmune)
+        {
+            AudioSource.PlayClipAtPoint(hurt, transform.position);
+            health -= damage;
+            checkHealth();
+            StartCoroutine(stun());
+        }
+    }
+
     void checkHealth()
     {
         if (health <= 0)
@@ -120,6 +133,13 @@ public class EnemyDamage : MonoBehaviour
         Eimmune = true;
         yield return new WaitForSeconds(0.2f);
         Eimmune = false;
+    }
+
+    private IEnumerator stun(){
+        float pastms = GetComponent<EnemyMovement>().moveSpeed;
+        GetComponent<EnemyMovement>().moveSpeed = 0;
+        yield return new WaitForSeconds(stuntime);
+        GetComponent<EnemyMovement>().moveSpeed = pastms;
     }
 
 }
