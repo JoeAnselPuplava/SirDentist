@@ -9,7 +9,6 @@ public class EnemyMovement : MonoBehaviour
     private GameObject player;
     private GameObject[] ground;
 
-    
     private Rigidbody2D rb;
     private bool shouldMove = true;
     private bool grounded = true;
@@ -162,6 +161,7 @@ public class EnemyMovement : MonoBehaviour
         }
         
     }
+    
 
     private void OnCollisionExit2D(Collision2D collision)
     {
