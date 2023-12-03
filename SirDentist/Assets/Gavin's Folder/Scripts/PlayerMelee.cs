@@ -18,7 +18,7 @@ public class PlayerMelee : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && canSwing)
+        if (Input.GetKeyDown(KeyCode.Z) && canSwing)
         {
             SwingSword();
             StartCoroutine(SwingCooldown());
