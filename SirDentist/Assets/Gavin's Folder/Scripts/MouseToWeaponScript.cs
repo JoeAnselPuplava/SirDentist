@@ -9,7 +9,6 @@ public class MouseToWeaponScript : MonoBehaviour
     public float thrust = 400.0f;
     public float maxspeed = 40f;
     float speed;
-    public GameObject weaponForcePoint;
 
     public Rigidbody2D ball;
     Vector2 mousePos;
@@ -28,7 +27,7 @@ public class MouseToWeaponScript : MonoBehaviour
         ScreenCenter.x = Screen.width/2;
         ScreenCenter.y = Screen.height/2;
         chainone.GetComponent<HingeJoint2D>().connectedBody = player.GetComponent<Rigidbody2D>();
-        
+        targetPoint = GameObject.FindGameObjectWithTag("rotation").transform;
     }
 
     // Update is called once per frame
@@ -77,7 +76,6 @@ public class MouseToWeaponScript : MonoBehaviour
 
         //GAVIN NOTE TO SELF: Maybe Make flail increase in spin force when beyond limited barrier?
     }
-
 }
 
 

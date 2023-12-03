@@ -44,7 +44,7 @@ public class PlayerRespawn : MonoBehaviour {
 
        void FlailRespawn(){
               Destroy(flail);
-              Vector3 flailpoint = rotationPoint.position + new Vector3(1f, 0f, 0f);
+              Vector3 flailpoint = GameObject.FindGameObjectWithTag("rotation").transform.position + new Vector3(1f, 0f, 0f);
               flail = Instantiate(flailpreFab, flailpoint, Quaternion.identity);
               flail.GetComponent<MouseToWeaponScript>().targetPoint = rotationPoint;
        }

@@ -18,11 +18,12 @@ public class chainLinker : MonoBehaviour
     void Update()
     {
         //chainone.GetComponent<Rigidbody2D>().MovePosition(rotationpos.position);
+        //chainone.GetComponent<HingeJoint2D>().connectedAnchor = rotationpos.position;
+        //chainone.GetComponent<Rigidbody2D>().MovePosition(rotationpos.position);
         //flail.position.move = rotationpos.position - chainone.transform.position;
     }
 
     void resetpos(){
-        Debug.Log("Reset Call");
         chainone.GetComponent<Rigidbody2D>().MovePosition(rotationpos.position);
     }
 }

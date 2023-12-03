@@ -32,7 +32,7 @@ public class FlailDamageScript : MonoBehaviour
             //Debug.Log("Damage:" + damage * damagemulti);
             EnemyDamage enemyDamage = other.gameObject.GetComponent<EnemyDamage>();
             enemyDamage.flailDamage(damage * damagemulti);
-            Debug.Log("Damage:" + (damage * damagemulti).ToString());
+            //Debug.Log("Damage:" + (damage * damagemulti).ToString());
             //call enemy function
         }
     }
