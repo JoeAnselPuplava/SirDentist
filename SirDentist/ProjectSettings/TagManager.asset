@@ -11,6 +11,7 @@ TagManager:
   - Checkpoint
   - Weapon
   - PauseMenuSlider
+  - rotation
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - Weapon
   - Background
   - Door
-  - 
+  - Enemy
   - 
   - 
   - 

@@ -30,7 +30,6 @@ public class PlayerBetterFall : MonoBehaviour {
         }
         if(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)){
             rb.velocity += Vector2.down * downforceMulti * Time.deltaTime;
-            Debug.Log("Hit");
         }
     }
 }
