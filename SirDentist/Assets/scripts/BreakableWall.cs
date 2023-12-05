@@ -13,6 +13,8 @@ public class BreakableWall : MonoBehaviour
     private Renderer myRend;
     private Color defaultColor;
 
+    public GameObject art;
+
     void Start()
     {
         //anim = gameObject.GetComponentInChildren<Animator>();
@@ -33,11 +35,12 @@ public class BreakableWall : MonoBehaviour
             //anim.SetBool("wallHalf", true);
             //anim.SetBool("wallGone", false);
         }
-        else if (hitNum == 0)
+        else if (hitNum <= 0)
         {
             //anim.SetBool("wallHalf", false);
             //anim.SetBool("wallGone", true);
             boxColliderObj.SetActive(false);
+            art.SetActive(false);
         }
     }
 
@@ -49,6 +52,14 @@ public class BreakableWall : MonoBehaviour
         //if (hitNum == 2) { anim.SetTrigger("cutFull"); }
         //else if (hitNum == 1) { anim.SetTrigger("cutHalf"); }
         StartCoroutine(wallHitReturn());
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Flail")
+        {
+            hitNum--;
+        }
     }
 
     IEnumerator wallHitReturn()
