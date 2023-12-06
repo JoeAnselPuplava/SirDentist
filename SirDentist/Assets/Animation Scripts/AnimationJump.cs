@@ -44,7 +44,7 @@ public class AnimationJump : MonoBehaviour
 
     public void Jump()
     {
-        Debug.Log("Set to true");
+        //Debug.Log("Set to true");
         StartCoroutine(waitForJump());
     }
 

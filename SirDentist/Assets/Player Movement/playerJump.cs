@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerJump : MonoBehaviour {
 
     public Rigidbody2D rb;
-    public float jumpForce = 7f;
+    public float jumpForce = 40f;
     public Transform feet;
     public LayerMask groundLayer;
     public bool isAlive = true;
@@ -20,18 +20,33 @@ public class PlayerJump : MonoBehaviour {
         animator = GetComponent<Animator>();
     }
 
-    void Update() {
-        if (IsGrounded() && isAlive)
+    private void Update()
+    {
+        if (Input.GetButtonDown("Jump")&& IsGrounded() && isAlive)
         {
-            jumpTimes = 0; // Reset jump count when touching the ground
-            canJump = true; // Player can jump again
-
+            canJump = true;
         }
+    }
 
-        if (Input.GetButtonDown("Jump") && canJump && isAlive) {
-            
+    void FixedUpdate()
+    {
+        //if (IsGrounded() && isAlive)
+        //{
+        //    jumpTimes = 0; // Reset jump count when touching the ground
+        //    canJump = true; // Player can jump again
+
+        //}
+
+        //if (Input.GetButtonDown("Jump") && canJump && isAlive)
+        //{
+
+        //    Jump();
+
+        //}
+
+        if (canJump)
+        {
             Jump();
-
         }
     }
 
@@ -44,15 +59,6 @@ public class PlayerJump : MonoBehaviour {
         rb.velocity = Vector2.up * jumpForce;
 
         // You can play jump animation and sound here if needed
-    }
-
-    IEnumerator createJump()
-    {
-        //Debug.Log("Running");
-
-        yield return new WaitForSeconds(0.1f);
-
-        
     }
 
     public bool IsGrounded() {        
