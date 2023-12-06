@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BossFootScript : MonoBehaviour
@@ -53,7 +54,8 @@ public class BossFootScript : MonoBehaviour
         { 
             Debug.Log("Stomped");
             gameHandler.playerGetHit(bossDamage);
-        } 
+        }
+
     }
 
     void pullUp(){

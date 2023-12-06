@@ -12,6 +12,7 @@ TagManager:
   - Weapon
   - PauseMenuSlider
   - rotation
+  - BossLeg
   layers:
   - Default
   - TransparentFX
