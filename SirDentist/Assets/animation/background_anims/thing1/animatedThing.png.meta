@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1dd79dca0f40c441e9174810f989462b
+guid: d312270f8c89648aaa9ca8995410bf6f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 150
+  spritePixelsToUnits: 60
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -121,7 +121,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: animatedThing_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 31
+        width: 829
+        height: 832
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 214309673d4354451a88b41dc662ef97
+      internalID: 1924822168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animatedThing_1
+      rect:
+        serializedVersion: 2
+        x: 1124
+        y: 8
+        width: 806
+        height: 829
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df4bd4461efd847629b0d1ded772ca9e
+      internalID: -1852110017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animatedThing_2
+      rect:
+        serializedVersion: 2
+        x: 2235
+        y: 21
+        width: 799
+        height: 822
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2edcf6062d42546ed98288f9bdc8e159
+      internalID: 510356298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animatedThing_3
+      rect:
+        serializedVersion: 2
+        x: 3326
+        y: 22
+        width: 805
+        height: 828
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fafdc59b4b2eb4b9596072af0101d45f
+      internalID: -141309706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +216,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      animatedThing_0: 1924822168
+      animatedThing_1: -1852110017
+      animatedThing_2: 510356298
+      animatedThing_3: -141309706
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
