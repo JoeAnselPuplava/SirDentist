@@ -31,7 +31,6 @@ public class PickUpFlail : MonoBehaviour
                 // Change the boolean value for the specified object
                 // Here, I'm setting the GameObject active, but modify this line as needed
                 //objectToSetTrue.SetActive(true);
-                flailPrefab.GetComponent<chainLinker>().start2();
                 gameObject.SetActive(false);
             }
             else
