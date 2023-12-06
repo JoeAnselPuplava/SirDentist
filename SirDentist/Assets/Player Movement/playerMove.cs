@@ -11,6 +11,7 @@ public class PlayerMove : MonoBehaviour
     public bool isAlive = true;
     private Vector2 velocity;
     public Animator animator;
+    private float horizontalInput = 0f;
 
     void Start()
     {
@@ -18,18 +19,26 @@ public class PlayerMove : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    void Update()
+    private void Update()
+    {
+        horizontalInput = Input.GetAxis("Horizontal");
+    }
+
+    void FixedUpdate()
     {
         if (isAlive)
         {
-            float horizontalInput = Input.GetAxis("Horizontal");
+            //float horizontalInput = Input.GetAxis("Horizontal");
             if(Mathf.Abs(horizontalInput) > 0.1f){
                 animator.SetBool("walk",true);
             }else{
                 animator.SetBool("walk",false);
             }
-            velocity = new Vector2(horizontalInput * runSpeed, rb2D.velocity.y);
 
+            //velocity += new Vector2(horizontalInput * runSpeed, rb2D.velocity.y);
+            //rb2D.velocity += new Vector2(horizontalInput * runSpeed, rb2D.velocity.y);
+
+            rb2D.velocity = new Vector2(horizontalInput * runSpeed, rb2D.velocity.y);
             // Turning: Reverse if input is moving the Player right and Player faces left
             if ((horizontalInput < 0 && !FaceRight) || (horizontalInput > 0 && FaceRight))
             {
@@ -38,17 +47,18 @@ public class PlayerMove : MonoBehaviour
 
         }
     }
+    
 
-    void FixedUpdate()
-    {
-        // Slow down on hills / stop sliding from velocity
-        if (velocity.x == 0)
-        {
-            velocity.x /= 1.1f;
-        }
+    //void FixedUpdate()
+    //{
+    //    // Slow down on hills / stop sliding from velocity
+    //    if (velocity.x == 0)
+    //    {
+    //        velocity.x /= 1.1f;
+    //    }
 
-        rb2D.velocity = velocity;
-    }
+    //    rb2D.velocity = velocity;
+    //}
 
     private void playerTurn()
     {

@@ -16,7 +16,7 @@ public class PlayerBetterFall : MonoBehaviour {
         jumpScript = gameObject.GetComponent<PlayerJump>();
     }
 
-    void Update() {
+    void FixedUpdate() {
         //Debug.Log(rb.velocity);
         if (!(Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)) || rb.velocity.y < 35) {
             rb.velocity += Vector2.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
@@ -24,10 +24,10 @@ public class PlayerBetterFall : MonoBehaviour {
             //rb.velocity += Vector2.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
 
-        if (rb.velocity.y < 17 && (!jumpScript.canJump || !jumpScript.IsGrounded()))
-        {
-            //rb.velocity += Vector2.up * Physics.gravity.y * (lowJumpMultiplier + 1) * Time.deltaTime;
-        }
+        //if (rb.velocity.y < 17 && (!jumpScript.canJump || !jumpScript.IsGrounded()))
+        //{
+        //    //rb.velocity += Vector2.up * Physics.gravity.y * (lowJumpMultiplier + 1) * Time.deltaTime;
+        //}
         if(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)){
             rb.velocity += Vector2.down * downforceMulti * Time.deltaTime;
         }
