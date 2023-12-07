@@ -22,6 +22,7 @@ public class BossFootScript : MonoBehaviour
     
     void Start()
     {
+        groundlevel = GameObject.FindGameObjectWithTag("groundlevel").transform;
         gameHandler = GameObject.FindGameObjectWithTag("GameHandler").GetComponent<GameHandler>();
         if (gameHandler == null)
         {
