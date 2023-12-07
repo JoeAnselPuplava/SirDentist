@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BossMainScript : MonoBehaviour
@@ -9,14 +10,19 @@ public class BossMainScript : MonoBehaviour
     float spawningspeed = 7f;
     float feetspeed = 1f;
 
+    public float warningtime = 2f;
+    public GameObject warningprefab;
     public GameObject player;
 
     bool alive = true;
 
     public GameObject footprefab;
 
+    public Transform groundlevel;
+
     void Start()
     {
+        groundlevel = GameObject.FindGameObjectWithTag("groundlevel").transform;
         player = GameObject.FindGameObjectWithTag("Player").gameObject;
         InvokeRepeating("spawnfoot", 5f, spawningspeed);
     }
@@ -42,8 +48,20 @@ public class BossMainScript : MonoBehaviour
         if(alive){
             Debug.Log("FootSpawn");
             float playerpos = player.transform.position.x;
-            var position = new Vector3(Random.Range(playerpos-10.0f, playerpos+10.0f), transform.position.y, 0);
-            Instantiate(footprefab, position, Quaternion.identity);
+            Vector3 position = new Vector3(Random.Range(playerpos-40.0f, playerpos+40.0f), transform.position.y, 0);
+            GameObject shadow = Instantiate(warningprefab, new Vector3(position.x,groundlevel.position.y-1,groundlevel.position.z), Quaternion.identity);
+            StartCoroutine(footpause(position));
+            StartCoroutine(shadowkill(shadow));
         }
+    }
+
+    IEnumerator footpause(Vector3 position){
+        yield return new WaitForSeconds(warningtime);
+        Instantiate(footprefab, position, Quaternion.identity);
+    }
+
+    IEnumerator shadowkill(GameObject shadow){
+        yield return new WaitForSeconds(warningtime + 4f);
+        Destroy(shadow);
     }
 }

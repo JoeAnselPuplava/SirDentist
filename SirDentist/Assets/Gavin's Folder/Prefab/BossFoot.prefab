@@ -211,8 +211,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossDamage: 25
-  baseSpeeddown: {x: 0, y: -100}
-  baseSpeedup: {x: 0, y: 50}
+  baseSpeeddown: {x: 0, y: -200}
+  baseSpeedup: {x: 0, y: 80}
   bottomFoot: {fileID: 2679708051606215032}
   groundlevel: {fileID: 0}
   pausetime: 3
