@@ -33,7 +33,7 @@ Transform:
   - {fileID: 2222554366625515802}
   - {fileID: 2183643325997250720}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1114992129571289438
 MonoBehaviour:
@@ -47,9 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebb8eee2a5e6a4b599c9abafe34b5861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 5922575844571558333}
+  anim: {fileID: 4287054226665082143}
   hitNum: 2
   boxColliderObj: {fileID: 7038095917822184117}
+  art: {fileID: 0}
 --- !u!95 &5922575844571558333
 Animator:
   serializedVersion: 5
@@ -135,7 +136,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.54, y: 0}
+  m_Offset: {x: 0.14751768, y: 0.00000023841858}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -146,7 +147,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.17, y: 12.37}
+  m_Size: {x: 5.5590734, y: 6.4518943}
   m_EdgeRadius: 0
 --- !u!1 &7057353455201144944
 GameObject:
@@ -158,7 +159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2222554366625515802}
   - component: {fileID: 1518203670819741488}
-  - component: {fileID: 7845266756057350387}
+  - component: {fileID: 4287054226665082143}
   m_Layer: 0
   m_Name: Spiderweb_spritesheet_gray_0
   m_TagString: Untagged
@@ -222,8 +223,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1497641445, guid: 6a4e08f925d204bf18843bf9a61d9a7f, type: 3}
-  m_Color: {r: 0.007114136, g: 0.9622642, b: 0, a: 1}
+  m_Sprite: {fileID: 1609428, guid: aa6eccd98ae0b4b2ba576b100fa8e599, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -233,7 +234,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &7845266756057350387
+--- !u!95 &4287054226665082143
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -243,7 +244,7 @@ Animator:
   m_GameObject: {fileID: 7057353455201144944}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fa69c326f9d91481bbc095278032b843, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
