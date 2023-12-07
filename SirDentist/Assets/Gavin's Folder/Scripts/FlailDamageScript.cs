@@ -22,11 +22,11 @@ public class FlailDamageScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        float damage = rb.velocity.magnitude;
+        if (damage < 1.5f){
+            damage = 0;
+        }
         if(other.gameObject.tag == "Enemy"){
-            float damage = rb.velocity.magnitude;
-            if (damage < 1.5f){
-                damage = 0;
-            }
             //Check if Eye Enemy
             EyeDamage EyeDamage = other.gameObject.GetComponent<EyeDamage>();
             if(EyeDamage != null){
@@ -49,6 +49,10 @@ public class FlailDamageScript : MonoBehaviour
                     }
                 }
             }
+        }
+        if(other.gameObject.tag == "BossLeg"){
+            BossMainScript bossDamage = GameObject.FindGameObjectWithTag("BossObject").GetComponent<BossMainScript>();
+            bossDamage.flailDamage(damage * damagemulti);
         }
     }
 

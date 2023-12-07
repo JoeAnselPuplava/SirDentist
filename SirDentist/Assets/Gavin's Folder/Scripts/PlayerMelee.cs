@@ -60,6 +60,11 @@ public class PlayerMelee : MonoBehaviour
                 }
             }
         }
+        if(other.gameObject.tag == "BossLeg"){
+            BossMainScript bossDamage = GameObject.FindGameObjectWithTag("BossObject").GetComponent<BossMainScript>();
+            bossDamage.meleeDamage(10);
+            other.GetComponent<BossFootScript>().freeze();
+        }
     }
 
     IEnumerator SwingCooldown()

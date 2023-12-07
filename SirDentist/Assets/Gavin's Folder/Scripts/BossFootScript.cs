@@ -20,6 +20,8 @@ public class BossFootScript : MonoBehaviour
     public float pausetime = 3f; 
 
     public GameObject player;
+
+    bool frozen = false;
     // Start is called before the first frame update
     
     void Start()
@@ -66,6 +68,13 @@ public class BossFootScript : MonoBehaviour
         }
 
     }
+    
+    public void freeze(){
+        if(rb.velocity == new Vector2(0f,0f) && !frozen){
+            Debug.Log("Frozen");
+            frozen = true;
+        }
+    }
 
     void pullUp(){
         rb.velocity = baseSpeedup;
@@ -73,6 +82,12 @@ public class BossFootScript : MonoBehaviour
 
     IEnumerator wait(){
         yield return new WaitForSeconds(pausetime);
-        pullUp();
+        if(!frozen){
+            pullUp();
+        }
+        else{
+            yield return new WaitForSeconds(pausetime);
+            pullUp();
+        }
     }
 }

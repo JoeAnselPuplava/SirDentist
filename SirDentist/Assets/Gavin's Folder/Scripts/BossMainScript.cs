@@ -19,7 +19,7 @@ public class BossMainScript : MonoBehaviour
     public GameObject footprefab;
 
     public Transform groundlevel;
-
+    private bool Eimmune = false;
     void Start()
     {
         groundlevel = GameObject.FindGameObjectWithTag("groundlevel").transform;
@@ -38,7 +38,14 @@ public class BossMainScript : MonoBehaviour
     void FixedUpdate(){
 
     }
-
+    public void flailDamage(float damage)
+    {
+        bossHealth -= damage;
+    }
+    public void meleeDamage(float damage)
+    {
+        bossHealth -= damage;
+    }
     void died(){
         Debug.Log("Boss has died");
         alive = false;

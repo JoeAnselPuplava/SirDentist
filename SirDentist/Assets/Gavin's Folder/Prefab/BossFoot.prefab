@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 6656077486355063636}
   m_Layer: 0
   m_Name: BossFoot
-  m_TagString: Enemy
+  m_TagString: BossLeg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -216,6 +216,7 @@ MonoBehaviour:
   bottomFoot: {fileID: 2679708051606215032}
   groundlevel: {fileID: 0}
   pausetime: 3
+  player: {fileID: 0}
 --- !u!50 &7546917447612816718
 Rigidbody2D:
   serializedVersion: 4
