@@ -128,10 +128,10 @@ TextureImporter:
         serializedVersion: 2
         x: 13
         y: 0
-        width: 559
+        width: 576
         height: 720
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,12 +147,12 @@ TextureImporter:
       name: breakable_block_1
       rect:
         serializedVersion: 2
-        x: 603
+        x: 596
         y: 0
-        width: 549
-        height: 720
+        width: 572
+        height: 719
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -170,10 +170,10 @@ TextureImporter:
         serializedVersion: 2
         x: 1193
         y: 0
-        width: 559
+        width: 571
         height: 720
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,12 +189,12 @@ TextureImporter:
       name: breakable_block_3
       rect:
         serializedVersion: 2
-        x: 1789
+        x: 1784
         y: 0
-        width: 560
+        width: 581
         height: 720
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -210,12 +210,12 @@ TextureImporter:
       name: breakable_block_4
       rect:
         serializedVersion: 2
-        x: 2406
+        x: 2396
         y: 0
-        width: 556
+        width: 579
         height: 720
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -231,12 +231,12 @@ TextureImporter:
       name: breakable_block_5
       rect:
         serializedVersion: 2
-        x: 3026
+        x: 3012
         y: 0
-        width: 567
+        width: 591
         height: 720
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -252,12 +252,12 @@ TextureImporter:
       name: breakable_block_6
       rect:
         serializedVersion: 2
-        x: 3640
+        x: 3631
         y: 0
-        width: 573
+        width: 593
         height: 720
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
