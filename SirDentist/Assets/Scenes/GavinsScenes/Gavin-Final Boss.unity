@@ -5883,7 +5883,7 @@ GameObject:
   - component: {fileID: 179455689}
   m_Layer: 0
   m_Name: BossObject
-  m_TagString: Untagged
+  m_TagString: BossObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

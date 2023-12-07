@@ -14,6 +14,7 @@ TagManager:
   - rotation
   - BossLeg
   - groundlevel
+  - BossObject
   layers:
   - Default
   - TransparentFX
