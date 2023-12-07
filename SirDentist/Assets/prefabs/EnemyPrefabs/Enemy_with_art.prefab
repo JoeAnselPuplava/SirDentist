@@ -407,6 +407,7 @@ MonoBehaviour:
   hurt: {fileID: 8300000, guid: 056d04608ec2441dfac3d27040bbbfa8, type: 3}
   hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
   explode: {fileID: 8300000, guid: 0aa440763332548be9bfd3bfd97b54aa, type: 3}
+  stuntime: 1.5
 --- !u!114 &6929798049100145831
 MonoBehaviour:
   m_ObjectHideFlags: 0

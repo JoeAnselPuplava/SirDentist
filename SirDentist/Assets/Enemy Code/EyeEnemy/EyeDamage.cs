@@ -14,6 +14,7 @@ public class EyeDamage : MonoBehaviour
     public AudioClip explode;
     private AudioSource AudSource;
     private GameObject player;
+    public float stuntime = 1.5f;
 
     private bool Eimmune = false;
 
@@ -96,7 +97,16 @@ public class EyeDamage : MonoBehaviour
             checkHealth();
         }
     }
-
+    public void meleeDamage(float damage)
+    {
+       if (!Eimmune)
+        {
+            AudioSource.PlayClipAtPoint(hurt, transform.position);
+            health -= damage;
+            checkHealth();
+            StartCoroutine(stun());
+        }
+    }
     void checkHealth()
     {
         if (health <= 0)
@@ -120,5 +130,10 @@ public class EyeDamage : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         Eimmune = false;
     }
-
+    private IEnumerator stun(){
+        float pastms = GetComponent<EyeMovement>().moveSpeed;
+        GetComponent<EyeMovement>().moveSpeed = 0;
+        yield return new WaitForSeconds(stuntime);
+        GetComponent<EyeMovement>().moveSpeed = pastms;
+    }
 }

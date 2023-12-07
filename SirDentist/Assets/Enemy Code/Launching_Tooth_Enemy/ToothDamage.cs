@@ -15,6 +15,7 @@ public class ToothDamage : MonoBehaviour
     private AudioSource AudSource;
     private GameObject player;
 
+    public float stuntime = 0.7f;
     private bool Eimmune = false;
 
     // Start is called before the first frame update
@@ -108,6 +109,17 @@ public class ToothDamage : MonoBehaviour
             print("dying");
         }
     }
+    public void meleeDamage(float damage)
+    {
+       if (!Eimmune)
+        {
+            AudioSource.PlayClipAtPoint(hurt, transform.position);
+            health -= damage;
+            checkHealth();
+            StartCoroutine(stun());
+        }
+    }
+
     public void killMe()
     {
         Destroy(gameObject);
@@ -120,5 +132,10 @@ public class ToothDamage : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         Eimmune = false;
     }
-
+    private IEnumerator stun(){
+        float pastms = GetComponent<LauchingMovement>().moveSpeed;
+        GetComponent<LauchingMovement>().moveSpeed = 0;
+        yield return new WaitForSeconds(stuntime);
+        GetComponent<LauchingMovement>().moveSpeed = pastms;
+    }
 }

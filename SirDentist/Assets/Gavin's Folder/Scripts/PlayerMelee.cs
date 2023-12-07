@@ -34,12 +34,31 @@ public class PlayerMelee : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         // Check if the sword collider has entered a collider with the "Enemy" tag
-        if (other.CompareTag("Enemy"))
+        if (other.gameObject.tag == "Enemy")
         {
             // Perform actions when the sword collides with an enemy
             Debug.Log("Sword hit an enemy!");
-            EnemyDamage enemyDamage = other.gameObject.GetComponent<EnemyDamage>();
-            enemyDamage.meleeDamage(10);
+
+            //Check if Eye Enemy
+            EyeDamage EyeDamage = other.gameObject.GetComponent<EyeDamage>();
+            if(EyeDamage != null){
+                EyeDamage.meleeDamage(10);
+                Debug.Log("hit");
+            }
+            else{
+                ToothDamage toothDamage = other.gameObject.GetComponent<ToothDamage>();
+                if(toothDamage != null){
+                    toothDamage.meleeDamage(10);
+                    Debug.Log("hit2");
+                }
+                else{
+                    EnemyDamage rangedDamage = other.gameObject.GetComponent<EnemyDamage>();
+                    if(rangedDamage != null){
+                        rangedDamage.meleeDamage(10);
+                        Debug.Log("hit3");
+                    }
+                }
+            }
         }
     }
 

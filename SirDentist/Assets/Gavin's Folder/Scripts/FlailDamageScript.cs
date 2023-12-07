@@ -27,13 +27,28 @@ public class FlailDamageScript : MonoBehaviour
             if (damage < 1.5f){
                 damage = 0;
             }
-            //float damage = Mathf.Sqrt(Mathf.Pow(Mathf.Abs(rb.velocity.x),2))
-            //+ Mathf.Sqrt(Mathf.Pow(Mathf.Abs(rb.velocity.y),2));
-            //Debug.Log("Damage:" + damage * damagemulti);
-            EnemyDamage enemyDamage = other.gameObject.GetComponent<EnemyDamage>();
-            enemyDamage.flailDamage(damage * damagemulti);
-            //Debug.Log("Damage:" + (damage * damagemulti).ToString());
-            //call enemy function
+            //Check if Eye Enemy
+            EyeDamage EyeDamage = other.gameObject.GetComponent<EyeDamage>();
+            if(EyeDamage != null){
+                EyeDamage.flailDamage(damage * damagemulti);
+                Debug.Log("hit");
+            }
+            //Check if tooth enemy
+            else{
+                ToothDamage toothDamage = other.gameObject.GetComponent<ToothDamage>();
+                if(toothDamage != null){
+                    toothDamage.flailDamage(damage * damagemulti);
+                    Debug.Log("hit2");
+                }
+                //check if ranged enemy
+                else{
+                    EnemyDamage rangedDamage = other.gameObject.GetComponent<EnemyDamage>();
+                    if(rangedDamage != null){
+                        rangedDamage.flailDamage(damage * damagemulti);
+                        Debug.Log("hit3");
+                    }
+                }
+            }
         }
     }
 
