@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
 
 public class BossMainScript : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class BossMainScript : MonoBehaviour
 
     public Transform groundlevel;
     private bool Eimmune = false;
+
+    public TMP_Text healthbar;
     void Start()
     {
         groundlevel = GameObject.FindGameObjectWithTag("groundlevel").transform;
@@ -30,6 +33,7 @@ public class BossMainScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        healthbar.text = "Boss Health: " + bossHealth;
         if(bossHealth < 0){
             died();
         }
