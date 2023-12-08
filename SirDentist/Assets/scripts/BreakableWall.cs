@@ -12,15 +12,14 @@ public class BreakableWall : MonoBehaviour
     //public GameObject boxColliderObj; // a child collider that can be turned off
     private Renderer myRend;
     private Color defaultColor;
-    private Collider myCollider;
-
+    private BoxCollider2D myCollider;
+    private bool once = true;
     public GameObject art;
 
     void Start()
     {
         anim = GetComponent<Animator>();
-        //boxColliderObj.SetActive(true);
-        myCollider = GetComponent<Collider>();
+        myCollider = gameObject.GetComponent<BoxCollider2D>();
         myRend = gameObject.GetComponentInChildren<Renderer>();
         defaultColor = myRend.material.color;
     }
@@ -35,19 +34,13 @@ public class BreakableWall : MonoBehaviour
         else if (hitNum == 1)
         {
             anim.SetTrigger("half_break");
-            print("half_break");
-            //anim.SetBool("wallHalf", true);
-            //anim.SetBool("wallGone", false);
         }
-        else if (hitNum <= 0)
+        else if (hitNum <= 0 && once)
         {
+            once = false;
             anim.SetTrigger("break");
-            //anim.SetBool("break", true);
-            print("break");
-            //anim.SetBool("wallGone", true);
-            //boxColliderObj.SetActive(false);
             art.SetActive(false);
-            myCollider.enabled = !myCollider.enabled;
+            myCollider.enabled = false;
 
         }
     }
@@ -63,13 +56,17 @@ public class BreakableWall : MonoBehaviour
         StartCoroutine(wallHitReturn());
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        print("hit");
-        if (collision.gameObject.tag == "Flail")
+        if (collision.gameObject.tag == "Flail" || collision.gameObject.tag == "Sword")
         {
-            hitNum--;
+            hitByWeapon();
         }
+    }
+
+    public void hitByWeapon()
+    {
+        hitNum--;
     }
 
     IEnumerator wallHitReturn()
