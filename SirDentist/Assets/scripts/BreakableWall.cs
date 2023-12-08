@@ -50,8 +50,9 @@ public class BreakableWall : MonoBehaviour
         // this is the function that the player attack script would access
         if (hitNum > 0)
             //if (!breakSFX.isPlaying) { breakSFX.Play(); }
-        if (hitNum == 2) { //anim.SetTrigger("break"); 
-    }
+            if (hitNum == 2)
+            { //anim.SetTrigger("break"); 
+            }
         //else if (hitNum == 1) { anim.SetTrigger("cutHalf"); }
         StartCoroutine(wallHitReturn());
     }
