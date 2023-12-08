@@ -21,7 +21,6 @@ public class BreakableWall : MonoBehaviour
         anim = GetComponent<Animator>();
         //boxColliderObj.SetActive(true);
         myCollider = GetComponent<Collider>();
-        myCollider = gameObject.AddComponent<BoxCollider2D>();
         myRend = gameObject.GetComponentInChildren<Renderer>();
         defaultColor = myRend.material.color;
     }
