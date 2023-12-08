@@ -13,7 +13,7 @@ public class PlayerJump : MonoBehaviour {
 
     public bool in_air;
 
-    public bool canJump = true; // Initially, the player can jump
+    public bool canJump = false; // Initially, the player can jump
 
     void Start() {
         rb = GetComponent<Rigidbody2D>();
