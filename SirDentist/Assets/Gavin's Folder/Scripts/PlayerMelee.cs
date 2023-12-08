@@ -65,6 +65,10 @@ public class PlayerMelee : MonoBehaviour
             bossDamage.meleeDamage(10);
             other.GetComponent<BossFootScript>().freeze();
         }
+        if(other.gameObject.tag == "BreakWall")
+        {
+            other.GetComponent<BreakableWall>().hitByWeapon();
+        }
     }
 
     IEnumerator SwingCooldown()
