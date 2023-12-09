@@ -20,10 +20,13 @@ public class BossFootScript : MonoBehaviour
     public float pausetime = 3f; 
 
     public GameObject player;
-
     bool frozen = false;
+
+    //Spawning info
+    public int round = 1;
+    public GameObject[] enemies;
+
     // Start is called before the first frame update
-    
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -46,13 +49,53 @@ public class BossFootScript : MonoBehaviour
     void FixedUpdate()
     {
         if(groundlevel.position.y > bottomFoot.position.y && !pause){
+            //Pause leg down
             pause = true;
             rb.velocity = new Vector2(0f,0f);
-            Debug.Log(player.GetComponent<PlayerJump>().canJump);
+            //Make player Jump
             if(player.GetComponent<PlayerJump>().IsGrounded()){
                 player.GetComponent<Rigidbody2D>().velocity = Vector2.up * (player.GetComponent<PlayerJump>().jumpForce/2);
                 //Debug.Log("hello2");
             }
+            //Spawn Enemy Stuff
+            float random = Random.Range(1, 100);
+            if(random < 20f * round){
+                //pick enemy type
+                GameObject spawningEnemy;
+                if(random < 30f){
+                    //spawn eye
+                    spawningEnemy = enemies[0];
+                }
+                else if(random < 40f){
+                    //spawn tooth
+                    spawningEnemy = enemies[1];
+                }
+                else{
+                    //spawn ranged
+                    spawningEnemy = enemies[2];
+                }              
+                //Choose spawnpos Chose place away from player in map
+                //Possible spaces (within 77 points of groundpos, y level 60 up, z 0) so range((groundpos-77),playerrange)((groundpos++77),playerrange)
+                //Maybe just simply to be opposite wall?
+                /*
+                float xpos;
+                Vector3 enemyPos;
+                if(player.transform.position.x > groundlevel.position.x){
+                        Debug.Log("Enemy Spawning left");
+                        enemyPos = new Vector3(groundlevel.position.x - 77f,groundlevel.position.y + 60f,0);
+                        Instantiate(spawningEnemy,enemyPos,Quaternion.identity);
+                }
+                else{
+                    if(rightspawn > 0){
+                        Debug.Log("Enemy Spawning right");
+                        xpos = Random.Range(groundlevel.position.x -77f,player.transform.position.x - 20f);
+                        enemyPos = new Vector3(xpos,groundlevel.position.y + 60f,0);
+                        Instantiate(spawningEnemy,enemyPos,Quaternion.identity);
+                    }
+                }
+                */
+            }
+            //Start wait perido
             StartCoroutine(wait());
         }
         if(gameObject.transform.position.y > (groundlevel.position.y + 250f) && pause){
