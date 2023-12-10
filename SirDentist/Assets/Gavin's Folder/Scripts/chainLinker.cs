@@ -7,8 +7,10 @@ public class chainLinker : MonoBehaviour
 {
     Transform rotationpos;
     public GameObject chainone;
-
+    public float strechdist = 2f;
     private bool delay = true;
+
+    float timePassed = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,10 +21,25 @@ public class chainLinker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Vector3.Distance(rotationpos.position,chainone.transform.position) > 2f && delay){
+        if(Vector3.Distance(rotationpos.position,chainone.transform.position) > strechdist && delay){
+            timePassed += Time.deltaTime;
+        }
+        else{
+            timePassed = 0f;
+        }
+        if(timePassed > 2f && delay)
+        {
+            Debug.Log("Stretch");
+            StartCoroutine(pause());
+            timePassed = 0f;
+        }
+
+        /*
+        if(Vector3.Distance(rotationpos.position,chainone.transform.position) > strechdist && delay){
             Debug.Log("Stretch");
             StartCoroutine(pause());
         }
+        */
 
         if(!delay){
             chainone.GetComponent<Rigidbody2D>().MovePosition(rotationpos.position);

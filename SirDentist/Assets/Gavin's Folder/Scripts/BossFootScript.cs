@@ -52,14 +52,16 @@ public class BossFootScript : MonoBehaviour
             //Pause leg down
             pause = true;
             rb.velocity = new Vector2(0f,0f);
+            StartCoroutine(wait());
             //Make player Jump
             if(player.GetComponent<PlayerJump>().IsGrounded()){
                 player.GetComponent<Rigidbody2D>().velocity = Vector2.up * (player.GetComponent<PlayerJump>().jumpForce/2);
                 //Debug.Log("hello2");
             }
             //Spawn Enemy Stuff
+            GameObject[] enemycount = GameObject.FindGameObjectsWithTag("Enemy");
             float random = Random.Range(1, 100);
-            if(random < 20f * round){
+            if(random < 20f * round && enemycount.Length < round){
                 //pick enemy type
                 GameObject spawningEnemy;
                 if(random < 30f){
@@ -77,8 +79,7 @@ public class BossFootScript : MonoBehaviour
                 //Choose spawnpos Chose place away from player in map
                 //Possible spaces (within 77 points of groundpos, y level 60 up, z 0) so range((groundpos-77),playerrange)((groundpos++77),playerrange)
                 //Maybe just simply to be opposite wall?
-                /*
-                float xpos;
+                
                 Vector3 enemyPos;
                 if(player.transform.position.x > groundlevel.position.x){
                         Debug.Log("Enemy Spawning left");
@@ -86,17 +87,13 @@ public class BossFootScript : MonoBehaviour
                         Instantiate(spawningEnemy,enemyPos,Quaternion.identity);
                 }
                 else{
-                    if(rightspawn > 0){
-                        Debug.Log("Enemy Spawning right");
-                        xpos = Random.Range(groundlevel.position.x -77f,player.transform.position.x - 20f);
-                        enemyPos = new Vector3(xpos,groundlevel.position.y + 60f,0);
-                        Instantiate(spawningEnemy,enemyPos,Quaternion.identity);
-                    }
+                    Debug.Log("Enemy Spawning Right");
+                    enemyPos = new Vector3(groundlevel.position.x + 77f,groundlevel.position.y + 60f,0);
+                    Instantiate(spawningEnemy,enemyPos,Quaternion.identity);
                 }
-                */
+                
             }
             //Start wait perido
-            StartCoroutine(wait());
         }
         if(gameObject.transform.position.y > (groundlevel.position.y + 250f) && pause){
             Destroy(gameObject);
