@@ -82,6 +82,10 @@ public class BossMainScript : MonoBehaviour
     void died(){
         Debug.Log("Boss has died");
         fighting = false;
+        GameObject[] enemycount = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach(GameObject enemy in enemycount){
+            Destroy(enemy);
+        }
     }
 
     void spawnfoot(){

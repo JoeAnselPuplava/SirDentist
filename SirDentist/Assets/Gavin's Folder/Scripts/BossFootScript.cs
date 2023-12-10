@@ -126,7 +126,7 @@ public class BossFootScript : MonoBehaviour
             pullUp();
         }
         else{
-            yield return new WaitForSeconds(pausetime);
+            yield return new WaitForSeconds(pausetime/2);
             pullUp();
         }
     }
