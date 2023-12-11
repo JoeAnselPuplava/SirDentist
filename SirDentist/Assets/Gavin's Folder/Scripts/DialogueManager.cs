@@ -11,6 +11,8 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text textbox;
 
     public GameObject dialogueBox;
+
+    public bool talking = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,9 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void StartDialogue(Dialogue dialogue){
+        //Show box and freeze time
         dialogueBox.SetActive(true);
+        talking = true;
         sentences.Clear();
         foreach (string sentence in dialogue.sentences){
             sentences.Enqueue(sentence);
@@ -33,6 +37,7 @@ public class DialogueManager : MonoBehaviour
     public void DisplayNextSentence(){
         if(sentences.Count == 0){
             EndDialogue();
+            //Start time up again close box
             dialogueBox.SetActive(false);
             return;
         }
@@ -43,5 +48,6 @@ public class DialogueManager : MonoBehaviour
     }
     public void EndDialogue(){
         Debug.Log("End of Convo");
+        talking = false;
     }
 }
