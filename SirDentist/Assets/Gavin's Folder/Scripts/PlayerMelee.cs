@@ -28,7 +28,7 @@ public class PlayerMelee : MonoBehaviour
     void SwingSword()
     {
         // Enable the collider when swinging the sword
-        //animator.SetBool("Swing", true);
+        animator.SetBool("Swing", true);
         swordCollider.enabled = true;
     }
 
@@ -81,7 +81,7 @@ public class PlayerMelee : MonoBehaviour
         yield return new WaitForSeconds(swingCooldown);
 
         // Disable the collider after the cooldown
-        //animator.SetBool("Swing", false);
+        animator.SetBool("Swing", false);
         swordCollider.enabled = false;
 
         canSwing = true;
