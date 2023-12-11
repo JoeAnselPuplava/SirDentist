@@ -37811,6 +37811,82 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1148777833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1148777836}
+  - component: {fileID: 1148777835}
+  - component: {fileID: 1148777834}
+  m_Layer: 0
+  m_Name: BossStartDia
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1148777834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148777833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0df8fafdac4e9cc44829cb4270cd8ea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 1148777835}
+--- !u!114 &1148777835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148777833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f2eafa8941ea74fa358d4e4be2a234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titles:
+  - '%!%@#%%'
+  - '%!%@#%%'
+  - SirDentist
+  - '%!%@#%%'
+  - '[Boss}'
+  - '[Boss}'
+  - SirDentist
+  - Fairy
+  sentences:
+  - So....
+  - Your the one who has been cleaning up all my minions.
+  - Huh? Who are you? Where are you? Reveal yourself!
+  - HA! How ignorant. It's cute really. Well let me introduce myself.
+  - 'I am [I#(FOWJEFK] and I you shall die today!!! '
+  - Now... GET STOMPED ON
+  - I... what?
+  - Sir! Above us! Its! Its....... HIGH HEELS!
+--- !u!4 &1148777836
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148777833}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1983646482}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1151519912
 GameObject:
   m_ObjectHideFlags: 0
@@ -44490,7 +44566,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 275333632579083641, guid: 2054f5a04bca1fa4c92edbbb9c158285, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -53
+      value: -82
       objectReference: {fileID: 0}
     - target: {fileID: 304945455606305914, guid: 2054f5a04bca1fa4c92edbbb9c158285, type: 3}
       propertyPath: m_fontSize
@@ -44501,16 +44577,20 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1787929812991414874, guid: 2054f5a04bca1fa4c92edbbb9c158285, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 93
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787929812991414874, guid: 2054f5a04bca1fa4c92edbbb9c158285, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 25.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1787929812991414874, guid: 2054f5a04bca1fa4c92edbbb9c158285, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 218
       objectReference: {fileID: 0}
     - target: {fileID: 1787929812991414874, guid: 2054f5a04bca1fa4c92edbbb9c158285, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -112
-      objectReference: {fileID: 0}
-    - target: {fileID: 2915116071642487923, guid: 2054f5a04bca1fa4c92edbbb9c158285, type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      value: -83
       objectReference: {fileID: 0}
     - target: {fileID: 3158997956334037790, guid: 2054f5a04bca1fa4c92edbbb9c158285, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -44518,7 +44598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3158997956334037790, guid: 2054f5a04bca1fa4c92edbbb9c158285, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 116
+      value: 79
       objectReference: {fileID: 0}
     - target: {fileID: 3822285877722491595, guid: 2054f5a04bca1fa4c92edbbb9c158285, type: 3}
       propertyPath: m_SizeDelta.x
@@ -44526,15 +44606,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3822285877722491595, guid: 2054f5a04bca1fa4c92edbbb9c158285, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 101.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3822285877722491595, guid: 2054f5a04bca1fa4c92edbbb9c158285, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 263.5
+      value: 31.13
       objectReference: {fileID: 0}
     - target: {fileID: 3822285877722491595, guid: 2054f5a04bca1fa4c92edbbb9c158285, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -2
+      value: -18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5753602577586744519, guid: 2054f5a04bca1fa4c92edbbb9c158285, type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5753602577586744519, guid: 2054f5a04bca1fa4c92edbbb9c158285, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6474029233091003511, guid: 2054f5a04bca1fa4c92edbbb9c158285, type: 3}
       propertyPath: m_IsActive
@@ -44546,19 +44630,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7622222649790748828, guid: 2054f5a04bca1fa4c92edbbb9c158285, type: 3}
       propertyPath: m_fontSize
-      value: 20
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 7622222649790748828, guid: 2054f5a04bca1fa4c92edbbb9c158285, type: 3}
       propertyPath: m_fontSizeBase
-      value: 20
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 8647329449409028339, guid: 2054f5a04bca1fa4c92edbbb9c158285, type: 3}
       propertyPath: m_Name
       value: DialogueManager
       objectReference: {fileID: 0}
     - target: {fileID: 8647329449409028339, guid: 2054f5a04bca1fa4c92edbbb9c158285, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_TagString
+      value: DialogueManager
       objectReference: {fileID: 0}
     - target: {fileID: 8789218605068352580, guid: 2054f5a04bca1fa4c92edbbb9c158285, type: 3}
       propertyPath: m_RootOrder
@@ -53278,6 +53362,90 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1659400604
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1659400607}
+  - component: {fileID: 1659400606}
+  - component: {fileID: 1659400605}
+  m_Layer: 0
+  m_Name: BossEndDia
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1659400605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659400604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0df8fafdac4e9cc44829cb4270cd8ea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 1659400606}
+--- !u!114 &1659400606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659400604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f2eafa8941ea74fa358d4e4be2a234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titles:
+  - '{Boss}'
+  - '{Boss}'
+  - '{Boss}'
+  - Fairy
+  - Suddenly,
+  - SirDentist
+  - Dragon
+  - '{Boss}'
+  - Dragon
+  - SirDentist
+  - ^GAME^
+  sentences:
+  - HAHHAHAHAHAHAHHAHAHAHAHAHAHAHAHAHAHHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAAHHAHAHAHAHAHAHAAHHAHAAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHHAHAHAHAHAH
+  - You think you have won!? No! I refuse to be defeated by a Swifer wielding mortal!
+  - If I can't have the dragon than no one can! We shall all persish here! No more
+    magic! No more dragons! No more DENTIST!!!!!
+  - That's SirDentist to you!! Hark foul being!
+  - '*{Boss} Starts kicking the walls violently'
+  - Uhhhhh... I don't think he's harking
+  - 'Hey! What''s going on down there? '
+  - RAAAAAAAAAAAAAAAAAAWWWWWWWWWWWWWWRRRRRR!
+  - Ugh! My heart hurtttttttttttt!
+  - Uh oh.....
+  - ^ You have won the game! The ending scene has not been implemented yet but thank
+    you for playing!^
+--- !u!4 &1659400607
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659400604}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1983646482}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1665524769
 GameObject:
   m_ObjectHideFlags: 0
@@ -63191,8 +63359,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1983646482}
-  - component: {fileID: 1983646481}
-  - component: {fileID: 1983646480}
   - component: {fileID: 1983646483}
   m_Layer: 0
   m_Name: BossGameHandler
@@ -63201,49 +63367,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1983646480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1983646479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0df8fafdac4e9cc44829cb4270cd8ea4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue: {fileID: 1983646481}
---- !u!114 &1983646481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1983646479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91f2eafa8941ea74fa358d4e4be2a234, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  titles:
-  - '%!%@#%%'
-  - '%!%@#%%'
-  - SirDentist
-  - '%!%@#%%'
-  - '[Boss}'
-  - '[Boss}'
-  - SirDentist
-  - Fairy
-  sentences:
-  - So....
-  - Your the one who has been cleaning up all my minions.
-  - Huh? Who are you? Where are you? Reveal yourself!
-  - HA! How ignorant. It's cute really. Well let me introduce myself.
-  - 'I am [I#(FOWJEFK] and I you shall die today!!! '
-  - Now... GET STOMPED ON
-  - I... what?
-  - Sir! Above us! Its! Its....... HIGH HEELS!
 --- !u!4 &1983646482
 Transform:
   m_ObjectHideFlags: 0
@@ -63255,7 +63378,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1148777836}
+  - {fileID: 1659400607}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -63271,7 +63396,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be8fb51908a8c1a4d8a0c65521256f4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startdialogue: {fileID: 1983646480}
+  startdialogue: {fileID: 1148777834}
+  enddialogue: {fileID: 1659400605}
+  fighting: 0
 --- !u!1 &1984655826
 GameObject:
   m_ObjectHideFlags: 0

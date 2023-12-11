@@ -17,6 +17,7 @@ TagManager:
   - BossObject
   - Sword
   - BreakWall
+  - DialogueManager
   layers:
   - Default
   - TransparentFX

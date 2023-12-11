@@ -17,7 +17,7 @@ public class BossMainScript : MonoBehaviour
     public GameObject warningprefab;
     public GameObject player;
 
-    bool fighting = true;
+    public bool fighting = false;
 
     public GameObject footprefab;
 
@@ -38,8 +38,9 @@ public class BossMainScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(bossHealth < 0){
+        if(bossHealth <= 0 && fighting){
             died();
+            bossHealth = 0;
             healthbar.text = "Boss Health: " + 0;
         }
         else{
@@ -77,7 +78,7 @@ public class BossMainScript : MonoBehaviour
     }
     public void meleeDamage(float damage)
     {
-        bossHealth -= damage;
+        bossHealth -= damage/2;
     }
     void died(){
         Debug.Log("Boss has died");
