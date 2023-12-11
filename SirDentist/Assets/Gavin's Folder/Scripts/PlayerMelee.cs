@@ -18,7 +18,7 @@ public class PlayerMelee : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && canSwing)
+        if (Input.GetButtonDown("Swing"))
         {
             SwingSword();
             StartCoroutine(SwingCooldown());
@@ -28,7 +28,7 @@ public class PlayerMelee : MonoBehaviour
     void SwingSword()
     {
         // Enable the collider when swinging the sword
-        //animator.SetBool("Swing", true);
+        animator.SetBool("Swing", true);
         swordCollider.enabled = true;
     }
 
