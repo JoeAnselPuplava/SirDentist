@@ -47,17 +47,17 @@ public class BossMainScript : MonoBehaviour
             healthbar.text = "Boss Health: " + Mathf.Round(bossHealth);
         }
 
-        if(bossHealth < 700 && round == 1){
+        if(bossHealth < 850 && round == 1){
             Debug.Log("Round 2");
             round = 2;
             spawningspeed = 5f;
             warningtime = 1.5f;
         }
-        else if(bossHealth < 300 && round == 2){
+        else if(bossHealth < 400 && round == 2){
             Debug.Log("Round 3");
             round = 3;
-            spawningspeed = 3f;
-            warningtime = 0.8f;
+            spawningspeed = 4f;
+            warningtime = 1f;
         }
         //Repeating clock for spawner
         timePassed += Time.deltaTime;

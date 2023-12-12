@@ -28,8 +28,8 @@ public class PlayerMelee : MonoBehaviour
     void SwingSword()
     {
         // Enable the collider when swinging the sword
-        animator.SetBool("Swing", true);
         swordCollider.enabled = true;
+        animator.SetBool("Swing", true);
     }
 
     void OnTriggerEnter2D(Collider2D other)
