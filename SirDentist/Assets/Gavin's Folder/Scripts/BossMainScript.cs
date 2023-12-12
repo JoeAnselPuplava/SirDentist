@@ -47,17 +47,17 @@ public class BossMainScript : MonoBehaviour
             healthbar.text = "Boss Health: " + Mathf.Round(bossHealth);
         }
 
-        if(bossHealth < 700 && round == 1){
+        if(bossHealth < 850 && round == 1){
             Debug.Log("Round 2");
             round = 2;
             spawningspeed = 5f;
             warningtime = 1.5f;
         }
-        else if(bossHealth < 300 && round == 2){
+        else if(bossHealth < 400 && round == 2){
             Debug.Log("Round 3");
             round = 3;
-            spawningspeed = 3f;
-            warningtime = 0.8f;
+            spawningspeed = 4f;
+            warningtime = 1f;
         }
         //Repeating clock for spawner
         timePassed += Time.deltaTime;
@@ -74,11 +74,17 @@ public class BossMainScript : MonoBehaviour
     }
     public void flailDamage(float damage)
     {
-        bossHealth -= damage;
+        if(!Eimmune){
+            bossHealth -= damage;
+            StartCoroutine(Immunity());
+        }
     }
     public void meleeDamage(float damage)
     {
-        bossHealth -= damage/2;
+        if(!Eimmune){
+            bossHealth -= damage/2;
+            StartCoroutine(Immunity());
+        }
     }
     void died(){
         Debug.Log("Boss has died");
@@ -104,6 +110,12 @@ public class BossMainScript : MonoBehaviour
             StartCoroutine(footpause(position));
             StartCoroutine(shadowkill(shadow));
         }
+    }
+    private IEnumerator Immunity()
+    {
+        Eimmune = true;
+        yield return new WaitForSeconds(0.3f);
+        Eimmune = false;
     }
 
     IEnumerator footpause(Vector3 position){

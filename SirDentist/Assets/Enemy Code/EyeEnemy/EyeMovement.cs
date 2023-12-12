@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EyeMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float moveSpeed = 10f;
     public float jumpForce = 10f;
     private GameObject player;
     private GameObject[] ground;
@@ -16,10 +16,14 @@ public class EyeMovement : MonoBehaviour
     private Animator animator;
     private Collider2D enemyCollider;
 
+    float stuntime = 1.5f;
+    float pastms;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        pastms = moveSpeed;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         enemyCollider = GetComponent<Collider2D>();
@@ -175,4 +179,17 @@ public class EyeMovement : MonoBehaviour
             grounded = false;
         }
     }
+
+    public void stuned(){
+        Debug.Log("Stunned");
+        StartCoroutine(stun());
+    }
+    
+    private IEnumerator stun(){
+        GetComponent<EyeMovement>().moveSpeed = 0;
+        yield return new WaitForSeconds(stuntime);
+        Debug.Log("unfreeze");
+        moveSpeed = pastms;
+    }
+    
 }
