@@ -74,11 +74,17 @@ public class BossMainScript : MonoBehaviour
     }
     public void flailDamage(float damage)
     {
-        bossHealth -= damage;
+        if(!Eimmune){
+            bossHealth -= damage;
+            StartCoroutine(Immunity());
+        }
     }
     public void meleeDamage(float damage)
     {
-        bossHealth -= damage/2;
+        if(!Eimmune){
+            bossHealth -= damage/2;
+            StartCoroutine(Immunity());
+        }
     }
     void died(){
         Debug.Log("Boss has died");
@@ -104,6 +110,12 @@ public class BossMainScript : MonoBehaviour
             StartCoroutine(footpause(position));
             StartCoroutine(shadowkill(shadow));
         }
+    }
+    private IEnumerator Immunity()
+    {
+        Eimmune = true;
+        yield return new WaitForSeconds(0.3f);
+        Eimmune = false;
     }
 
     IEnumerator footpause(Vector3 position){

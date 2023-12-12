@@ -222,6 +222,7 @@ MonoBehaviour:
   - {fileID: 1852329664667170523, guid: 2655165cff1294fd39ddbe5349f15768, type: 3}
   - {fileID: 6592727011549376180, guid: 9a063834b85674070ac165a5fa0ff3b9, type: 3}
   - {fileID: 8792242479419311618, guid: 040e67be4ee551b4bb6a5a52572f3c3b, type: 3}
+  crashlanding: {fileID: 8300000, guid: 66fa110e0af55f642af4b82d70033b01, type: 3}
 --- !u!50 &7546917447612816718
 Rigidbody2D:
   serializedVersion: 4

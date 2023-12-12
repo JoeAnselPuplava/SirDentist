@@ -26,6 +26,8 @@ public class BossFootScript : MonoBehaviour
     public int round = 1;
     public GameObject[] enemies;
 
+    public AudioClip crashlanding;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,8 +58,9 @@ public class BossFootScript : MonoBehaviour
             //Make player Jump
             if(player.GetComponent<PlayerJump>().IsGrounded()){
                 player.GetComponent<Rigidbody2D>().velocity = Vector2.up * (player.GetComponent<PlayerJump>().jumpForce/2);
-                //Debug.Log("hello2");
             }
+            //Play SFX
+            AudioSource.PlayClipAtPoint(crashlanding, transform.position);
             //Spawn Enemy Stuff
             GameObject[] enemycount = GameObject.FindGameObjectsWithTag("Enemy");
             float random = Random.Range(1, 100);
