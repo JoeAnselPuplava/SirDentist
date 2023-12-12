@@ -26,12 +26,7 @@ public class BreakableWall : MonoBehaviour
 
     void Update()
     {
-        if (hitNum == 2)
-        {
-            //anim.SetBool("wallHalf", false);
-            //anim.SetBool("wallGone", false);
-        }
-        else if (hitNum == 1)
+        if (hitNum == 1)
         {
             anim.SetTrigger("half_break");
         }
@@ -45,18 +40,6 @@ public class BreakableWall : MonoBehaviour
         }
     }
 
-    public void wallDamage()
-    {
-        // this is the function that the player attack script would access
-        if (hitNum > 0)
-            //if (!breakSFX.isPlaying) { breakSFX.Play(); }
-            if (hitNum == 2)
-            { //anim.SetTrigger("break"); 
-            }
-        //else if (hitNum == 1) { anim.SetTrigger("cutHalf"); }
-        StartCoroutine(wallHitReturn());
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Flail" || collision.gameObject.tag == "Sword")
@@ -68,14 +51,5 @@ public class BreakableWall : MonoBehaviour
     public void hitByWeapon()
     {
         hitNum--;
-    }
-
-    IEnumerator wallHitReturn()
-    {
-        myRend.material.color = new Color(1.0f, 1.0f, 2.5f);
-        yield return new WaitForSeconds(0.5f);
-        hitNum -= 1;
-        myRend.material.color = defaultColor;
-        //breakSFX.Stop();
     }
 }

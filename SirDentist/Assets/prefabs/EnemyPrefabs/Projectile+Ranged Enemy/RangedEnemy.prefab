@@ -116,7 +116,7 @@ Transform:
   m_GameObject: {fileID: 8792242479419311618}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8065201880292433293}
@@ -250,6 +250,7 @@ MonoBehaviour:
   hurt: {fileID: 8300000, guid: 9cf752587d75f4e86ad5a3c66d671dad, type: 3}
   hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
   explode: {fileID: 8300000, guid: 0aa440763332548be9bfd3bfd97b54aa, type: 3}
+  stuntime: 0.7
 --- !u!114 &1626619985189687250
 MonoBehaviour:
   m_ObjectHideFlags: 0

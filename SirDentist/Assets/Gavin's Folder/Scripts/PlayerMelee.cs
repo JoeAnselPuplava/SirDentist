@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerMelee : MonoBehaviour
 {
-    public float swingCooldown = 1.0f;
+    public float swingCooldown = 0.1f;
     public Collider2D swordCollider;
     public Animator animator;
     private bool canSwing = true;
