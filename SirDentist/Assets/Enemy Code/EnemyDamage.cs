@@ -146,9 +146,10 @@ public class EnemyDamage : MonoBehaviour
     }
 
     private IEnumerator backupdeath(){
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         if(this.gameObject != null){
             GetComponent<InjureFlash>().injury();
+            yield return new WaitForSeconds(0.2f);
             killMe();
         }
     }

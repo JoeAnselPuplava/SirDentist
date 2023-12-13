@@ -28,6 +28,8 @@ public class BossFootScript : MonoBehaviour
 
     public AudioClip crashlanding;
 
+    public GameObject shadow;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,7 +52,7 @@ public class BossFootScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(groundlevel.position.y > bottomFoot.position.y && !pause){
+        if(groundlevel.position.y > (bottomFoot.position.y + 1f) && !pause){
             //Pause leg down
             pause = true;
             rb.velocity = new Vector2(0f,0f);
@@ -121,6 +123,7 @@ public class BossFootScript : MonoBehaviour
 
     void pullUp(){
         rb.velocity = baseSpeedup;
+        shadow.GetComponent<shadowFade>().shadowvanish();
     }
 
     IEnumerator wait(){

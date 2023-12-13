@@ -116,9 +116,8 @@ public class BossMainScript : MonoBehaviour
             else if(position.x > rightWall.position.x){
                 position.x = rightWall.position.x;
             }
-            GameObject shadow = Instantiate(warningprefab, new Vector3(position.x,groundlevel.position.y-1,groundlevel.position.z), Quaternion.identity);
-            StartCoroutine(footpause(position));
-            StartCoroutine(shadowkill(shadow));
+            GameObject shadow = Instantiate(warningprefab, new Vector3(position.x+1f,groundlevel.position.y-1f,position.z-2.1f), Quaternion.identity);   
+            StartCoroutine(footpause(position, shadow));
         }
     }
     private IEnumerator Immunity()
@@ -128,15 +127,12 @@ public class BossMainScript : MonoBehaviour
         Eimmune = false;
     }
 
-    IEnumerator footpause(Vector3 position){
+    IEnumerator footpause(Vector3 position, GameObject shadow){
         yield return new WaitForSeconds(warningtime);
-        GameObject foot = Instantiate(footprefab, position, Quaternion.identity);
+        GameObject foot = Instantiate(footprefab, new Vector3(position.x,position.y,position.z-3f), Quaternion.identity);
         foot.GetComponent<BossFootScript>().pausetime = foot.GetComponent<BossFootScript>().pausetime / round;
-         foot.GetComponent<BossFootScript>().round = round;
+        foot.GetComponent<BossFootScript>().round = round;
+        foot.GetComponent<BossFootScript>().shadow = shadow;
     }
 
-    IEnumerator shadowkill(GameObject shadow){
-        yield return new WaitForSeconds(warningtime + (4f/round));
-        Destroy(shadow);
-    }
 }
