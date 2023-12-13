@@ -6,8 +6,8 @@ using UnityEngine;
 public class PlayerMelee : MonoBehaviour
 {
     public float swingCooldown = 0.1f;
-    public Collider2D swordCollider;
     public Animator animator;
+    public Collider2D swordCollider;
     private bool canSwing = true;
 
     void Start()
@@ -18,24 +18,27 @@ public class PlayerMelee : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Swing"))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && canSwing)
         {
             SwingSword();
-            StartCoroutine(SwingCooldown());
         }
     }
 
     void SwingSword()
     {
+        
         // Enable the collider when swinging the sword
+        Debug.Log("Sword Enabled");
         swordCollider.enabled = true;
        //animator.SetBool("Swing", true);
-	   animator.SetTrigger("Swing");
+	   //animator.SetTrigger("Swing");
+       StartCoroutine(SwingCooldown());
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         // Check if the sword collider has entered a collider with the "Enemy" tag
+        Debug.Log("Sword status: " + swordCollider.enabled);
         if (other.gameObject.tag == "Enemy")
         {
             // Perform actions when the sword collides with an enemy
@@ -74,16 +77,16 @@ public class PlayerMelee : MonoBehaviour
     }
 
     IEnumerator SwingCooldown()
-    {
+    {   
         canSwing = false;
-        
-
         // Wait for the specified cooldown duration
         yield return new WaitForSeconds(swingCooldown);
 
         // Disable the collider after the cooldown
         //animator.SetBool("Swing", false);
+        Debug.Log("Sword Disabled");
         swordCollider.enabled = false;
+        Debug.Log("Sword status: " + swordCollider.enabled);
 
         canSwing = true;
     }
