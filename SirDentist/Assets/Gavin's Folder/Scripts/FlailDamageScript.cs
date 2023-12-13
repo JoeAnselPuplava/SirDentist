@@ -23,7 +23,7 @@ public class FlailDamageScript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         float damage = rb.velocity.magnitude;
-        if (damage < 1.5f){
+        if (damage < 8f){
             damage = 0;
         }
         if(other.gameObject.tag == "Enemy"){
