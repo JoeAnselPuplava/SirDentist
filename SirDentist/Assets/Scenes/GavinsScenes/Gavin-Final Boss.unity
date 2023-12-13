@@ -61716,6 +61716,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2612236280332345982, guid: 9d84b5ce49079964ba6027fbcc7de696, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3114208311479570112, guid: 9d84b5ce49079964ba6027fbcc7de696, type: 3}
       propertyPath: m_Name
       value: MainPlayer 0.04v Variant
