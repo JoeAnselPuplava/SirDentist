@@ -28,6 +28,8 @@ public class BossFootScript : MonoBehaviour
 
     public AudioClip crashlanding;
 
+    public GameObject shadow;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -121,6 +123,7 @@ public class BossFootScript : MonoBehaviour
 
     void pullUp(){
         rb.velocity = baseSpeedup;
+        shadow.GetComponent<shadowFade>().shadowvanish();
     }
 
     IEnumerator wait(){
