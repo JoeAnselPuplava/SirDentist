@@ -11,7 +11,6 @@ public class BossMainScript : MonoBehaviour
     public float bossHealth = 1000f;
 
     float spawningspeed = 7f;
-    float feetspeed = 1f;
 
     public float warningtime = 2f;
     public GameObject warningprefab;

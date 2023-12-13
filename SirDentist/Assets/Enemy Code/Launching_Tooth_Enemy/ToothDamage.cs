@@ -92,6 +92,7 @@ public class ToothDamage : MonoBehaviour
 
         if (!Eimmune)
         {
+            GetComponent<InjureFlash>().injury();
             AudioSource.PlayClipAtPoint(hurt, transform.position);
             health -= damage;
             checkHealth();
@@ -102,11 +103,13 @@ public class ToothDamage : MonoBehaviour
     {
         if (health <= 0)
         {
+            GetComponent<InjureFlash>().injury();
             Eimmune = true;
+            Debug.Log("dying tooth");
+            StartCoroutine(backupdeath());
             AudioSource.PlayClipAtPoint(explode, transform.position);
             animator.SetTrigger("die");//this plays the death animation (in this case eyeball exploding)
             //in animator killMe() is called after death anim finishes playing
-            print("dying");
         }
     }
     public void meleeDamage(float damage)
@@ -137,5 +140,13 @@ public class ToothDamage : MonoBehaviour
         GetComponent<LauchingMovement>().moveSpeed = 0;
         yield return new WaitForSeconds(stuntime);
         GetComponent<LauchingMovement>().moveSpeed = pastms;
+    }
+    private IEnumerator backupdeath(){
+        Debug.Log("test");
+        yield return new WaitForSeconds(1f);
+        if(this.gameObject != null){
+            GetComponent<InjureFlash>().injury();
+            killMe();
+        }
     }
 }

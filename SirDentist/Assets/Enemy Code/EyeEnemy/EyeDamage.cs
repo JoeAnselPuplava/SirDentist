@@ -92,6 +92,7 @@ public class EyeDamage : MonoBehaviour
 
         if (!Eimmune)
         {
+            GetComponent<InjureFlash>().injury();
             AudioSource.PlayClipAtPoint(hurt, transform.position);
             health -= damage;
             checkHealth();
@@ -101,6 +102,7 @@ public class EyeDamage : MonoBehaviour
     {
        if (!Eimmune)
         {
+            GetComponent<InjureFlash>().injury();
             AudioSource.PlayClipAtPoint(hurt, transform.position);
             health -= damage;
             checkHealth();
@@ -116,6 +118,7 @@ public class EyeDamage : MonoBehaviour
             animator.SetTrigger("die");//this plays the death animation (in this case eyeball exploding)
             //in animator killMe() is called after death anim finishes playing
             print("dying");
+            StartCoroutine(backupdeath());
         }
     }
     public void killMe()
@@ -130,5 +133,12 @@ public class EyeDamage : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         Eimmune = false;
     }
-    
+    private IEnumerator backupdeath(){
+        Debug.Log("test");
+        yield return new WaitForSeconds(1f);
+        if(this.gameObject != null){
+            GetComponent<InjureFlash>().injury();
+            killMe();
+        }
+    }
 }

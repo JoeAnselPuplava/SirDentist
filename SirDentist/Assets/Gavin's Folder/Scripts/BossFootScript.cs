@@ -60,7 +60,7 @@ public class BossFootScript : MonoBehaviour
                 player.GetComponent<Rigidbody2D>().velocity = Vector2.up * (player.GetComponent<PlayerJump>().jumpForce/2);
             }
             //Play SFX
-            AudioSource.PlayClipAtPoint(crashlanding, transform.position);
+            //AudioSource.PlayClipAtPoint(crash, transform.position);
             //Spawn Enemy Stuff
             GameObject[] enemycount = GameObject.FindGameObjectsWithTag("Enemy");
             float random = Random.Range(1, 100);

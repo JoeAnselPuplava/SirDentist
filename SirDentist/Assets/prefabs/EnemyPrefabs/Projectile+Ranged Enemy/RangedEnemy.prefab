@@ -144,6 +144,7 @@ GameObject:
   - component: {fileID: 1350902701726906588}
   - component: {fileID: 1626619985189687250}
   - component: {fileID: 6969527078569731666}
+  - component: {fileID: 4836220419514884397}
   m_Layer: 12
   m_Name: RangedEnemy
   m_TagString: Enemy
@@ -266,8 +267,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.63}
-  m_Size: {x: 5.94, y: 8.48}
+  m_Offset: {x: 0, y: 0.18}
+  m_Size: {x: 6.06, y: 5.96}
   m_Direction: 0
 --- !u!70 &5587455070573751120
 CapsuleCollider2D:
@@ -301,8 +302,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.5}
-  m_Size: {x: 5.1, y: 7.25}
+  m_Offset: {x: 0, y: 0.35}
+  m_Size: {x: 5.1, y: 4.94}
   m_Direction: 0
 --- !u!114 &6166373077492322862
 MonoBehaviour:
@@ -364,3 +365,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   jumpForce: 10
+  shouldRun: 0
+--- !u!114 &4836220419514884397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8792242479419311618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2867c5658904a0e40a4f6200886dc42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 5873567587768435859}

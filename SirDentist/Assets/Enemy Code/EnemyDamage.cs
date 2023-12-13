@@ -8,7 +8,7 @@ public class EnemyDamage : MonoBehaviour
 
     private GameHandler gameHandler;
     public int attackpower = 10;
-    public float health = 50f;
+    public float health = 100f;
     private Animator animator;
     public AudioClip hurt;
     public AudioClip hit;
@@ -91,23 +91,30 @@ public class EnemyDamage : MonoBehaviour
 
     public void flailDamage(float damage)
     {
-
+        Debug.Log("here! " + Eimmune);
         if (!Eimmune)
         {
+            Debug.Log("Hit!");
+            GetComponent<InjureFlash>().injury();
             AudioSource.PlayClipAtPoint(hurt, transform.position);
             health -= damage;
+            Debug.Log(health);
             checkHealth();
         }
     }
 
     public void meleeDamage(float damage)
     {
+        Debug.Log("here! " + Eimmune);
        if (!Eimmune)
         {
+            Debug.Log("Hit!");
+            GetComponent<InjureFlash>().injury();
             AudioSource.PlayClipAtPoint(hurt, transform.position);
             health -= damage;
+            Debug.Log(health);
             checkHealth();
-            StartCoroutine(stun());
+            GetComponent<EnemyMovement>().stuned();
         }
     }
 
@@ -115,11 +122,13 @@ public class EnemyDamage : MonoBehaviour
     {
         if (health <= 0)
         {
+            Debug.Log("Died");
             Eimmune = true;
             AudioSource.PlayClipAtPoint(explode, transform.position);
             animator.SetTrigger("die");//this plays the death animation (in this case eyeball exploding)
             //in animator killMe() is called after death anim finishes playing
             print("dying");
+            StartCoroutine(backupdeath());
         }
     }
     public void killMe()
@@ -130,16 +139,18 @@ public class EnemyDamage : MonoBehaviour
 
     private IEnumerator Immunity()
     {
+        Debug.Log("Immunity");
         Eimmune = true;
         yield return new WaitForSeconds(0.2f);
         Eimmune = false;
     }
 
-    private IEnumerator stun(){
-        float pastms = GetComponent<EnemyMovement>().moveSpeed;
-        GetComponent<EnemyMovement>().moveSpeed = 0;
-        yield return new WaitForSeconds(stuntime);
-        GetComponent<EnemyMovement>().moveSpeed = pastms;
+    private IEnumerator backupdeath(){
+        yield return new WaitForSeconds(1f);
+        if(this.gameObject != null){
+            GetComponent<InjureFlash>().injury();
+            killMe();
+        }
     }
 
 }

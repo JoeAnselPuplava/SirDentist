@@ -15,10 +15,14 @@ public class EnemyMovement : MonoBehaviour
     private Animator animator;
     private Collider2D enemyCollider;
 
+    float stuntime = 1.5f;
+    float pastms;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        pastms = moveSpeed;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         enemyCollider = GetComponent<Collider2D>();
@@ -162,7 +166,7 @@ public class EnemyMovement : MonoBehaviour
         
     }
     
-
+    
     private void OnCollisionExit2D(Collision2D collision)
     {
         //Debug.Log("No longer in contact with " + (collision.gameObject.tag));
@@ -171,5 +175,18 @@ public class EnemyMovement : MonoBehaviour
             //Debug.Log("Grounded false");
             grounded = false;
         }
+    }
+
+
+    public void stuned(){
+        Debug.Log("Stunned");
+        StartCoroutine(stun());
+    }
+    
+    private IEnumerator stun(){
+        GetComponent<EyeMovement>().moveSpeed = 0;
+        yield return new WaitForSeconds(stuntime);
+        Debug.Log("unfreeze");
+        moveSpeed = pastms;
     }
 }

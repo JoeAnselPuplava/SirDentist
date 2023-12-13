@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 5892231129973442824}
   - component: {fileID: 7305804252376625512}
   - component: {fileID: 6929798049100145831}
+  - component: {fileID: 6772271493865409112}
   m_Layer: 0
   m_Name: Eye_boy
   m_TagString: Enemy
@@ -407,7 +408,6 @@ MonoBehaviour:
   hurt: {fileID: 8300000, guid: 056d04608ec2441dfac3d27040bbbfa8, type: 3}
   hit: {fileID: 8300000, guid: 19d24903ca8294aa48db8c6a0b80045c, type: 3}
   explode: {fileID: 8300000, guid: 0aa440763332548be9bfd3bfd97b54aa, type: 3}
-  stuntime: 1.5
 --- !u!114 &6929798049100145831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,3 +422,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   jumpForce: 10
+--- !u!114 &6772271493865409112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852329664667170523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2867c5658904a0e40a4f6200886dc42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 3982425802944265405}
