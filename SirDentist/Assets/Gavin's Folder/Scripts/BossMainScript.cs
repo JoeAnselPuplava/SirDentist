@@ -75,6 +75,7 @@ public class BossMainScript : MonoBehaviour
     public void flailDamage(float damage)
     {
         if(!Eimmune){
+            damageflash();
             bossHealth -= damage;
             StartCoroutine(Immunity());
         }
@@ -82,10 +83,20 @@ public class BossMainScript : MonoBehaviour
     public void meleeDamage(float damage)
     {
         if(!Eimmune){
+            damageflash();
             bossHealth -= damage/2;
             StartCoroutine(Immunity());
         }
     }
+
+    void damageflash(){
+        GameObject[] legs = GameObject.FindGameObjectsWithTag("BossLeg");
+        foreach(GameObject leg in legs){
+            leg.GetComponent<InjureFlash>().injury();
+        }
+        
+    }
+
     void died(){
         Debug.Log("Boss has died");
         fighting = false;
