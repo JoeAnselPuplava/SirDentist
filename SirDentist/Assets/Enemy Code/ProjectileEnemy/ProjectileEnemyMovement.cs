@@ -9,7 +9,7 @@ public class ProjectileEnemyMovement : MonoBehaviour
     private GameObject player;
     private GameObject[] ground;
 
-    private bool shouldRun;
+    public bool shouldRun;
     
     private Rigidbody2D rb;
     private bool shouldMove = true;
@@ -48,25 +48,12 @@ public class ProjectileEnemyMovement : MonoBehaviour
 
     private void shouldRunfunc(){
         float dist_to_player= Vector3.Distance(player.transform.position,transform.position);
-        if(dist_to_player<15){
+        if(dist_to_player<20){
             shouldRun = true;
         }
         else{
             shouldRun = false;
         }
-    }
-
-    private void shouldStab(){// calculates distance between players hit 
-        //and determines if it should run the stab animation
-        float dist_to_player= Vector3.Distance(player.transform.position,transform.position);//computes dist to player
-        if(dist_to_player<3){
-            animator.SetBool("hasHit",true);
-        }
-        else{
-            animator.SetBool("hasHit", false);
-        }
-
-
     }
 
     void TowardsPlayer()

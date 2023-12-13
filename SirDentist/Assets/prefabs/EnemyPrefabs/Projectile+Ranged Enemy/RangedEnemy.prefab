@@ -348,6 +348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EggPrefab: {fileID: 469795721482379407, guid: 602d7911f32d1ce43b59e6cf78a851b3, type: 3}
+  animator: {fileID: 2262624924468292358}
   spawnDist: 5
 --- !u!114 &6969527078569731666
 MonoBehaviour:
@@ -361,5 +362,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b62ec596c0ece954dbcefa31162b2081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3.4
+  moveSpeed: 10
   jumpForce: 10

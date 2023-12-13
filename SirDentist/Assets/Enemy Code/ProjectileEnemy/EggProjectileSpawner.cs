@@ -6,19 +6,21 @@ using UnityEngine;
 public class EggProjectileSpawner : MonoBehaviour
 {
     public GameObject EggPrefab;
-
+    public Animator animator;
     public float spawnDist = 1f;
+    private bool runAway = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        runAway = gameObject.GetComponent<ProjectileEnemyMovement>().shouldRun;
         StartCoroutine(timeDelay());
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        runAway = gameObject.GetComponent<ProjectileEnemyMovement>().shouldRun;
     }
 
     void FireShot(){
@@ -28,9 +30,25 @@ public class EggProjectileSpawner : MonoBehaviour
 
     IEnumerator timeDelay(){
         while(true){
+
             yield return new WaitForSeconds(Random.Range(2f, 5f));
-            FireShot();
+            if (!runAway)
+            {
+                StartCoroutine(fireEnemies());
+            }
+            else
+            {
+                animator.SetBool("FireShot", false);
+            }
+
         }
+    }
+    IEnumerator fireEnemies()
+    {
+        animator.SetBool("FireShot", true);
+        FireShot();
+        yield return new WaitForSeconds(0.1f);
+        animator.SetBool("FireShot", false);
     }
 }
 
