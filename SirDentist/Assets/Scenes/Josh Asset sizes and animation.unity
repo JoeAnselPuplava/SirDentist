@@ -874,6 +874,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1626619985189687250, guid: 040e67be4ee551b4bb6a5a52572f3c3b, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1815797900}
     - target: {fileID: 3405174301639790806, guid: 040e67be4ee551b4bb6a5a52572f3c3b, type: 3}
       propertyPath: m_Name
       value: Cav Art
