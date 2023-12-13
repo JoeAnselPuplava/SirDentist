@@ -81,8 +81,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swingCooldown: 1
-  swordCollider: {fileID: 9003688744040421606}
   animator: {fileID: 0}
+  swordCollider: {fileID: 9003688744040421606}
+  canSwing: 1
 --- !u!1001 &1382433437014070175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -105,7 +106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4042121503189736799, guid: 5c8734319882c4247be8cec476345458, type: 3}
       propertyPath: m_Name
-      value: MainPlayer 0.04v Variant
+      value: MainPlayer v0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5810186177619672947, guid: 5c8734319882c4247be8cec476345458, type: 3}
       propertyPath: m_Enabled
@@ -163,6 +164,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7052610569154784225, guid: 5c8734319882c4247be8cec476345458, type: 3}
+      propertyPath: swordCollider
+      value: 
+      objectReference: {fileID: 1529075069303394748}
     - target: {fileID: 7488368073409512592, guid: 5c8734319882c4247be8cec476345458, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -216,7 +221,8 @@ PrefabInstance:
       value: 2.65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6680571371417888547, guid: 5c8734319882c4247be8cec476345458, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6357950857396907919, guid: 5c8734319882c4247be8cec476345458, type: 3}
       insertIndex: -1
@@ -232,11 +238,6 @@ PrefabInstance:
 --- !u!212 &1284452334889812485 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 215092465011511706, guid: 5c8734319882c4247be8cec476345458, type: 3}
-  m_PrefabInstance: {fileID: 1382433437014070175}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &2413400680442237904 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 3625816352518471759, guid: 5c8734319882c4247be8cec476345458, type: 3}
   m_PrefabInstance: {fileID: 1382433437014070175}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &3114208311479570112 stripped
@@ -257,8 +258,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swingCooldown: 1
-  swordCollider: {fileID: 2413400680442237904}
   animator: {fileID: 3714511791046296640}
+  swordCollider: {fileID: 0}
+  canSwing: 1
 --- !u!114 &7260208910217978155
 MonoBehaviour:
   m_ObjectHideFlags: 0

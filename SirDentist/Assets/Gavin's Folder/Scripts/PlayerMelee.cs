@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class PlayerMelee : MonoBehaviour
 {
-    public float swingCooldown = 0.1f;
+    public float swingCooldown = 0.01f;
     public Animator animator;
     public Collider2D swordCollider;
-    private bool canSwing = true;
+    public bool canSwing = true;
 
     void Start()
     {
@@ -22,6 +22,7 @@ public class PlayerMelee : MonoBehaviour
         {
             SwingSword();
         }
+
     }
 
     void SwingSword()
@@ -29,10 +30,10 @@ public class PlayerMelee : MonoBehaviour
         
         // Enable the collider when swinging the sword
         Debug.Log("Sword Enabled");
-        swordCollider.enabled = true;
-       //animator.SetBool("Swing", true);
-	   //animator.SetTrigger("Swing");
-       StartCoroutine(SwingCooldown());
+        //swordCollider.enabled = true;
+        //animator.SetBool("Swing", true);
+        animator.SetTrigger("Swing");
+        StartCoroutine(SwingCooldown());
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -79,16 +80,31 @@ public class PlayerMelee : MonoBehaviour
     IEnumerator SwingCooldown()
     {   
         canSwing = false;
-        // Wait for the specified cooldown duration
-        yield return new WaitForSeconds(swingCooldown);
+        //How long the collider will be out
+        swordCollider.enabled = true;
+        for (int i = 0; i < 160; i++) {
+            yield return null;
+        }
+        swordCollider.enabled = false;
+
+        //Cooldown for sword use
+        for (int i = 0; i < 200; i++)
+        {
+            yield return null;
+        }
+
+        canSwing = true;
+
+        //swordCollider.enabled = false;
+        //yield return new WaitForSeconds(swingCooldown);
+
 
         // Disable the collider after the cooldown
         //animator.SetBool("Swing", false);
-        Debug.Log("Sword Disabled");
-        swordCollider.enabled = false;
-        Debug.Log("Sword status: " + swordCollider.enabled);
+        //Debug.Log("Sword Disabled");
 
-        canSwing = true;
+        //Debug.Log("Sword status: " + swordCollider.enabled);
+
     }
 }
 

@@ -10,6 +10,7 @@ public class AnimationMove : MonoBehaviour
     public bool isAlive = true;
     //private Vector2 velocity;
     public Animator animator;
+    public GameObject swordCollider;
 
     void Start()
     {
@@ -33,6 +34,11 @@ public class AnimationMove : MonoBehaviour
             //if ((horizontalInput < 0 && !FaceRight) || (horizontalInput > 0 && FaceRight))
             //{
             //    playerTurn();
+            //}
+            //if (Input.GetKeyDown(KeyCode.Mouse0) && swordCollider.GetComponent<PlayerMelee>().canSwing)
+            //{
+            //    Debug.Log("Swing animation");
+            //    animator.SetTrigger("Swing");
             //}
         }
     }
