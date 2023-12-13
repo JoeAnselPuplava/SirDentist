@@ -225,7 +225,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4042121503189736799, guid: 5c8734319882c4247be8cec476345458, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5611342683670158039}
+    - targetCorrespondingSourceObject: {fileID: 4042121503189736799, guid: 5c8734319882c4247be8cec476345458, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7260208910217978155}
   m_SourcePrefab: {fileID: 100100000, guid: 5c8734319882c4247be8cec476345458, type: 3}
+--- !u!212 &1284452334889812485 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 215092465011511706, guid: 5c8734319882c4247be8cec476345458, type: 3}
+  m_PrefabInstance: {fileID: 1382433437014070175}
+  m_PrefabAsset: {fileID: 0}
 --- !u!61 &2413400680442237904 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 3625816352518471759, guid: 5c8734319882c4247be8cec476345458, type: 3}
@@ -251,6 +259,19 @@ MonoBehaviour:
   swingCooldown: 1
   swordCollider: {fileID: 2413400680442237904}
   animator: {fileID: 3714511791046296640}
+--- !u!114 &7260208910217978155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3114208311479570112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2867c5658904a0e40a4f6200886dc42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 1284452334889812485}
 --- !u!95 &3714511791046296640 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2351999587579336671, guid: 5c8734319882c4247be8cec476345458, type: 3}
