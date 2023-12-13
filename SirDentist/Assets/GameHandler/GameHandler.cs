@@ -45,6 +45,8 @@ public class GameHandler : MonoBehaviour {
       public void playerGetHit(int damage){
         if (!immune)
         {
+            //Damage flash indicate
+            player.GetComponent<InjureFlash>().injury();
             playerHealth -= damage;
             if (playerHealth >=0){
                 updateStatsDisplay();
