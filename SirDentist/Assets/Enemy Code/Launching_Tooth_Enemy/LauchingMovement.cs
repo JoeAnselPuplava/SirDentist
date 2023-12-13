@@ -45,9 +45,9 @@ public class LauchingMovement : MonoBehaviour
         {
             if (dist < dist_to && canLaunch)
             {
-                
+                windUp();
                 StartCoroutine(launching());
-                animator.SetBool("charging",false);
+                
                 StartCoroutine(cooldown());
             }
             else
@@ -76,10 +76,11 @@ public class LauchingMovement : MonoBehaviour
 
         StartCoroutine(stopMoving());
 
-
+        
         yield return new WaitForSeconds(1.5f);
+        animator.SetBool("charging", false);
         moveSpeed = oldSpeed;
-        windUp();
+        
         Vector2 force = new Vector2(player.transform.position.x - transform.position.x,
                                     player.transform.position.y - transform.position.y);
         rb.AddForce(force*200);
