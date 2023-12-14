@@ -5,8 +5,8 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    public Queue<string> titles;
-    public Queue<string> lines;
+    public string[] titles;
+    public string[] lines;
     public TMP_Text titlebox;
     public TMP_Text textbox;
 
@@ -14,50 +14,58 @@ public class DialogueManager : MonoBehaviour
 
     public bool talking = false;
 
-    //public CameraFollow2DLERP camerascript;
-    //float oldcameradist;
-    // Start is called before the first frame update
+    int currentSentenceIndex;
+
     void Start()
     {
-        titles = new Queue<string>();
-        lines = new Queue<string>();
-        //camerascript = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow2DLERP>();
+        // Initialize other variables or components if needed
     }
 
-    public void StartDialogue(Dialogue dialogue){
-        //Show box and freeze time
+    public void StartDialogue(Dialogue dialogue)
+    {
         dialogueBox.SetActive(true);
         talking = true;
-        lines.Clear();
-        //Shift Camera down
-        //oldcameradist = camerascript.up;
-        //camerascript.up = 0;
-        
-        foreach (string sentence in dialogue.sentences){
-            lines.Enqueue(sentence);
+
+        lines = new string[dialogue.sentences.Length];
+        titles = new string[dialogue.titles.Length];
+
+        for (int i = 0; i < dialogue.sentences.Length; i++)
+        {
+            lines[i] = dialogue.sentences[i];
         }
-        foreach (string title in dialogue.titles){
-            titles.Enqueue(title);
+
+        for (int i = 0; i < dialogue.titles.Length; i++)
+        {
+            titles[i] = dialogue.titles[i];
         }
-        //DisplayNextSentence();
+
+        currentSentenceIndex = 0;
+        DisplayNextSentence();
     }
 
-    public void DisplayNextSentence(){
-        if(lines.Count == 0){
+    public void DisplayNextSentence()
+    {
+        if (currentSentenceIndex == lines.Length)
+        {
             EndDialogue();
-            //Start time up again close box
             dialogueBox.SetActive(false);
             return;
         }
-        string title = titles.Dequeue();
+
+        string title = titles[currentSentenceIndex];
         titlebox.text = title;
-        string sentence = lines.Dequeue();
+
+        string sentence = lines[currentSentenceIndex];
         textbox.text = sentence;
+
+        currentSentenceIndex++;
     }
-    public void EndDialogue(){
+
+    public void EndDialogue()
+    {
         Debug.Log("End of Convo");
         talking = false;
-        //camerascript.up = oldcameradist;
+        // Perform any other necessary actions upon ending dialogue
     }
 }
 

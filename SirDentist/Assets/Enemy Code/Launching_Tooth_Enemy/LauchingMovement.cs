@@ -21,7 +21,8 @@ public class LauchingMovement : MonoBehaviour
     public AudioClip chargeUpAudioClip;
     private AudioSource AudSource;
     
-
+    float stuntime = 1.5f;
+    float pastms;
     public float stunheight = 1f;
     public GameObject stunanimation;
 
@@ -225,6 +226,21 @@ public class LauchingMovement : MonoBehaviour
             Debug.Log("got hit");
             grounded = false;
         }
+    }
+
+
+    public void stuned(){
+        Debug.Log("Stunned");
+        StartCoroutine(stun());
+    }
+    
+    private IEnumerator stun(){
+        GetComponent<EyeMovement>().moveSpeed = 0;
+        GameObject stunani = Instantiate(stunanimation,new Vector3(transform.position.x,transform.position.y + stunheight,transform.position.z), Quaternion.identity);
+        yield return new WaitForSeconds(stuntime);
+        Debug.Log("unfreeze");
+        Destroy(stunani);
+        moveSpeed = pastms;
     }
 }
 

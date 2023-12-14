@@ -511,6 +511,8 @@ MonoBehaviour:
   jumpForce: 10
   dist_to: 7
   chargeUpAudioClip: {fileID: 8300000, guid: 30da91a52f6594a8799f2936ede2dace, type: 3}
+  stunheight: 1
+  stunanimation: {fileID: 5516828199995968995, guid: 8f16091fee80b49469428eb310868405, type: 3}
 --- !u!114 &3803264185558283323
 MonoBehaviour:
   m_ObjectHideFlags: 0

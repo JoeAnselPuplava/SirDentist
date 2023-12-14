@@ -119,7 +119,7 @@ public class ToothDamage : MonoBehaviour
             AudioSource.PlayClipAtPoint(hurt, transform.position);
             health -= damage;
             checkHealth();
-            StartCoroutine(stun());
+            GetComponent<LauchingMovement>().stuned();
         }
     }
 
@@ -135,12 +135,7 @@ public class ToothDamage : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         Eimmune = false;
     }
-    private IEnumerator stun(){
-        float pastms = GetComponent<LauchingMovement>().moveSpeed;
-        GetComponent<LauchingMovement>().moveSpeed = 0;
-        yield return new WaitForSeconds(stuntime);
-        GetComponent<LauchingMovement>().moveSpeed = pastms;
-    }
+
     private IEnumerator backupdeath(){
         Debug.Log("test");
         yield return new WaitForSeconds(1.5f);

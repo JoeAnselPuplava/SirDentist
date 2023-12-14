@@ -423,6 +423,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   jumpForce: 10
+  stunheight: 1
+  stunanimation: {fileID: 5516828199995968995, guid: 8f16091fee80b49469428eb310868405, type: 3}
 --- !u!114 &6772271493865409112
 MonoBehaviour:
   m_ObjectHideFlags: 0
