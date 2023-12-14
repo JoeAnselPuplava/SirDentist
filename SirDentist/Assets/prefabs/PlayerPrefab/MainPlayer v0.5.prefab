@@ -122,15 +122,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6357950857396907919, guid: 5c8734319882c4247be8cec476345458, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6357950857396907919, guid: 5c8734319882c4247be8cec476345458, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.31143284
+      value: -166.06993
       objectReference: {fileID: 0}
     - target: {fileID: 6357950857396907919, guid: 5c8734319882c4247be8cec476345458, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.7028112
+      value: 1.0349741
       objectReference: {fileID: 0}
     - target: {fileID: 6357950857396907919, guid: 5c8734319882c4247be8cec476345458, type: 3}
       propertyPath: m_LocalPosition.z
@@ -230,9 +230,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4042121503189736799, guid: 5c8734319882c4247be8cec476345458, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5611342683670158039}
-    - targetCorrespondingSourceObject: {fileID: 4042121503189736799, guid: 5c8734319882c4247be8cec476345458, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 7260208910217978155}
   m_SourcePrefab: {fileID: 100100000, guid: 5c8734319882c4247be8cec476345458, type: 3}
 --- !u!212 &1284452334889812485 stripped
@@ -245,22 +242,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4042121503189736799, guid: 5c8734319882c4247be8cec476345458, type: 3}
   m_PrefabInstance: {fileID: 1382433437014070175}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5611342683670158039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3114208311479570112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d651a467ca9caea42b7675a8610cdd01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swingCooldown: 1
-  animator: {fileID: 3714511791046296640}
-  swordCollider: {fileID: 0}
-  canSwing: 1
 --- !u!114 &7260208910217978155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,11 +255,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 1284452334889812485}
---- !u!95 &3714511791046296640 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2351999587579336671, guid: 5c8734319882c4247be8cec476345458, type: 3}
-  m_PrefabInstance: {fileID: 1382433437014070175}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5410117812386593808 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6357950857396907919, guid: 5c8734319882c4247be8cec476345458, type: 3}

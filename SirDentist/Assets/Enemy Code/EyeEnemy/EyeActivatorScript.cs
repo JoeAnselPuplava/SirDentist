@@ -24,7 +24,7 @@ public class EyeActivatorScript : MonoBehaviour
             once = false;
             foreach (GameObject enemy in enemies)
             {
-                enemy.GetComponent<EnemyMovement>().moveSpeed = speed;
+                enemy.GetComponent<EyeMovement>().moveSpeed = speed;
             }
         }
     }
