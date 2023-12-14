@@ -6,7 +6,7 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     public Queue<string> titles;
-    public Queue<string> sentences;
+    public Queue<string> lines;
     public TMP_Text titlebox;
     public TMP_Text textbox;
 
@@ -20,7 +20,7 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         titles = new Queue<string>();
-        sentences = new Queue<string>();
+        lines = new Queue<string>();
         //camerascript = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow2DLERP>();
     }
 
@@ -28,12 +28,13 @@ public class DialogueManager : MonoBehaviour
         //Show box and freeze time
         dialogueBox.SetActive(true);
         talking = true;
-        sentences.Clear();
+        lines.Clear();
         //Shift Camera down
         //oldcameradist = camerascript.up;
         //camerascript.up = 0;
+        lines.Enqueue("Test");
         foreach (string sentence in dialogue.sentences){
-            sentences.Enqueue(sentence);
+            lines.Enqueue(sentence);
         }
         foreach (string title in dialogue.titles){
             titles.Enqueue(title);
@@ -42,7 +43,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void DisplayNextSentence(){
-        if(sentences.Count == 0){
+        if(lines.Count == 0){
             EndDialogue();
             //Start time up again close box
             dialogueBox.SetActive(false);
@@ -50,7 +51,7 @@ public class DialogueManager : MonoBehaviour
         }
         string title = titles.Dequeue();
         titlebox.text = title;
-        string sentence = sentences.Dequeue();
+        string sentence = lines.Dequeue();
         textbox.text = sentence;
     }
     public void EndDialogue(){
