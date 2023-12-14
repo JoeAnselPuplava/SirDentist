@@ -32,16 +32,14 @@ public class DialogueManager : MonoBehaviour
         //Shift Camera down
         //oldcameradist = camerascript.up;
         //camerascript.up = 0;
-        lines.Enqueue("Test");
-        /*
+        
         foreach (string sentence in dialogue.sentences){
             lines.Enqueue(sentence);
         }
         foreach (string title in dialogue.titles){
             titles.Enqueue(title);
         }
-        DisplayNextSentence();
-        */
+        //DisplayNextSentence();
     }
 
     public void DisplayNextSentence(){

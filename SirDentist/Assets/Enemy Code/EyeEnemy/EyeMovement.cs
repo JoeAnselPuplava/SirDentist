@@ -19,6 +19,9 @@ public class EyeMovement : MonoBehaviour
     float stuntime = 1.5f;
     float pastms;
 
+    public float stunheight = 1f;
+    public GameObject stunanimation;
+
 
     // Start is called before the first frame update
     void Start()
@@ -187,8 +190,10 @@ public class EyeMovement : MonoBehaviour
     
     private IEnumerator stun(){
         GetComponent<EyeMovement>().moveSpeed = 0;
+        GameObject stunani = Instantiate(stunanimation,new Vector3(transform.position.x,transform.position.y + stunheight,transform.position.z), Quaternion.identity);
         yield return new WaitForSeconds(stuntime);
         Debug.Log("unfreeze");
+        Destroy(stunani);
         moveSpeed = pastms;
     }
     

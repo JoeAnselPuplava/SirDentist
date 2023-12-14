@@ -22,6 +22,8 @@ public class LauchingMovement : MonoBehaviour
     private AudioSource AudSource;
     
 
+    public float stunheight = 1f;
+    public GameObject stunanimation;
 
     // Start is called before the first frame update
     void Start()
