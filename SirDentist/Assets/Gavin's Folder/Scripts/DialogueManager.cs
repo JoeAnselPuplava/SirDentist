@@ -14,14 +14,14 @@ public class DialogueManager : MonoBehaviour
 
     public bool talking = false;
 
-    public CameraFollow2DLERP camerascript;
-    float oldcameradist;
+    //public CameraFollow2DLERP camerascript;
+    //float oldcameradist;
     // Start is called before the first frame update
     void Start()
     {
         titles = new Queue<string>();
         sentences = new Queue<string>();
-        camerascript = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow2DLERP>();
+        //camerascript = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow2DLERP>();
     }
 
     public void StartDialogue(Dialogue dialogue){
@@ -30,8 +30,8 @@ public class DialogueManager : MonoBehaviour
         talking = true;
         sentences.Clear();
         //Shift Camera down
-        oldcameradist = camerascript.up;
-        camerascript.up = 0;
+        //oldcameradist = camerascript.up;
+        //camerascript.up = 0;
         foreach (string sentence in dialogue.sentences){
             sentences.Enqueue(sentence);
         }
@@ -56,6 +56,6 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue(){
         Debug.Log("End of Convo");
         talking = false;
-        camerascript.up = oldcameradist;
+        //camerascript.up = oldcameradist;
     }
 }
