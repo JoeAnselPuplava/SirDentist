@@ -23,7 +23,6 @@ public class LauchingMovement : MonoBehaviour
     
     float stuntime = 1.5f;
     float pastms;
-    public float stunheight = 1f;
     public GameObject stunanimation;
 
     // Start is called before the first frame update
@@ -35,6 +34,8 @@ public class LauchingMovement : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         ground = GameObject.FindGameObjectsWithTag("Ground");
         AudSource = GetComponent<AudioSource>();
+        //Hide stun animation
+        stunanimation.SetActive(false);
     }
 
     // Update is called once per frame
@@ -236,10 +237,11 @@ public class LauchingMovement : MonoBehaviour
     
     private IEnumerator stun(){
         GetComponent<EyeMovement>().moveSpeed = 0;
-        GameObject stunani = Instantiate(stunanimation,new Vector3(transform.position.x,transform.position.y + stunheight,transform.position.z), Quaternion.identity);
+        rb.velocity = new Vector2(0, 0);
+        stunanimation.SetActive(true);
         yield return new WaitForSeconds(stuntime);
         Debug.Log("unfreeze");
-        Destroy(stunani);
+        stunanimation.SetActive(false);
         moveSpeed = pastms;
     }
 }
