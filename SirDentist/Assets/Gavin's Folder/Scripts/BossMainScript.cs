@@ -129,7 +129,7 @@ public class BossMainScript : MonoBehaviour
 
     IEnumerator footpause(Vector3 position, GameObject shadow){
         yield return new WaitForSeconds(warningtime);
-        GameObject foot = Instantiate(footprefab, new Vector3(position.x,position.y,position.z-3f), Quaternion.identity);
+        GameObject foot = Instantiate(footprefab, new Vector3(position.x,position.y,position.z-3f), Quaternion.Euler(new Vector3(0, (int)Random.Range(0f, 2f)*180, 0)));
         foot.GetComponent<BossFootScript>().pausetime = foot.GetComponent<BossFootScript>().pausetime / round;
         foot.GetComponent<BossFootScript>().round = round;
         foot.GetComponent<BossFootScript>().shadow = shadow;
