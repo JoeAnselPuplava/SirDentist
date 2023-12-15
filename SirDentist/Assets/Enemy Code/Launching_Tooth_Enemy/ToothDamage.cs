@@ -18,6 +18,8 @@ public class ToothDamage : MonoBehaviour
     public float stuntime = 0.7f;
     private bool Eimmune = false;
 
+    private bool canhit = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +35,7 @@ public class ToothDamage : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
 
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && canhit)
         {
 
             StartCoroutine(waitImmune());
@@ -60,7 +62,7 @@ public class ToothDamage : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && canhit)
         {
             StartCoroutine(waitImmune());
         }
@@ -82,9 +84,11 @@ public class ToothDamage : MonoBehaviour
 
     IEnumerator waitImmune()
     {
+        canhit = false;
         AudioSource.PlayClipAtPoint(hit, transform.position);
         gameHandler.playerGetHit(attackpower);
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.8f);
+        canhit = true;
     }
 
     public void flailDamage(float damage)
