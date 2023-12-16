@@ -12,9 +12,11 @@ public class EyeMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private bool shouldMove = true;
-    private bool grounded = true;
     private Animator animator;
     private Collider2D enemyCollider;
+
+    public Transform feet;
+    public LayerMask groundLayer;
 
     float stuntime = 1.5f;
     float pastms;
@@ -38,18 +40,11 @@ public class EyeMovement : MonoBehaviour
     void Update()
     {
         shouldStab();
-        touchingGrass();
 
-        //Debug.Log("What: " + grounded);
-        if (shouldMove && grounded)
+        if (shouldMove && IsGrounded())
         {
             TowardsPlayer();
         }
-        else
-        {
-            standIdle();
-        }
-
     }
 
     private void shouldStab()
@@ -84,11 +79,6 @@ public class EyeMovement : MonoBehaviour
             animator.SetBool("left", false);
         }
 
-    }
-
-    void standIdle()
-    {
-        //StandIdle Animation
     }
 
     IEnumerator moveLeft()
@@ -149,38 +139,14 @@ public class EyeMovement : MonoBehaviour
 
     }
 
-    private void touchingGrass()
+    public bool IsGrounded()
     {
-        //if (other.gameObject.tag == ("Ground"))
-
-        ground = GameObject.FindGameObjectsWithTag("Ground");
-        Collider2D groundCollider;
-
-        foreach (GameObject floors in ground)
+        Collider2D groundCheck = Physics2D.OverlapCircle(feet.position, .2f, groundLayer);
+        if (groundCheck != null)
         {
-
-            groundCollider = floors.GetComponent<Collider2D>();
-
-            if (groundCollider != null)
-            {
-                if (enemyCollider.IsTouching(groundCollider))
-                {
-                    //Debug.Log("Grounded true");
-                    grounded = true;
-                }
-            }
+            return true;
         }
-
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        //Debug.Log("No longer in contact with " + (collision.gameObject.tag));
-        if (collision.gameObject.tag == ("Ground"))
-        {
-            //Debug.Log("Grounded false");
-            grounded = false;
-        }
+        return false;
     }
 
     public void stuned(){

@@ -21,18 +21,13 @@ public class PickUp : MonoBehaviour{
 
                   GetComponent<Collider2D>().enabled = false;
                   //GetComponent< AudioSource>().Play();
-                  StartCoroutine(DestroyThis());
-
+              
                   if (isCoinPickUp == true) {
                         gameHandler.playerGetCoins(1);
                         //playerPowerupVFX.powerup();
                   }
-            }
-      }
-
-      IEnumerator DestroyThis(){
-            yield return new WaitForSeconds(0.3f);
-            Destroy(gameObject);
+                  Destroy(gameObject);
+        }
       }
 
 }

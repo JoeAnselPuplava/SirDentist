@@ -20,7 +20,10 @@ public class LauchingMovement : MonoBehaviour
     private Collider2D enemyCollider;
     public AudioClip chargeUpAudioClip;
     private AudioSource AudSource;
-    
+
+    public Transform feet;
+    public LayerMask groundLayer;
+
     float stuntime = 1.5f;
     float pastms;
     public GameObject stunanimation;
@@ -43,9 +46,8 @@ public class LauchingMovement : MonoBehaviour
     {
         //shouldStab();
         float dist = Vector3.Distance(player.transform.position, transform.position);
-        touchingGrass();
         
-        if (shouldMove && grounded)
+        if (shouldMove && IsGrounded())
         {
             if (dist < dist_to && canLaunch)
             {
@@ -58,10 +60,6 @@ public class LauchingMovement : MonoBehaviour
             {
                 TowardsPlayer();
             }                        
-        }
-        else
-        {
-            standIdle();
         }
 
     }
@@ -111,11 +109,6 @@ public class LauchingMovement : MonoBehaviour
             StartCoroutine(moveRight());
         }
 
-    }
-
-    void standIdle()
-    {
-        //StandIdle Animation
     }
 
     IEnumerator moveLeft()
@@ -187,51 +180,28 @@ public class LauchingMovement : MonoBehaviour
 
     }
 
-    private void touchingGrass()
+    public bool IsGrounded()
     {
-        //if (other.gameObject.tag == ("Ground"))
-
-        ground = GameObject.FindGameObjectsWithTag("Ground");
-        Collider2D groundCollider;
-
-        foreach (GameObject floors in ground)
+        Collider2D groundCheck = Physics2D.OverlapCircle(feet.position, .2f, groundLayer);
+        if (groundCheck != null)
         {
-
-            groundCollider = floors.GetComponent<Collider2D>();
-
-            if (groundCollider != null)
-            {
-                if (enemyCollider.IsTouching(groundCollider))
-                {
-                    animator.SetBool("notShootin", true);
-                    //Debug.Log("Grounded true");
-                    grounded = true;
-                }
-            }
+            return true;
         }
-
+        return false;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        //Debug.Log("No longer in contact with " + (collision.gameObject.tag));
-        if (collision.gameObject.tag == ("Ground"))
-        {
-            
-            //Debug.Log("Grounded false");
-            grounded = false;
-        }
         if (collision.gameObject.tag == ("Player")||collision.gameObject.tag == ("Flail"))
         {
             animator.SetBool("notShootin", true);
-            Debug.Log("got hit");
-            grounded = false;
+            //Debug.Log("got hit");
         }
     }
 
 
     public void stuned(){
-        Debug.Log("Stunned");
+        //Debug.Log("Stunned");
         StartCoroutine(stun());
     }
     
@@ -240,7 +210,7 @@ public class LauchingMovement : MonoBehaviour
         rb.velocity = new Vector2(0, 0);
         stunanimation.SetActive(true);
         yield return new WaitForSeconds(stuntime);
-        Debug.Log("unfreeze");
+        //Debug.Log("unfreeze");
         stunanimation.SetActive(false);
         moveSpeed = pastms;
     }
