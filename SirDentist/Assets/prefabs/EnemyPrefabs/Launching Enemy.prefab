@@ -527,9 +527,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b74c0be2c1a804ffe893be4f99861818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 10
   jumpForce: 10
-  dist_to: 7
+  dist_to: 20
   chargeUpAudioClip: {fileID: 8300000, guid: 30da91a52f6594a8799f2936ede2dace, type: 3}
   feet: {fileID: 2814983350847639636}
   groundLayer:
