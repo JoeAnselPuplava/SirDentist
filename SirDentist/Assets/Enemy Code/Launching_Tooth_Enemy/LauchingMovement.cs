@@ -14,7 +14,6 @@ public class LauchingMovement : MonoBehaviour
     private GameObject[] ground;
     private Rigidbody2D rb;
     private bool shouldMove = true;
-    private bool grounded = true;
     private bool canLaunch = true;
     private Animator animator;
     private Collider2D enemyCollider;
@@ -49,12 +48,10 @@ public class LauchingMovement : MonoBehaviour
         
         if (shouldMove && IsGrounded())
         {
+            
             if (dist < dist_to && canLaunch)
             {
-                windUp();
-                StartCoroutine(launching());
-                
-                StartCoroutine(cooldown());
+                StartCoroutine(launching());      
             }
             else
             {
@@ -77,15 +74,20 @@ public class LauchingMovement : MonoBehaviour
         moveSpeed = 0;
 
         StartCoroutine(stopMoving());
-
-        
+        windUp();
         yield return new WaitForSeconds(1.5f);
         animator.SetBool("charging", false);
-        moveSpeed = oldSpeed;
+        Debug.Log(canLaunch);
+        if (canLaunch)
+        {
+            moveSpeed = oldSpeed;
+
+            Vector2 force = new Vector2(player.transform.position.x - transform.position.x,
+                                        player.transform.position.y - transform.position.y);
+            rb.AddForce(force * 200);
+            StartCoroutine(cooldown());
+        }
         
-        Vector2 force = new Vector2(player.transform.position.x - transform.position.x,
-                                    player.transform.position.y - transform.position.y);
-        rb.AddForce(force*200);
     }
 
     IEnumerator cooldown()
@@ -98,11 +100,11 @@ public class LauchingMovement : MonoBehaviour
 
     void TowardsPlayer()
     {
+        animator.SetBool("notShootin", false);
+        animator.SetBool("charging", false);
         if (Mathf.Round(player.transform.position.x * 10f) - Mathf.Round(transform.position.x * 10f) < 0)
         {
             StartCoroutine(moveLeft());
-
-
         }
         else if (Mathf.Round(player.transform.position.x * 10f) - Mathf.Round(transform.position.x * 10f) > 0)
         {
@@ -154,7 +156,7 @@ public class LauchingMovement : MonoBehaviour
         
         shouldMove = false;
         rb.velocity = new Vector2(0, 0);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.5f);
         shouldMove = true;
 
 
@@ -175,6 +177,14 @@ public class LauchingMovement : MonoBehaviour
             animator.SetBool("notShootin",true);
             animator.SetBool("charging",false);
             StartCoroutine(stopMoving());
+        }
+        else if (other.gameObject.tag == "Ground") {
+            animator.SetBool("notShootin", true);
+            animator.SetBool("charging", false);
+        }
+        else if (other.gameObject.tag == "Sword")
+        {
+            stuned();
         }
 
 
@@ -206,11 +216,14 @@ public class LauchingMovement : MonoBehaviour
     }
     
     private IEnumerator stun(){
-        GetComponent<EyeMovement>().moveSpeed = 0;
+        moveSpeed = 0;
+        canLaunch = false;
         rb.velocity = new Vector2(0, 0);
         stunanimation.SetActive(true);
+        animator.SetBool("notShootin", true);
         yield return new WaitForSeconds(stuntime);
-        //Debug.Log("unfreeze");
+        Debug.Log("unfreeze");
+        canLaunch = true;
         stunanimation.SetActive(false);
         moveSpeed = pastms;
     }

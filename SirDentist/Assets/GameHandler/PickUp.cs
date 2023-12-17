@@ -17,7 +17,9 @@ public class PickUp : MonoBehaviour{
 
       public void OnTriggerEnter2D (Collider2D other){
             if ((playerCoin && other.gameObject.tag == "Player") ||
-               (!playerCoin && other.gameObject.tag == "Flail")){
+               (!playerCoin && other.gameObject.tag == "Flail") ||
+               (!playerCoin && other.gameObject.tag == "Sword"))
+        {
 
                   GetComponent<Collider2D>().enabled = false;
                   //GetComponent< AudioSource>().Play();

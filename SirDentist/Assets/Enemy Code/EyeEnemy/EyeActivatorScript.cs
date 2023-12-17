@@ -26,6 +26,7 @@ public class EyeActivatorScript : MonoBehaviour
             {
                 enemy.GetComponent<EyeMovement>().moveSpeed = speed;
             }
+            Destroy(gameObject);
         }
     }
 
