@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stomach.unity
     guid: 5a36a28407d894f4483f10d3fedd38ae
+  - enabled: 1
+    path: Assets/Scenes/finalThroat.unity
+    guid: 77ef5bd275768574f8f316e1a7665759
   m_configObjects: {}
