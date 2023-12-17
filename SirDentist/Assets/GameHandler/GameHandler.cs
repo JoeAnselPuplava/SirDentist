@@ -149,7 +149,7 @@ public class GameHandler : MonoBehaviour {
       public void ReplayLastLevel() {
             Time.timeScale = 1f;
              GameHandler_PauseMenu.GameisPaused = false;
-            SceneManager.LoadScene(lastLevelDied);
+            SceneManager.LoadScene(sceneName);
              // Reset all static variables here, for new games:
             playerHealth = StartPlayerHealth;
             Lives = maxLives;
