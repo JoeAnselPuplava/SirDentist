@@ -127,7 +127,7 @@ public class GameHandler : MonoBehaviour {
             //SceneManager.LoadScene("Mouth_Level");
 
             //Change by Joe to tutorial level
-            SceneManager.LoadScene("Tutorial_1");
+            SceneManager.LoadScene("Tutorial_1_Arted_V2");
         // Reset time scale to 1 when starting the game
         Time.timeScale = 1f;
             // Reset the paused state if it was paused before
