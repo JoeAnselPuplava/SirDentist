@@ -15,6 +15,8 @@ public class PlayerJump : MonoBehaviour {
 
     public bool canJump = false; // Initially, the player can jump
 
+    public bool canMove = true;
+
     void Start() {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -22,7 +24,7 @@ public class PlayerJump : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetButtonDown("Jump")&& IsGrounded() && isAlive)
+        if (Input.GetButtonDown("Jump")&& IsGrounded() && isAlive && canMove)
         {
             canJump = true;
         }

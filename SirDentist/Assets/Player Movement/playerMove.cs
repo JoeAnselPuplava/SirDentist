@@ -12,6 +12,8 @@ public class PlayerMove : MonoBehaviour
     private Vector2 velocity;
     public Animator animator;
     private float horizontalInput = 0f;
+    
+    public bool canMove = true;
 
     void Start()
     {
@@ -26,7 +28,7 @@ public class PlayerMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isAlive)
+        if (isAlive && canMove)
         {
             //float horizontalInput = Input.GetAxis("Horizontal");
             if(Mathf.Abs(horizontalInput) > 0.1f){

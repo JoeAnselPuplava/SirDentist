@@ -71,6 +71,10 @@ public class PlayerMelee : MonoBehaviour
             bossDamage.meleeDamage(10);
             other.GetComponent<BossFootScript>().freeze();
         }
+        if(other.gameObject.tag == "StartingLeg"){
+            BossSceneManager manager = GameObject.FindGameObjectWithTag("BossManager").GetComponent<BossSceneManager>();
+            manager.attacked = true;
+        }
         if(other.gameObject.tag == "BreakWall")
         {
             other.GetComponent<BreakableWall>().hitByWeapon();

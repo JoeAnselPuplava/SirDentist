@@ -54,6 +54,10 @@ public class FlailDamageScript : MonoBehaviour
             BossMainScript bossDamage = GameObject.FindGameObjectWithTag("BossObject").GetComponent<BossMainScript>();
             bossDamage.flailDamage(damage * damagemulti);
         }
+        if(other.gameObject.tag == "StartingLeg"){
+            BossSceneManager manager = GameObject.FindGameObjectWithTag("BossManager").GetComponent<BossSceneManager>();
+            manager.attacked = true;
+        }
     }
 
 }

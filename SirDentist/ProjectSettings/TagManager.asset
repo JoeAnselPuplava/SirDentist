@@ -18,6 +18,8 @@ TagManager:
   - Sword
   - BreakWall
   - DialogueManager
+  - BossManager
+  - StartingLeg
   layers:
   - Default
   - TransparentFX
