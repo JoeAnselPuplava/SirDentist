@@ -62,12 +62,10 @@ public class GameHandler : MonoBehaviour {
                   updateStatsDisplay();
             }
 
-        if (playerHealth <= 0 && (Lives <= 0)){
+        if (playerHealth <= 0){
                 playerHealth = 0;
                 updateStatsDisplay();
                 playerDies();
-        } else if (playerHealth <= 0){ 
-          UpdateLives(-1); 
         }
       }
 
@@ -118,7 +116,7 @@ public class GameHandler : MonoBehaviour {
       IEnumerator DeathPause(){
             //player.GetComponent<PlayerMove>().isAlive = false;
             //player.GetComponent<PlayerJump>().isAlive = false;
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(0.1f);
             SceneManager.LoadScene("EndLose");
       }
 
