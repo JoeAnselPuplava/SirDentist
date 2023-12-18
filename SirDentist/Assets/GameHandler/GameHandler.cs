@@ -154,7 +154,19 @@ public class GameHandler : MonoBehaviour {
             coins = gotCoins;
       }
 
-      public void QuitGame() {
+    // Replay the Level where you died
+    public void ReplayLastLevelDeath()
+    {
+        Time.timeScale = 1f;
+        GameHandler_PauseMenu.GameisPaused = false;
+        SceneManager.LoadScene(lastLevelDied);
+        // Reset all static variables here, for new games:
+        playerHealth = StartPlayerHealth;
+        Lives = maxLives;
+        coins = gotCoins;
+    }
+
+    public void QuitGame() {
                 #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;
                 #else
