@@ -127,7 +127,7 @@ public class EnemyDamage : MonoBehaviour
             AudioSource.PlayClipAtPoint(explode, transform.position);
             animator.SetTrigger("die");//this plays the death animation (in this case eyeball exploding)
             //in animator killMe() is called after death anim finishes playing
-            print("dying");
+            //print("dying");
             StartCoroutine(backupdeath());
         }
     }
