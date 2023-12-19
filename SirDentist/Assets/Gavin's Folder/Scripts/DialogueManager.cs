@@ -16,10 +16,14 @@ public class DialogueManager : MonoBehaviour
 
     int currentSentenceIndex;
 
+    Rigidbody2D playerRB;
+
     void Start()
     {
         // Initialize other variables or components if needed
+        playerRB = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
     }
+
 
     public void StartDialogue(Dialogue dialogue)
     {
@@ -38,6 +42,9 @@ public class DialogueManager : MonoBehaviour
         {
             titles[i] = dialogue.titles[i];
         }
+
+        //Freeze player
+        playerRB.constraints = RigidbodyConstraints2D.FreezeAll;
 
         currentSentenceIndex = 0;
         DisplayNextSentence();
@@ -66,6 +73,7 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("End of Convo");
         talking = false;
         // Perform any other necessary actions upon ending dialogue
+        playerRB.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 }
 

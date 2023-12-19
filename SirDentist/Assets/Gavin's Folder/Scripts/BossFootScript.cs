@@ -31,12 +31,15 @@ public class BossFootScript : MonoBehaviour
 
     public GameObject shadow;
 
+    public GameObject stunAnimation;
+
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         groundlevel = GameObject.FindGameObjectWithTag("groundlevel").transform;
         gameHandler = GameObject.FindGameObjectWithTag("GameHandler").GetComponent<GameHandler>();
+        stunAnimation.SetActive(false);
         if (gameHandler == null)
         {
             Debug.LogError("GameHandler not found!");
@@ -124,6 +127,7 @@ public class BossFootScript : MonoBehaviour
         if(rb.velocity == new Vector2(0f,0f) && !frozen){
             Debug.Log("Frozen");
             frozen = true;
+            stunAnimation.SetActive(true);
         }
     }
 
@@ -140,6 +144,7 @@ public class BossFootScript : MonoBehaviour
         else{
             yield return new WaitForSeconds(pausetime/2);
             pullUp();
+            stunAnimation.SetActive(false);
         }
     }
 }

@@ -227,6 +227,7 @@ MonoBehaviour:
   - {fileID: 8792242479419311618, guid: 040e67be4ee551b4bb6a5a52572f3c3b, type: 3}
   crashlanding: {fileID: 8300000, guid: 66fa110e0af55f642af4b82d70033b01, type: 3}
   shadow: {fileID: 0}
+  stunAnimation: {fileID: 2684570758651743662}
 --- !u!50 &7546917447612816718
 Rigidbody2D:
   serializedVersion: 4
@@ -414,7 +415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5516828199995968995, guid: 8f16091fee80b49469428eb310868405, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8307214362586303706, guid: 8f16091fee80b49469428eb310868405, type: 3}
       propertyPath: m_RootOrder
@@ -484,5 +485,10 @@ PrefabInstance:
 --- !u!4 &1911518102121761943 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8307214362586303706, guid: 8f16091fee80b49469428eb310868405, type: 3}
+  m_PrefabInstance: {fileID: 7624089377610170445}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2684570758651743662 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5516828199995968995, guid: 8f16091fee80b49469428eb310868405, type: 3}
   m_PrefabInstance: {fileID: 7624089377610170445}
   m_PrefabAsset: {fileID: 0}
