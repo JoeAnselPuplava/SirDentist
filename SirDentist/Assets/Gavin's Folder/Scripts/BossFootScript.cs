@@ -27,7 +27,7 @@ public class BossFootScript : MonoBehaviour
     public int difficulty;
     public GameObject[] enemies;
 
-    public AudioClip crashlanding;
+    public AudioSource crashlanding;
 
     public GameObject shadow;
 
@@ -71,7 +71,7 @@ public class BossFootScript : MonoBehaviour
                 player.GetComponent<Rigidbody2D>().velocity = Vector2.up * (player.GetComponent<PlayerJump>().jumpForce/2);
             }
             //Play SFX
-            //AudioSource.PlayClipAtPoint(crash, transform.position);
+            crashlanding.Play();
             //Spawn Enemy Stuff
             GameObject[] enemycount = GameObject.FindGameObjectsWithTag("Enemy");
             float random = Random.Range(1, 100);

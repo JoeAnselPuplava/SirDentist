@@ -21,7 +21,8 @@ public class StartingFoot : MonoBehaviour
 
     public GameObject player;
 
-    public AudioClip crashlanding;
+    public AudioSource crashlanding;
+
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +49,7 @@ public class StartingFoot : MonoBehaviour
             pause = true;
             rb.velocity = new Vector2(0f,0f);
             //Play SFX
-            //AudioSource.PlayClipAtPoint(crash, transform.position);
+            crashlanding.Play();
             //Spawn Enemy Stuff
             //Start wait perido
         }

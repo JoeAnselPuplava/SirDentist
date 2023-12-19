@@ -15,6 +15,7 @@ public class BossSceneManager : MonoBehaviour
 
     public GameObject bossHealthbar;
     public GameObject choicemenu;
+    public GameObject bossmusic;
 
     public bool attacked = false;
     public bool fighting = false; 
@@ -24,6 +25,7 @@ public class BossSceneManager : MonoBehaviour
         Debug.Log("Start Scene");
         shadow.SetActive(false);
         bossHealthbar.SetActive(false);
+        bossmusic.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player");
         bossMain = GameObject.FindGameObjectWithTag("BossObject").GetComponent<BossMainScript>();
         //Dialogue just fairies and Dentist
@@ -67,6 +69,7 @@ public class BossSceneManager : MonoBehaviour
         //Next needs to give prompt for choicing battle diff
         if(!FindObjectOfType<DialogueManager>().talking && !fighting && dialoguestage ==10){
             Debug.Log("Start Battle!");
+            bossmusic.SetActive(true);
             bossHealthbar.SetActive(true);
             bossMain.fighting = true;
             fighting = true;

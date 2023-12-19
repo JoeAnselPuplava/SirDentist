@@ -27,8 +27,8 @@ public class BossMainScript : MonoBehaviour
     public Text healthbar;
 
     float timePassed = 0f;
-
     public int difficulty = 1;
+
     void Start()
     {
         groundlevel = GameObject.FindGameObjectWithTag("groundlevel").transform;
@@ -50,14 +50,14 @@ public class BossMainScript : MonoBehaviour
         if(bossHealth < (500f * difficulty * 0.8f) && round == 1){
             Debug.Log("Round 2");
             round = 2;
-            spawningspeed = spawningspeed * 0.7f;
+            spawningspeed = spawningspeed * 0.8f;
             warningtime = warningtime * 0.75f;
         }
         else if(bossHealth < (500f * difficulty * 0.4f) && round == 2){
             Debug.Log("Round 3");
             round = 3;
-            spawningspeed = spawningspeed * 0.8f;
-            warningtime = warningtime * 0.7f;
+            spawningspeed = spawningspeed * 0.85f;
+            warningtime = warningtime * 0.8f;
         }
         //Repeating clock for spawner
         timePassed += Time.deltaTime;
