@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InstatiateEnemies : MonoBehaviour
+public class SetFalse : MonoBehaviour
 {
     public List<GameObject> enemiesToSpawn; // List of prefabs to instantiate
     private bool once = false;
@@ -23,7 +23,7 @@ public class InstatiateEnemies : MonoBehaviour
         {
             foreach (GameObject prefab in enemiesToSpawn)
             {
-                prefab.SetActive(true);
+                prefab.SetActive(false);
                 //Debug.Log("Prefab: " + prefab.activeSelf);
 
             }
