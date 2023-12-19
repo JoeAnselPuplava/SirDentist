@@ -17,13 +17,14 @@ public class BossFootScript : MonoBehaviour
     public Transform groundlevel;
 
     bool pause = false;
-    public float pausetime = 3f; 
+    public float pausetime = 4f; 
 
     public GameObject player;
     bool frozen = false;
 
     //Spawning info
     public int round = 1;
+    public int difficulty;
     public GameObject[] enemies;
 
     public AudioClip crashlanding;
@@ -47,6 +48,11 @@ public class BossFootScript : MonoBehaviour
         }
         rb.velocity = baseSpeeddown;
 
+        bossDamage = 15 + (5* difficulty);
+        if(difficulty == 4){
+            bossDamage = 50;
+        }
+
     }
 
     // Update is called once per frame
@@ -66,7 +72,7 @@ public class BossFootScript : MonoBehaviour
             //Spawn Enemy Stuff
             GameObject[] enemycount = GameObject.FindGameObjectsWithTag("Enemy");
             float random = Random.Range(1, 100);
-            if(random < 20f * round && enemycount.Length < round){
+            if(random < 20f * round && enemycount.Length < 2 * (round + difficulty)){
                 //pick enemy type
                 GameObject spawningEnemy;
                 if(random < 30f){

@@ -30,7 +30,7 @@ public class shadowFade : MonoBehaviour
 
         while (currentFadeTime < fadeDuration)
         {
-            float alpha = 1 - (currentFadeTime / fadeDuration);
+            float alpha = originalColor.a - (currentFadeTime / fadeDuration);
             Color newColor = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
             objectRenderer.material.color = newColor;
 
