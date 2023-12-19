@@ -22,7 +22,7 @@ public class BossMainScript : MonoBehaviour
     public Transform groundlevel;
     public Transform leftWall;
     public Transform rightWall;
-    private bool Eimmune = false;
+    public bool Eimmune = false;
 
     public Text healthbar;
 

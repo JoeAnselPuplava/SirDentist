@@ -44,27 +44,35 @@ public class FlailDamageScript : MonoBehaviour
             //Check if Eye Enemy
             EyeDamage EyeDamage = other.gameObject.GetComponent<EyeDamage>();
             if(EyeDamage != null){
+                if(EyeDamage.Eimmune == false){
+                    // Show damage indicator on the enemy
+                    ShowDamageIndicator(damage * damagemulti, other.contacts[0].point);
+                }
                 EyeDamage.flailDamage(damage * damagemulti);
-                // Show damage indicator on the enemy
-                ShowDamageIndicator(damage * damagemulti, other.contacts[0].point);
+                
                 Debug.Log("hit");
             }
             //Check if tooth enemy
             else{
                 ToothDamage toothDamage = other.gameObject.GetComponent<ToothDamage>();
                 if(toothDamage != null){
+                    if(toothDamage.Eimmune == false){
+                        // Show damage indicator on the enemy
+                        ShowDamageIndicator(damage * damagemulti, other.contacts[0].point);
+                    }
                     toothDamage.flailDamage(damage * damagemulti);
-                    // Show damage indicator on the enemy
-                     ShowDamageIndicator(damage * damagemulti, other.contacts[0].point);
+                    
                     Debug.Log("hit2");
                 }
                 //check if ranged enemy
                 else{
                     EnemyDamage rangedDamage = other.gameObject.GetComponent<EnemyDamage>();
                     if(rangedDamage != null){
+                        if(rangedDamage.Eimmune == false){
+                            // Show damage indicator on the enemy
+                            ShowDamageIndicator(damage * damagemulti, other.contacts[0].point);
+                        }
                         rangedDamage.flailDamage(damage * damagemulti);
-                        // Show damage indicator on the enemy
-                        ShowDamageIndicator(damage * damagemulti, other.contacts[0].point);
                         Debug.Log("hit3");
                     }
                 }
@@ -72,12 +80,15 @@ public class FlailDamageScript : MonoBehaviour
         }
         if(other.gameObject.tag == "BossLeg"){
             BossMainScript bossDamage = GameObject.FindGameObjectWithTag("BossObject").GetComponent<BossMainScript>();
+            if(bossDamage.Eimmune == false){
+                // Show damage indicator on the enemy
+                ShowDamageIndicator(damage * damagemulti, other.contacts[0].point);
+            }
             bossDamage.flailDamage(damage * damagemulti);
             ShowDamageIndicator(damage * damagemulti, other.contacts[0].point);
         }
         if(other.gameObject.tag == "StartingLeg"){
             BossSceneManager manager = GameObject.FindGameObjectWithTag("BossManager").GetComponent<BossSceneManager>();
-            ShowDamageIndicator(damage * damagemulti, other.contacts[0].point);
             manager.attacked = true;
         }
 

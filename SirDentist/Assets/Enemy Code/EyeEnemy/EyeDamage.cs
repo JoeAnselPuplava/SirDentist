@@ -15,7 +15,7 @@ public class EyeDamage : MonoBehaviour
     private AudioSource AudSource;
     private GameObject player;
 
-    private bool Eimmune = false;
+    public bool Eimmune = false;
 
     private bool canhit = true;
 
