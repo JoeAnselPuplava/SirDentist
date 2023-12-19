@@ -8,7 +8,7 @@ public class grabKey : MonoBehaviour
 {
     private GameHandler gameHandler;
     private AudioSource grabSound;
-    private bool once = true;
+    public bool once = true;
 
     // Start is called before the first frame update
     void Start()
