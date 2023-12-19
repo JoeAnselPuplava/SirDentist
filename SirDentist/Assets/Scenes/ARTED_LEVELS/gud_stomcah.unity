@@ -38226,7 +38226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5492192735034775429, guid: e2756f5d2d7ec4bac9d3aadc0d2c68a4, type: 3}
       propertyPath: next_scene
-      value: heart_level
+      value: Final Boss
       objectReference: {fileID: 0}
     - target: {fileID: 6539217606867904797, guid: e2756f5d2d7ec4bac9d3aadc0d2c68a4, type: 3}
       propertyPath: m_Name

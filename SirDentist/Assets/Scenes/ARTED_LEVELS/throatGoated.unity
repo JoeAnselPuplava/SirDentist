@@ -5271,7 +5271,7 @@ SpriteRenderer:
   m_Size: {x: 12.8, y: 7.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &291873379 stripped
@@ -13109,7 +13109,7 @@ SpriteRenderer:
   m_Size: {x: 12.8, y: 7.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &748903796
@@ -24217,7 +24217,7 @@ PrefabInstance:
       objectReference: {fileID: 24300002, guid: 56ada04dfec4b6a4bb0cb5246bef34b7, type: 2}
     - target: {fileID: 5492192735034775429, guid: e2756f5d2d7ec4bac9d3aadc0d2c68a4, type: 3}
       propertyPath: next_scene
-      value: Stomach
+      value: gud_stomcah
       objectReference: {fileID: 0}
     - target: {fileID: 6539217606867904797, guid: e2756f5d2d7ec4bac9d3aadc0d2c68a4, type: 3}
       propertyPath: m_Name
@@ -24502,7 +24502,7 @@ SpriteRenderer:
   m_Size: {x: 12.8, y: 7.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1496288123
@@ -33488,7 +33488,7 @@ SpriteRenderer:
   m_Size: {x: 12.8, y: 7.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &2009675661
