@@ -7726,8 +7726,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titles:
   - Stella-eto
+  - Molar
   sentences:
   - How silly! Now get stomped mortal!
+  - Look out Sire!
 --- !u!4 &152496160
 Transform:
   m_ObjectHideFlags: 0
@@ -11428,28 +11430,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titles:
   - SirDentist
-  - Fairy
+  - Molar
   - SirDentist
-  - Fairy
+  - Mandy
   - SirDentist
-  - Fairy
+  - Mandy
   - SirDentist
-  - Fairy
+  - Molar and Mandy
   - ^%#%&#
   - SirDentist
-  - Fairy
+  - Molar
+  - Molar
   sentences:
   - Where... are we?
   - I believe we made it to the heart Sire.
-  - Uhhhhh... we may be in too deep.
-  - I'm not sure what you mean Sire.
-  - ...I'm a dentist, Fairy.
+  - Uhhhhh... we're for sure in too deep.
+  - What do you mean?
+  - ...I'm a dentist, Mandy.
   - So?
   - ...
   - ........
   - '#*$&)#$@&)$*#($*@)#*$)#($*)@#$*)@#$(*@)$*@'
   - What the?! What was that?!
-  - Sire! Look up! It's! It's! HIGH HEELS!
+  - Sire! Look up! It's! It's.........!
+  - HIGH HEELS!
 --- !u!4 &215165150
 Transform:
   m_ObjectHideFlags: 0
@@ -22646,8 +22650,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titles:
   - Stella-eto
+  - Mandy
   sentences:
   - 'You dare continue to insult me! I shall destroy you!!!!!! '
+  - Let's get 'em! RAAAAAAA!
 --- !u!4 &447747487
 Transform:
   m_ObjectHideFlags: 0
@@ -58862,9 +58868,9 @@ MonoBehaviour:
   - Stella-eto
   - SirDentist
   - SirDentist
-  - Fairy
+  - Mandy
   - SirDentist
-  - Fairy
+  - Mandy
   - Stella-eto
   sentences:
   - So....
@@ -58874,11 +58880,11 @@ MonoBehaviour:
   - I am Stella-eto the great supreme cavity! Fear me!
   - ....
   - Why are there high heels in a dragons heart?
-  - I think they're quite pretty. Can I have them after?
+  - I think they're quite pretty. Can I have them after we beat the boss?
   - I...What? Your a fairy, those are way to big for you.
-  - Harumph! Let me dream sire!
-  - Enough! The dragon is insulting me by sending you lot. Fighting you would be
-    a waste of time. Begone!
+  - But I wanna make a house out of themmmmm. Pleaseeeeeeee!
+  - Enough! The dragon insults me by sending your pitiful selves to defeat me. Fighting
+    you would be a waste of time. Begone!
 --- !u!4 &1148777836
 Transform:
   m_ObjectHideFlags: 0
@@ -67062,8 +67068,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titles:
   - Stella-eto
+  - Molar
   sentences:
   - RAWRIRREWORWEWRURIWRWIRWOIEROIEJERIWOIRJR!!! DIEEEEEEE!!!!
+  - Uh Sire you can't say that! This game is PG!
 --- !u!4 &1300465019
 Transform:
   m_ObjectHideFlags: 0
@@ -70219,8 +70227,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titles:
   - Stella-eto
+  - Mandy
   sentences:
   - 'RAWRRRRRRR!!! HOW DARE YOU MORTAL!!!! THERE SHALL BE NOTHING LEFT OF YOU! BEGONE!!!! '
+  - GIMMMEEE YOUR SHOES!
 --- !u!4 &1355843342
 Transform:
   m_ObjectHideFlags: 0
@@ -83930,14 +83940,14 @@ MonoBehaviour:
   - Stella-eto
   - Stella-eto
   - Stella-eto
-  - Fairy
+  - Molar
   - Suddenly,
   - SirDentist
   - Dragon
   - Stella-eto
   - Dragon
-  - SirDentist
-  - ^GAME^
+  - Molar
+  - Mandy
   sentences:
   - HAHHAHAHAHAHAHHAHAHAHAHAHAHAHAHAHAHHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAAHHAHAHAHAHAHAHAAHHAHAAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHHAHAHAHAHAH
   - You think you have won!? No! I refuse to be defeated by a Swifer wielding mortal!
@@ -83945,14 +83955,13 @@ MonoBehaviour:
     magic! No more dragons! No more DENTIST!!!!!
   - NO MORE DENTIST!!!!!
   - That's SirDentist to you!! Hark foul being!
-  - '*{Boss} Starts kicking the walls violently'
+  - '*Stella-eto starts kicking the walls violently.'
   - Uhhhhh... I don't think he's harking
   - 'Hey! What''s going on down there? '
   - RAAAAAAAAAAAAAAAAAAWWWWWWWWWWWWWWRRRRRR!
-  - Ugh! My heart hurtttttttttttt!
-  - Uh oh.....
-  - ^ You have won the game! The ending scene has not been implemented yet but thank
-    you for playing!^
+  - Ugh! My heart hurtttttttttttts!
+  - Uh oh...
+  - Grab the gold and run!!!
 --- !u!4 &1659400607
 Transform:
   m_ObjectHideFlags: 0
