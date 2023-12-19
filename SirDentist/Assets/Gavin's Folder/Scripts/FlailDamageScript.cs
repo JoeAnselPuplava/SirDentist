@@ -40,7 +40,7 @@ public class FlailDamageScript : MonoBehaviour
         if (damage < 8f){
             damage = 0;
         }
-        if(other.gameObject.tag == "Enemy"){
+        if(other.gameObject.tag == "Enemy" && damage != 0){
             //Check if Eye Enemy
             EyeDamage EyeDamage = other.gameObject.GetComponent<EyeDamage>();
             if(EyeDamage != null){
@@ -78,7 +78,7 @@ public class FlailDamageScript : MonoBehaviour
                 }
             }
         }
-        if(other.gameObject.tag == "BossLeg"){
+        if(other.gameObject.tag == "BossLeg" && damage != 0){
             BossMainScript bossDamage = GameObject.FindGameObjectWithTag("BossObject").GetComponent<BossMainScript>();
             if(bossDamage.Eimmune == false){
                 // Show damage indicator on the enemy
