@@ -18,15 +18,21 @@ public class DialogueManager : MonoBehaviour
 
     Rigidbody2D playerRB;
 
+    float getcameraheight;
+
+    CameraFollow2DLERP camerascript;
+
     void Start()
     {
         // Initialize other variables or components if needed
         playerRB = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
+        camerascript = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow2DLERP>();
     }
 
 
     public void StartDialogue(Dialogue dialogue)
     {
+        Debug.Log("Start Dialogue");
         dialogueBox.SetActive(true);
         talking = true;
 
@@ -44,7 +50,14 @@ public class DialogueManager : MonoBehaviour
         }
 
         //Freeze player
-        playerRB.constraints = RigidbodyConstraints2D.FreezeAll;
+        if(playerRB != null){
+            playerRB.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+        }
+        else{
+            Debug.Log("Dialogue Couldn't find player RB");
+        }
+        getcameraheight = camerascript.up;
+        camerascript.up = 0;
 
         currentSentenceIndex = 0;
         DisplayNextSentence();
@@ -74,6 +87,7 @@ public class DialogueManager : MonoBehaviour
         talking = false;
         // Perform any other necessary actions upon ending dialogue
         playerRB.constraints = RigidbodyConstraints2D.FreezeRotation;
+        camerascript.up = getcameraheight;
     }
 }
 
