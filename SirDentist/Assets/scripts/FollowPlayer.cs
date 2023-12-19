@@ -19,6 +19,8 @@ public class FollowPlayer : MonoBehaviour
     public float moveSpeed;
     public float topSpeed = 10f;
     private float scaleX;
+    private float rand = 0f;
+    private bool canRand = true;
     //public Vector2 offsetFollow;
 
     //Follow Player vs Attack Enemies
@@ -67,7 +69,12 @@ public class FollowPlayer : MonoBehaviour
     void FixedUpdate()
     {
         //FOLLOW PLAYER
-        Vector3 offset = new Vector3(-3, 10, 0);
+        if (canRand)
+        {
+            StartCoroutine(createRand());
+        }        
+        Vector3 offset = new Vector3(-3 + rand, 10 + rand, 0);
+        
         if ((followPlayer) && (player != null))
         {
             playerPos = player.transform.position + offset;
@@ -109,66 +116,16 @@ public class FollowPlayer : MonoBehaviour
             //float offset = 90f;
             //transform.rotation = Quaternion.Euler(Vector3.forward * (angle + offset));
         }
-
-
-        //FOLLOW ENEMY
-        /*
-        if ((attackEnemy) && (enemyTarget != null)){
-                enemyPos = enemyTarget.transform.position;
-                distToEnemy = Vector2.Distance(transform.position, enemyPos);
-
-                // Retreat from enemy
-                if (distToEnemy <= followDistance){
-                        transform.position = Vector2.MoveTowards (transform.position, enemyPos, -moveSpeed * Time.deltaTime);
-                        anim.SetBool("Walk", true);
-                }
-
-                // Stop following enemy
-                if ((distToEnemy > followDistance) && (distToEnemy < startFollowDistance)){
-                        transform.position = this.transform.position;
-                        anim.SetBool("Walk", false);
-                }
-
-                // Follow enemy
-                else if ((distToEnemy >= startFollowDistance)){
-                        transform.position = Vector2.MoveTowards (transform.position, enemyPos, moveSpeed * Time.deltaTime);
-                        anim.SetBool("Walk", true);
-                }
-
-                // Turn buddy toward enemy
-                if (enemyTarget.transform.position.x > gameObject.transform.position.x){
-                        gameObject.transform.localScale = new Vector2(scaleX, gameObject.transform.localScale.y);
-                } else {
-                        gameObject.transform.localScale = new Vector2(scaleX * -1, gameObject.transform.localScale.y);
-                }
-        }
-        */
-
-        //Timer for shooting projectiles
-        /*
-        if ((attackEnemy==true)&&(enemyTarget !=null) && (distToEnemy > followDistance) && (distToEnemy < startFollowDistance)){
-                if (timeBtwShots <= 0) {
-                        isAttacking = true;
-                        anim.SetBool("Attack", true);
-
-                        GameObject myProjectile = Instantiate (projectile, transform.position, Quaternion.identity);
-                        myProjectile.GetComponent<NPC_Projectile>().attackPlayer = false;
-                        myProjectile.GetComponent<NPC_Projectile>().enemyTrans = enemyTarget.transform;
-
-                        timeBtwShots = startTimeBtwShots;
-                } else {
-                        timeBtwShots -= Time.deltaTime;
-                        isAttacking = false;
-                        anim.SetBool("Attack", false);
-                }
-        } else {anim.SetBool("Attack", false); }
-
-        */
-
-        //end bracket of FixedUpdate:
     }
 
-
+    IEnumerator createRand()
+    {
+        canRand = false;
+        yield return new WaitForSeconds(0.5f);
+        //rand = Random.Range(-3.0f, 3.0f);
+        rand = Random.Range(-6f, 6.0f);
+        canRand = true;
+    }
     /*
     void FindTheEnemy(){
             //animator.SetTrigger ("Melee");

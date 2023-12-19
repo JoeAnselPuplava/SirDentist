@@ -19,6 +19,8 @@ public class FollowMolar : MonoBehaviour
     public float moveSpeed;
     public float topSpeed = 10f;
     private float scaleX;
+    private float rand = 0f;
+    private bool canRand = true;
     //public Vector2 offsetFollow;
 
     //Follow Player vs Attack Enemies
@@ -67,7 +69,11 @@ public class FollowMolar : MonoBehaviour
     void FixedUpdate()
     {
         //FOLLOW PLAYER
-        Vector3 offset = new Vector3(4, 10, 0);
+        if (canRand)
+        {
+            StartCoroutine(createRand());
+        }
+        Vector3 offset = new Vector3(4 + rand, 10 + rand, 0);
         if ((followPlayer) && (player != null))
         {
             playerPos = player.transform.position + offset;
@@ -93,21 +99,15 @@ public class FollowMolar : MonoBehaviour
                 transform.position = Vector2.MoveTowards(transform.position, playerPos, moveSpeed * Time.deltaTime);
                 //anim.SetBool("Walk", true);
             }
+        }
 
-            // Turn follower toward player (good for bipedal characters)
-            /*
-             if (player.transform.position.x > gameObject.transform.position.x){
-                      gameObject.transform.localScale = new Vector2(scaleX, gameObject.transform.localScale.y);
-              } else {
-                      gameObject.transform.localScale = new Vector2(scaleX * -1, gameObject.transform.localScale.y);
-              }
-              */
-
-            //// Rotate to face player (good for swimming / flying followers)
-            //Vector2 direction = (playerPos - (Vector2)transform.position).normalized;
-            //float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-            //float offset = 90f;
-            //transform.rotation = Quaternion.Euler(Vector3.forward * (angle + offset));
+        IEnumerator createRand()
+        {
+            canRand = false;
+            yield return new WaitForSeconds(0.5f);
+            //rand = Random.Range(-3.0f, 3.0f);
+            rand = Random.Range(-6f, 6.0f);
+            canRand = true;
         }
 
 
