@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossSceneManager : MonoBehaviour
 {  
@@ -79,6 +80,9 @@ public class BossSceneManager : MonoBehaviour
             fighting = false;
             dialogues[7].TriggerDialogue();
             dialoguestage = 100;
+        }
+        if(!FindObjectOfType<DialogueManager>().talking && dialoguestage == 100 && !fighting){
+            SceneManager.LoadScene("closing_vid");
         }
     }
 

@@ -23877,6 +23877,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flail0.05v
       objectReference: {fileID: 0}
+    - target: {fileID: 5703664975527856471, guid: d3437029c90e043d3b6af6f359f75536, type: 3}
+      propertyPath: damagemulti
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8827345987995776005, guid: d3437029c90e043d3b6af6f359f75536, type: 3}
       propertyPath: m_RootOrder
       value: 7
