@@ -2,20 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class BossMainScript : MonoBehaviour
 {
     public int round = 1;
 
-    public float bossHealth = 1000f;
+    public float bossHealth;
 
-    float spawningspeed = 7f;
+    float spawningspeed;
 
     public float warningtime = 2f;
     public GameObject warningprefab;
     public GameObject player;
-
     public bool fighting = false;
 
     public GameObject footprefab;
@@ -25,9 +24,11 @@ public class BossMainScript : MonoBehaviour
     public Transform rightWall;
     private bool Eimmune = false;
 
-    public TMP_Text healthbar;
+    public Text healthbar;
 
     float timePassed = 0f;
+
+    public int difficulty = 1;
     void Start()
     {
         groundlevel = GameObject.FindGameObjectWithTag("groundlevel").transform;
@@ -46,17 +47,17 @@ public class BossMainScript : MonoBehaviour
             healthbar.text = "Boss Health: " + Mathf.Round(bossHealth);
         }
 
-        if(bossHealth < 850 && round == 1){
+        if(bossHealth < (500f * difficulty * 0.8f) && round == 1){
             Debug.Log("Round 2");
             round = 2;
-            spawningspeed = 5f;
-            warningtime = 1.5f;
+            spawningspeed = spawningspeed * 0.7f;
+            warningtime = warningtime * 0.75f;
         }
-        else if(bossHealth < 400 && round == 2){
+        else if(bossHealth < (500f * difficulty * 0.4f) && round == 2){
             Debug.Log("Round 3");
             round = 3;
-            spawningspeed = 4f;
-            warningtime = 1f;
+            spawningspeed = spawningspeed * 0.8f;
+            warningtime = warningtime * 0.7f;
         }
         //Repeating clock for spawner
         timePassed += Time.deltaTime;
@@ -68,8 +69,13 @@ public class BossMainScript : MonoBehaviour
 
     }
 
-    void FixedUpdate(){
+    public void startbattle(){
+        bossHealth = 500f * difficulty;
+        timePassed = -2f;
+        spawningspeed = 9f - difficulty;
+        warningtime = 3f - (difficulty/2);
 
+        Debug.Log(difficulty);
     }
     public void flailDamage(float damage)
     {
@@ -130,8 +136,9 @@ public class BossMainScript : MonoBehaviour
     IEnumerator footpause(Vector3 position, GameObject shadow){
         yield return new WaitForSeconds(warningtime);
         GameObject foot = Instantiate(footprefab, new Vector3(position.x,position.y,position.z-3f), Quaternion.Euler(new Vector3(0, (int)Random.Range(0f, 2f)*180, 0)));
-        foot.GetComponent<BossFootScript>().pausetime = foot.GetComponent<BossFootScript>().pausetime / round;
+        foot.GetComponent<BossFootScript>().pausetime = (foot.GetComponent<BossFootScript>().pausetime - (difficulty * 0.5f)) / round;
         foot.GetComponent<BossFootScript>().round = round;
+        foot.GetComponent<BossFootScript>().difficulty = difficulty;
         foot.GetComponent<BossFootScript>().shadow = shadow;
     }
 

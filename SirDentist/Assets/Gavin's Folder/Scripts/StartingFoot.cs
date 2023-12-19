@@ -66,7 +66,9 @@ public class StartingFoot : MonoBehaviour
     }
 
     IEnumerator pausing(){
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
+        bossSceneManager.attacked = true;
+        yield return new WaitForSeconds(0.5f);
         rb.velocity = baseSpeedup;
     }
 }
