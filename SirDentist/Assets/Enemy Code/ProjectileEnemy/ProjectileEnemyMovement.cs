@@ -61,15 +61,13 @@ public class ProjectileEnemyMovement : MonoBehaviour
         if (Mathf.Round(player.transform.position.x*10f) - Mathf.Round(transform.position.x*10f) < 0)
         {
             StartCoroutine(moveRight());
-            animator.SetBool("left", true);
-            animator.SetBool("right", false);
+            animator.SetBool("alert", true);
            
         }
         else if (Mathf.Round(player.transform.position.x*10f) - Mathf.Round(transform.position.x*10f) > 0)
         {
             StartCoroutine(moveLeft());
-            animator.SetBool("right", true);
-            animator.SetBool("left", false);
+            animator.SetBool("alert", true);
         }
 
     }

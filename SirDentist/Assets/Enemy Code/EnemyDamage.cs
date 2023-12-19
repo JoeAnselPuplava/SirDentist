@@ -9,7 +9,7 @@ public class EnemyDamage : MonoBehaviour
     private GameHandler gameHandler;
     public int attackpower = 10;
     public float health = 100f;
-    private Animator animator;
+    public Animator animator;
     public AudioClip hurt;
     public AudioClip hit;
     public AudioClip explode;
@@ -22,7 +22,6 @@ public class EnemyDamage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
         AudSource = GetComponent<AudioSource>();
         player = GameObject.FindWithTag("Player");
         if (GameObject.FindWithTag("GameHandler") != null)
