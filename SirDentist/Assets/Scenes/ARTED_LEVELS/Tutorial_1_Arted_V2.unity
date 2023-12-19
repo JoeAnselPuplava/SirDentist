@@ -11365,6 +11365,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 35450670769275276, guid: 701b9dd377958e94d93bc744aec3ff31, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 32
+      objectReference: {fileID: 0}
     - target: {fileID: 1079609585454161610, guid: 701b9dd377958e94d93bc744aec3ff31, type: 3}
       propertyPath: m_Name
       value: Dialogue Canvas
