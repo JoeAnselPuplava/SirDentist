@@ -5,16 +5,18 @@ using UnityEngine.Video;
 public class video_switch_scene : MonoBehaviour
 {
     // Start is called before the first frame update
-    private VideoPlayer videoPlayer;
+    public VideoPlayer videoPlayer;
+    public string nextScene;
 
     private void Start()
     {
         videoPlayer.loopPointReached += EndReached;
         videoPlayer.Play();
+        print("playing");
     }
 
     private void EndReached(VideoPlayer vp)
     {
-        SceneManager.LoadScene("Tutorial_1_Arted_V2");
+        SceneManager.LoadScene(nextScene);
     }
 }

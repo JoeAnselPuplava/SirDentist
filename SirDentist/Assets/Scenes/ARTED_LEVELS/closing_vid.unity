@@ -148,7 +148,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 725663608}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: a0890ac7a17f78f4bbfba6b75fdcfd55, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 283096baf9fe6354ea991d816742f526, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 1084891991}
@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 725663610}
-  nextScene: Tutorial_1_Arted_V2
+  nextScene: MainMenu
 --- !u!4 &2118576996
 Transform:
   m_ObjectHideFlags: 0
