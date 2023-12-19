@@ -38,17 +38,15 @@ public class EggProjectileSpawner : MonoBehaviour
             }
             else
             {
-                animator.SetBool("FireShot", false);
+                animator.SetTrigger("FireShot");
             }
 
         }
     }
     IEnumerator fireEnemies()
     {
-        animator.SetBool("FireShot", true);
         FireShot();
         yield return new WaitForSeconds(0.1f);
-        animator.SetBool("FireShot", false);
     }
 }
 
