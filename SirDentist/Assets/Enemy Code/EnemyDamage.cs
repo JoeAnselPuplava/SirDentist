@@ -17,7 +17,7 @@ public class EnemyDamage : MonoBehaviour
     private GameObject player;
 
     public float stuntime = 0.7f;
-    private bool Eimmune = false;
+    public bool Eimmune = false;
 
     // Start is called before the first frame update
     void Start()

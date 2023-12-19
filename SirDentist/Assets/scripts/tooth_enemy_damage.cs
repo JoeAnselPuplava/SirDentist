@@ -12,7 +12,7 @@ public class tooth_enemy_damage : MonoBehaviour
     public AudioClip hit;
     private AudioSource AudSource;
 
-    private bool Eimmune = false;
+    public bool Eimmune = false;
     private float damage_level=0f;
     void Start()
     {

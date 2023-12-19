@@ -16,7 +16,7 @@ public class ToothDamage : MonoBehaviour
     private GameObject player;
 
     public float stuntime = 0.7f;
-    private bool Eimmune = false;
+    public bool Eimmune = false;
 
     private bool canhit = true;
 
