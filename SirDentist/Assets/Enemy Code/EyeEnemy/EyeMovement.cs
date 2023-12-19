@@ -51,7 +51,7 @@ public class EyeMovement : MonoBehaviour
     {// calculates distance between players hit 
         //and determines if it should run the stab animation
         float dist_to_player = Vector3.Distance(player.transform.position, transform.position);//computes dist to player
-        if (dist_to_player < 3)
+        if (dist_to_player < 10)
         {
             animator.SetBool("shouldHit", true);
         }

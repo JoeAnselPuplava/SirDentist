@@ -343,7 +343,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2345102859341300481, guid: be2e55d23b49ece409d9badc65ba9a3d, type: 3}
         m_TargetAssemblyTypeName: GameHandler, Assembly-CSharp
-        m_MethodName: ReplayLastLevel
+        m_MethodName: ReplayLastLevelDeath
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
