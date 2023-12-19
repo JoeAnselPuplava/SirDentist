@@ -86,7 +86,7 @@ public class PlayerMelee : MonoBehaviour
         canSwing = false;
         //How long the collider will be out
         swordCollider.enabled = true;
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 50; i++) {
             yield return null;
         }
         swordCollider.enabled = false;

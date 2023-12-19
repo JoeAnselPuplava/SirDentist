@@ -114,7 +114,7 @@ public class EnemyDamage : MonoBehaviour
             health -= damage;
             Debug.Log(health);
             checkHealth();
-            GetComponent<EnemyMovement>().stuned();
+            //GetComponent<ProjectileEnemyMovement>().stuned();
         }
     }
 
