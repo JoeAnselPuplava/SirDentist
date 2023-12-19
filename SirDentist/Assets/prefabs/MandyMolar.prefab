@@ -31,7 +31,7 @@ Transform:
   - {fileID: 23987324832527441}
   - {fileID: 2685488794997565392}
   m_Father: {fileID: 0}
-  m_RootOrder: 45
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5561050059609860452
 PrefabInstance:
@@ -44,6 +44,10 @@ PrefabInstance:
     - target: {fileID: 1141435481442805111, guid: 574150a92e1a6264d99cd2627cfc52e2, type: 3}
       propertyPath: m_SortingLayer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1141435481442805111, guid: 574150a92e1a6264d99cd2627cfc52e2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1141435481442805111, guid: 574150a92e1a6264d99cd2627cfc52e2, type: 3}
       propertyPath: m_SortingLayerID
@@ -147,6 +151,10 @@ PrefabInstance:
     - target: {fileID: 1141435481442805111, guid: 574150a92e1a6264d99cd2627cfc52e2, type: 3}
       propertyPath: m_SortingLayer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1141435481442805111, guid: 574150a92e1a6264d99cd2627cfc52e2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1141435481442805111, guid: 574150a92e1a6264d99cd2627cfc52e2, type: 3}
       propertyPath: m_SortingLayerID
