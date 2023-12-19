@@ -37,6 +37,10 @@ public class GameHandler : MonoBehaviour {
             updateStatsDisplay();
       }
 
+      void Update(){
+        updateStatsDisplay();
+      }
+
     public void playerGetCoins(int newCoins){
              coins += newCoins;
              updateStatsDisplay();
