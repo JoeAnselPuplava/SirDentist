@@ -24,6 +24,6 @@ EditorBuildSettings:
     path: Assets/Scenes/ARTED_LEVELS/OLD_DONT_USE/Boss_Level_Arted_V2.unity
     guid: 0edea34659b914a51bc2ef7baa94b9f3
   - enabled: 0
-    path: Assets/Scenes/GavinsScenes/Gavin-Final Boss.unity
+    path: Assets/Scenes/ARTED_LEVELS/Final Boss.unity
     guid: 3a716820fe4ab3b4e8befac27b2beb62
   m_configObjects: {}
