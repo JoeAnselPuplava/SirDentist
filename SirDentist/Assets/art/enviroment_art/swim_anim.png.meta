@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 400
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -126,10 +126,10 @@ TextureImporter:
       name: swim_anim_0
       rect:
         serializedVersion: 2
-        x: 176
-        y: 819
-        width: 1770
-        height: 1770
+        x: 0
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: swim_anim_1
       rect:
         serializedVersion: 2
-        x: 2414
-        y: 801
-        width: 1798
-        height: 1788
+        x: 128
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,13 +165,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swim_anim_2
+      name: swim_anim_3
       rect:
         serializedVersion: 2
-        x: 4464
-        y: 810
-        width: 1836
-        height: 1789
+        x: 384
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,13 +186,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: swim_anim_3
+      name: swim_anim_2
       rect:
         serializedVersion: 2
-        x: 6908
-        y: 819
-        width: 1789
-        height: 1770
+        x: 256
+        y: 0
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b8c49a8001f04baf937487483fc5be7
-      internalID: -641763977
+      spriteID: 54c848e7a5ac649319855b925ea588a7
+      internalID: -1876149002
       vertices: []
       indices: 
       edges: []
