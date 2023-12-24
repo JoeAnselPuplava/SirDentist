@@ -50,6 +50,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         //Freeze player
+        playerRB = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
         if(playerRB != null){
             playerRB.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         }
