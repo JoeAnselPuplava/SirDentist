@@ -33,7 +33,7 @@ RectTransform:
   m_Children:
   - {fileID: 5516660170576287491}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -167,6 +167,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: f187db04b5ed3446c8294ccb3222d43c, type: 3}
+    - target: {fileID: 3822285877722491595, guid: 2054f5a04bca1fa4c92edbbb9c158285, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 18.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6474029233091003511, guid: 2054f5a04bca1fa4c92edbbb9c158285, type: 3}
       propertyPath: m_IsActive
       value: 1
